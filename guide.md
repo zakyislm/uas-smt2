@@ -1,7 +1,7 @@
 # Swift Expedition - Panduan Lengkap
 
 > Dokumentasi lengkap proyek UAS Algoritma Pemrograman & Struktur Data  
-> Single-File C++ Implementation (`main.cpp` — 1030 baris)
+> Single-File C++ Implementation (`main.cpp` — 1100 baris)
 
 ---
 
@@ -27,7 +27,7 @@ Berikut adalah penjabaran lengkap dari **16 syarat UAS** yang wajib dipenuhi, be
 
 **Lokasi:** Baris 47-116 (`main.cpp`)
 
-**Struct yang didefinisikan:**
+**Struct yang dideklarasikan:**
 - `User` (baris 47-54) — Data pengguna login
 - `Paket` (baris 56-69) — Data paket pengiriman
 - `Tracking` (baris 71-79) — Riwayat tracking pengiriman
@@ -37,10 +37,10 @@ Berikut adalah penjabaran lengkap dari **16 syarat UAS** yang wajib dipenuhi, be
 - `Kota` (baris 106-111) — Data kota untuk graph
 - `Edge` (baris 113-116) — Edge graph (tujuan + jarak)
 
-**Mengapa `struct`:**  
+**Penggunaan** `struct`:**  
 Struct dipilih karena model-model ini berfungsi sebagai **Plain Data Objects (PDO)** — mereka hanya menyimpan data tanpa memerlukan enkapsulasi ketat (private members). Semua field bersifat public secara default pada struct, sehingga akses data menjadi lebih sederhana dan langsung. Ini sesuai dengan prinsip "data-first design" di mana model hanya bertugas membawa data antar layer aplikasi.
 
-**Mengapa ditulis seperti itu:**  
+**Penggunaan** ditulis seperti itu:**  
 Setiap struct merepresentasikan satu entitas bisnis nyata. Contoh `Paket` memiliki field seperti `id`, `resi`, `nama_penerima`, `berat`, `biaya`, `status`, dll. yang merupakan atribut alami dari sebuah paket pengiriman. Constructor dengan default argument disediakan agar objek dapat dibuat dengan fleksibel — bisa kosong (default) atau dengan nilai tertentu.
 
 ```cpp
@@ -109,7 +109,7 @@ void paketAddPaket(PaketData& p, const Paket& pk) {
 
 ### 1.4 `namespace` — Organisasi Kode
 
-**Lokasi:** Baris 19 dan 983 (`main.cpp`)
+**Lokasi:** Baris 19 dan 1000 (`main.cpp`)
 
 **Implementasi:**
 ```cpp
@@ -124,7 +124,7 @@ int main() {
 }
 ```
 
-**Mengapa namespace:**  
+**Penggunaan namespace:**  
 Namespace mencegah **name collision** (konflik nama) antar modul. Semua kode proyek dibungkus dalam `namespace SwiftExpedition` sehingga nama struct/function seperti `User`, `Paket`, `Graph`, `Stack`, `Queue` tidak akan bentrok dengan library eksternal atau kode lain. Ini adalah best practice C++ untuk proyek skala menengah ke atas.
 
 ---
@@ -345,7 +345,7 @@ inline vector<Paket> paketSortByBerat(PaketData& p, bool ascending = true) {
 }
 ```
 
-**Mengapa `std::sort`:**  
+**Penggunaan** `std::sort`:**  
 `std::sort` adalah implementasi **Introsort** (hybrid QuickSort/HeapSort/InsertionSort) dari STL yang memiliki kompleksitas **O(n log n)**. Dibandingkan menulis sorting manual, `std::sort` lebih efisien, teruji, dan mendukung custom comparator via lambda.
 
 ---
@@ -369,7 +369,7 @@ inline string paketGetKlasifikasiName(PaketData& p, int id) {
 }
 ```
 
-**Mengapa `std::find_if`:**  
+**Penggunaan** `std::find_if`:**  
 `std::find_if` mencari elemen berdasarkan **predikat/kondisi kustom**, bukan hanya nilai eksak. Sangat berguna untuk mencari layanan berdasarkan ID atau klasifikasi berdasarkan ID. Lebih fleksibel daripada `std::find` karena bisa menggunakan lambda sebagai kondisi pencarian.
 
 ---
@@ -397,7 +397,7 @@ int menunggu = count_if(pakets.begin(), pakets.end(),
     [](const Paket& pp) { return pp.status == "Menunggu"; });
 ```
 
-**Mengapa `std::count_if`:**  
+**Penggunaan** `std::count_if`:**  
 `std::count_if` menghitung jumlah elemen yang memenuhi kondisi tertentu dalam satu pass O(n). Digunakan untuk statistik seperti menghitung jumlah paket per status. Lebih efisien dan ekspresif daripada loop manual dengan counter.
 
 ---
@@ -430,7 +430,7 @@ inline void csvWrite(const string& filename, const vector<string>& lines) {
 }
 ```
 
-**Mengapa file handling:**  
+**Penggunaan** file handling:**  
 Data perlu **persisten** (bertahan setelah program ditutup). CSV dipilih karena:
 - Format sederhana dan human-readable
 - Mudah diedit manual dengan text editor atau Excel
@@ -465,7 +465,7 @@ auto displayRow = [](const Paket& pp) {
 for_each(pakets.begin(), pakets.end(), displayRow);
 ```
 
-**Mengapa lambda:**  
+**Penggunaan** lambda:**  
 Lambda memungkinkan pembuatan fungsi **sekali pakai secara inline** tanpa perlu mendefinisikan functor atau function pointer terpisah. Pada sorting, lambda sebagai comparator membuat kode lebih ringkas dan logika perbandingan langsung terlihat. Lambda juga bisa **capture** variabel dari scope luar (`[ascending]`, `[&status]`, `[id]`).
 
 ---
@@ -482,7 +482,7 @@ Berikut penjelasan lengkap **10 struktur data** yang digunakan, mengapa dipilih,
 **Template:** `SinglyLinkedList<T>`  
 **Digunakan untuk:** `SinglyLinkedList<Paket> paketList` (baris 522)
 
-**Mengapa Singly Linked List:**
+**Penggunaan** Singly Linked List:**
 - **Insert O(1)** di akhir list — efisien untuk menambah paket baru
 - **Delete O(n)** dengan traversal — cukup untuk operasi hapus paket
 - **Memory efisien** — hanya satu pointer `next` per node
@@ -512,7 +512,7 @@ Mengimplementasikan operator `*`, `->`, `++`, `==`, `!=` sehingga mendukung rang
 **Template:** `CircularLinkedList<T>`  
 **Digunakan untuk:** `CircularLinkedList<Kurir> kurirList` (baris 525)
 
-**Mengapa Circular Linked List:**
+**Penggunaan** Circular Linked List:**
 - **Rotasi natural** — node terakhir menunjuk ke node pertama, menciptakan siklus
 - **Round-robin assignment** — setiap pemanggilan `rotate()` + `current()` mengembalikan kurir berikutnya secara siklik
 - **Load balancing** — memastikan semua kurir mendapat giliran secara adil
@@ -543,7 +543,7 @@ inline Kurir* paketGetNextKurir(PaketData& p) {
 **Template:** `Stack<T>`  
 **Digunakan untuk:** `map<int, Stack<Tracking>> undoStacks` (baris 533)
 
-**Mengapa Stack:**
+**Penggunaan** Stack:**
 - **LIFO (Last-In-First-Out)** — undo harus mengembalikan ke status sebelumnya (yang terakhir ditambahkan)
 - Operasi `push` (tambah tracking) dan `pop` (undo tracking) keduanya O(1)
 - Secara konseptual cocok: setiap update tracking di-push, undo berarti pop status terakhir
@@ -580,7 +580,7 @@ inline bool trackingUndoLast(TrackingData& tr, int paketId) {
 **Template:** `Queue<T>`  
 **Digunakan untuk:** `Queue<Paket> paketQueue` (baris 524)
 
-**Mengapa Queue:**
+**Penggunaan** Queue:**
 - **FIFO (First-In-First-Out)** — paket yang masuk lebih dulu harus diproses lebih dulu (keadilan)
 - **Enqueue O(1)** — Admin menambah paket ke antrian
 - **Dequeue O(1)** — Kurir mengambil paket dari depan antrian
@@ -607,7 +607,7 @@ inline bool trackingUndoLast(TrackingData& tr, int paketId) {
 **Template:** `AVLTree<K, V>`  
 **Digunakan untuk:** `AVLTree<string, int> resiTree` (baris 523) — key: resi, value: ID paket
 
-**Mengapa AVL Tree:**
+**Penggunaan** AVL Tree:**
 - **Self-balancing** — menjamin tinggi tree O(log n), mencegah degenerasi ke linked list
 - **Pencarian O(log n)** — jauh lebih cepat daripada linear search O(n) untuk data banyak
 - Resi adalah **key unik** yang ideal sebagai key tree
@@ -649,7 +649,7 @@ inline Paket* paketFindByResi(PaketData& p, const string& resi) {
 **Template:** `HashTable<K, V>` (wraps `std::map`)  
 **Digunakan untuk:** `HashTable<string, User> userTable` (baris 518) — key: username
 
-**Mengapa Hash Table:**
+**Penggunaan** Hash Table:**
 - **Pencarian O(log n)** — login harus cepat (menggunakan `std::map` yang berbasis red-black tree)
 - Username sebagai **key unik** yang di-index
 - Insert dan lookup keduanya efisien
@@ -671,7 +671,7 @@ inline Paket* paketFindByResi(PaketData& p, const string& resi) {
 **Struktur:** `Graph` (non-template)  
 **Digunakan untuk:** `Graph graph` (baris 537) — jaringan rute pengiriman
 
-**Mengapa Graph:**
+**Penggunaan** Graph:**
 - **Model alami** — kota = vertex, jalan = edge, jarak = weight
 - Mendukung **BFS** (shortest path by edges) dan **DFS** (eksplorasi semua rute)
 - **Undirected** — jalan antar kota dua arah
@@ -696,7 +696,7 @@ inline Paket* paketFindByResi(PaketData& p, const string& resi) {
 **Lokasi:** Baris 399-422 (`main.cpp`)  
 **Method:** `Graph::BFS(const string& asal, const string& tujuan)`
 
-**Mengapa BFS:**
+**Penggunaan** BFS:**
 - BFS menjamin menemukan jalur dengan **jumlah edge paling sedikit** (level-order traversal)
 - Cocok untuk mencari rute dengan **minimal transit kota** (bukan jarak terpendek)
 - Menggunakan queue dalam implementasinya
@@ -722,7 +722,7 @@ vector<string> BFS(const string& asal, const string& tujuan) {
 **Lokasi:** Baris 424-434 (`main.cpp`)  
 **Method:** `Graph::DFS(const string& start)`
 
-**Mengapa DFS:**
+**Penggunaan** DFS:**
 - DFS mengeksplorasi **sedalam mungkin** sebelum backtracking
 - Cocok untuk **menemukan semua konektivitas** dari suatu titik
 - Implementasi rekursif yang natural untuk traversal graph
@@ -744,7 +744,7 @@ dfsRec(start);
 **Lokasi:** Baris 436-462 (`main.cpp`)  
 **Method:** `Graph::findAllPaths(const string& asal, const string& tujuan)`
 
-**Mengapa Find All Paths:**
+**Penggunaan** Find All Paths:**
 - Menemukan **semua kemungkinan jalur** dari kota asal ke tujuan
 - Menampilkan **total jarak** untuk setiap jalur
 - Menggunakan DFS dengan backtracking
@@ -806,7 +806,7 @@ Meskipun single-file, prinsip-prinsip good programming tetap diterapkan:
 ### 4.1 Peta Kode Lengkap
 
 ```
-main.cpp (1030 baris)
+main.cpp (1100 baris)
 │
 ├── SECTION 1: HEADERS (baris 1-17)
 │   ├── #include <iostream>, <fstream>, <sstream>, <string>
@@ -917,9 +917,9 @@ main.cpp (1030 baris)
 │   └── menuCeo()           (baris 960-981)
 │       └── 10 menu items (CEO report, graph, BFS, DFS)
 │
-├── End of namespace        (baris 983)
+├── End of namespace        (baris 1000)
 │
-└── SECTION 10: MAIN (baris 988-1030)
+└── SECTION 10: MAIN (baris 1005-1100)
     ├── Inisialisasi data structures
     ├── Load semua CSV
     ├── Login loop
@@ -1865,4 +1865,4 @@ Keluar dari program...
 ---
 
 > **Dokumentasi ini disusun untuk memenuhi pemahaman menyeluruh terhadap proyek Swift Expedition UAS Algoritma Pemrograman & Struktur Data.**  
-> Seluruh kode diimplementasikan dalam single-file `main.cpp` (1030 baris) dengan 10 struktur data dan 16 konsep C++.
+> Seluruh kode diimplementasikan dalam single-file `main.cpp` (1100 baris) dengan 10 struktur data dan 16 konsep C++.
