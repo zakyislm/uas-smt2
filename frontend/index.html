@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SwiftExpedition Tracking Dashboard — Real-time package tracking, courier management, and route optimization platform.">
+    <title>SwiftExpedition — Tracking Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>S</text></svg>">
+</head>
+<body>
+    <div id="app"></div>
+    <div class="toast-container" id="toast-container"></div>
+    <div class="modal-backdrop" id="modal-backdrop">
+        <div class="modal" id="modal-content"></div>
+    </div>
+
+    <!-- Scripts (order matters) -->
+    <script src="/js/api.js"></script>
+    <script src="/js/components/statusChip.js"></script>
+    <script src="/js/components/sidebar.js"></script>
+    <script src="/js/components/header.js"></script>
+    <script src="/js/components/table.js"></script>
+    <script src="/js/components/modal.js"></script>
+    <script src="/js/components/graphCanvas.js"></script>
+    <script src="/js/screens/login.js"></script>
+    <script src="/js/screens/dashboard.js"></script>
+    <script src="/js/screens/pengiriman.js"></script>
+    <script src="/js/screens/tambahPaket.js"></script>
+    <script src="/js/screens/antrean.js"></script>
+    <script src="/js/screens/kurir.js"></script>
+    <script src="/js/screens/ambilPaket.js"></script>
+    <script src="/js/screens/updateStatus.js"></script>
+    <script src="/js/screens/undoAction.js"></script>
+    <script src="/js/screens/riwayat.js"></script>
+    <script src="/js/screens/laporan.js"></script>
+    <script src="/js/screens/filterData.js"></script>
+    <script src="/js/screens/sortingPaket.js"></script>
+    <script src="/js/screens/bfsGraph.js"></script>
+    <script src="/js/screens/dfsGraph.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
