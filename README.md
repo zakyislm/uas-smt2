@@ -27,6 +27,19 @@ Sistem ini dibangun di atas konsep integrasi antara backend berkinerja tinggi da
 
 ---
 
+## 📂 Struktur Folder Modular (Modular Directory Structure)
+
+Untuk kemudahan presentasi dan pemeliharaan kode (maintainability), codebase proyek ini telah direfaktorisasi dari file tunggal yang panjang menjadi struktur modular yang rapi di bawah folder `lib/`:
+
+*   **`main.cpp`**: Hanya berisi fungsi utama `main()` dan inisialisasi awal untuk alur CLI program console (~48 baris).
+*   **`server.cpp`**: Hanya berisi konfigurasi HTTP server dan routing API JSON untuk frontend web.
+*   **`lib/expedition.h`**: Core header yang menyimpan semua definisi struktur data custom (Singly/Circular Linked List, Stack, Queue, AVL Tree, Graph), manipulasi CSV, dan state global.
+*   **`lib/cli_menus.h`**: Menyimpan alur dan tampilan menu CLI untuk program console.
+*   **`lib/serialization.h`**: Menyimpan helper serialisasi objek C++ menjadi JSON untuk API backend.
+*   **`external/`**: Menyimpan pustaka eksternal pihak ketiga (`httplib.h` dan `json.hpp`) agar file root tetap bersih.
+
+---
+
 ## 🔄 Program Workflow (Alur Kerja)
 
 Alur kerja dirancang menyerupai operasional ekspedisi nyata dengan 4 pilar utama (berdasarkan *Role* / Hak Akses):
