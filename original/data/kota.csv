@@ -1,0 +1,22 @@
+asal;tujuan;jarak
+Jakarta Pusat;Jakarta Selatan;15
+Jakarta Pusat;Jakarta Timur;20
+Jakarta Pusat;Jakarta Barat;12
+Jakarta Selatan;Jakarta Timur;18
+Jakarta Selatan;Depok;25
+Jakarta Timur;Bekasi;30
+Jakarta Barat;Tangerang;25
+Jakarta Pusat;Bogor;55
+Jakarta Selatan;Bogor;42
+Jakarta Timur;Bogor;48
+Depok;Bogor;35
+Bekasi;Karawang;55
+Bogor;Bandung;180
+Jakarta Pusat;Bandung;150
+Tangerang;Bandung;200
+Jakarta Pusat;Surabaya;780
+Bandung;Surabaya;710
+Bandung;Yogyakarta;430
+Bogor;Semarang;480
+Semarang;Surabaya;320
+Semarang;Yogyakarta;120

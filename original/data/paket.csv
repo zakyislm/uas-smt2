@@ -1,0 +1,12 @@
+id;resi;nama_penerima;alamat_tujuan;kota_asal;kota_tujuan;berat;biaya;status;id_layanan;id_klasifikasi;id_kurir
+1;SWFT-001;Bapak Rahmat;Jl. Merdeka No.10;Jakarta Pusat;Bandung;5.500000;85000.000000;terkirim;1;2;4
+2;SWFT-002;Ibu Sari;Jl. Sudirman No.25;Jakarta Selatan;Surabaya;12.000000;345000.000000;terkirim;2;2;4
+3;SWFT-003;PT Maju Jaya;Jl. Gatot Subroto No.100;Bandung;Yogyakarta;3.000000;60000.000000;sampai_tujuan;1;1;5
+4;SWFT-004;Toko Elektronik;Jl. Ahmad Yani No.5;Jakarta Timur;Semarang;2.000000;120000.000000;dalam_perjalanan;3;1;6
+5;SWFT-005;Bapak Hadi;Jl. Diponegoro No.30;Jakarta Barat;Bogor;45.000000;500000.000000;diproses;4;3;5
+6;SWFT-006;Ani Wijaya;Jl. Thamrin No.15;Jakarta Pusat;Bekasi;7.000000;100000.000000;dalam_perjalanan;1;2;6
+7;SWFT-007;Budi Utama;Jl. Kebon Jeruk No.8;Jakarta Selatan;Tangerang;3.500000;110000.000000;menunggu;2;1;4
+8;SWFT-008;CV Nusantara;Jl. Pahlawan No.45;Bogor;Semarang;8.000000;140000.000000;diproses;1;2;6
+9;SWFT-009;Dina Lestari;Jl. Mangga Dua No.12;Jakarta Timur;Depok;1.500000;80000.000000;menunggu;3;1;5
+10;SWFT-010;Koperasi Makmur;Jl. Raya Bogor No.200;Bekasi;Karawang;50.000000;550000.000000;sampai_tujuan;4;3;4
+11;SWF-20260609-0012;Dimitri;Jl. Depok Pedalaman Utara IV no 57;Depok;Depok;97.000000;876000.000000;menunggu;4;3;0
