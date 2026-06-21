@@ -4,7 +4,7 @@ SwiftExpedition adalah sistem manajemen logistik dan pengiriman paket canggih ya
 
 ---
 
-## 🎯 Konsep Inti (Core Concepts)
+## Konsep Inti (Core Concepts)
 
 Sistem ini dibangun di atas konsep integrasi antara backend berkinerja tinggi dan frontend yang responsif, menggunakan arsitektur **Local Client-Server**:
 
@@ -27,7 +27,7 @@ Sistem ini dibangun di atas konsep integrasi antara backend berkinerja tinggi da
 
 ---
 
-## 📂 Struktur Folder Modular (Modular Directory Structure)
+## Struktur Folder Modular (Modular Directory Structure)
 
 Untuk kemudahan presentasi dan pemeliharaan kode (maintainability), codebase proyek ini telah direfaktorisasi dari file tunggal yang panjang menjadi struktur modular yang rapi di bawah folder `lib/`:
 
@@ -40,7 +40,7 @@ Untuk kemudahan presentasi dan pemeliharaan kode (maintainability), codebase pro
 
 ---
 
-## 🔄 Program Workflow (Alur Kerja)
+## Program Workflow (Alur Kerja)
 
 Alur kerja dirancang menyerupai operasional ekspedisi nyata dengan 4 pilar utama (berdasarkan *Role* / Hak Akses):
 
@@ -66,7 +66,7 @@ Alur kerja dirancang menyerupai operasional ekspedisi nyata dengan 4 pilar utama
 
 ---
 
-## 🚀 Cara Menjalankan
+## Cara Menjalankan
 
 1. Lakukan kompilasi server (*build*):
    ```bash
