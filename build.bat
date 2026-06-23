@@ -1,6 +1,6 @@
 @echo off
 echo Compiling SwiftExpedition GUI Server...
-g++ -std=c++17 -O2 server.cpp -o server.exe -lws2_32
+g++ -std=c++17 -O2 server.cpp -o server.exe -lws2_32 -lsodium
 if %errorlevel% neq 0 (
     echo Compilation failed!
     pause

@@ -1,9 +1,9 @@
 id;nama;username;password;role
-1;Zaky Ismail;zaky;pass123;CEO
-2;Farrel Santoso;farrel;pass123;Manager
-3;Irsal Alkatiri;irsal;pass123;Manager
-4;Fauzi Bowo;fauzi;pass123;Admin
-5;Dimitri Suwanto;Dimitri;pass123;Admin
-6;Citra Dewi;citra;pass123;Kurir
-7;Doni Kusuma;doni;pass123;Kurir
-8;Eka Putri;eka;pass123;Kurir
+1;Zaky Ismail;zaky;$argon2id$v=19$m=65536,t=2,p=1$fZ2lhxcAj+v172E52hldvw$a7W7o8FZEdO+iwYbP3aLc55HnvvGIjKjBKW2AGddDxY;CEO
+2;Farrel Santoso;farrel;$argon2id$v=19$m=65536,t=2,p=1$O1SYS/SIAuYarIffowHQ+A$1ep/ZbcA+8Q9y6MQ6DvqETYj/u1alHcWjlms+3E/o18;Manager
+3;Irsal Alkatiri;irsal;$argon2id$v=19$m=65536,t=2,p=1$oVkmhBGgMToy2p56zwiQxQ$dqfrR2vwj5z0jIHbQZ+e0GncmS70Xoc6P1gRM7rEjzA;Manager
+4;Fauzi Bowo;fauzi;$argon2id$v=19$m=65536,t=2,p=1$bkSE27iE+GkfNpkH9SypHw$6jdf7/jL6oMtJi9dX/nXgbNUmxOAomy/L36HH7Z/ec0;Admin
+5;Dimitri Suwanto;Dimitri;$argon2id$v=19$m=65536,t=2,p=1$4cPzAA/4438AAUtHF68hgQ$iVU4ZG8MHuU1gCqUBOiKtdvCv8gUr3gRQasU1kR3+hM;Admin
+6;Citra Dewi;citra;$argon2id$v=19$m=65536,t=2,p=1$CJ6ztpTNjZzDSl8xGm70LQ$jKUrPa5DGVL/1Mpf4qlfN2cFGUZQ4TX5JtgSz1fmRrk;Kurir
+7;Doni Kusuma;doni;$argon2id$v=19$m=65536,t=2,p=1$+o6kNJYV8058JIEAYrL4Lw$f0+HoMBcFM5f7G3jD9u2o/c1wGhjzvNnkVQiI8CzskE;Kurir
+8;Eka Putri;eka;$argon2id$v=19$m=65536,t=2,p=1$qmnCyJh9ku4cGqIGpplM0Q$y/rz69G+Yu0W0phm1fm5aQJAhnK4cpu0e3IcGBmHayE;Kurir
