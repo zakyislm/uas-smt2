@@ -17,6 +17,7 @@
 #include <iomanip>
 #include <limits>
 #include <stdexcept>
+#include <sodium.h>
 
 using namespace std;
 
@@ -630,9 +631,25 @@ inline void authLoadUsers(AuthData& auth, const string& filename) {
     } catch (const exception& e) { cout << "  [ERROR] Gagal memuat user: " << e.what() << "\n"; }
 }
 
+inline void initSodium() {
+    static bool initialized = false;
+    if (!initialized) {
+        if (sodium_init() < 0) {
+            throw std::runtime_error("Gagal inisialisasi libsodium");
+        }
+        initialized = true;
+    }
+}
+
 inline User* authLogin(AuthData& auth, const string& username, const string& password) {
+    initSodium();
     User* u = auth.userTable.find(username);
-    return (u && u->password == password) ? u : nullptr;
+    if (u) {
+        if (crypto_pwhash_str_verify(u->password.c_str(), password.c_str(), password.length()) == 0) {
+            return u;
+        }
+    }
+    return nullptr;
 }
 
 // --- Paket Service ---

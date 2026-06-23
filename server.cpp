@@ -1,7 +1,7 @@
 // ============================================================
 // SwiftExpedition GUI Server
 // C++ HTTP Server bridging frontend to SwiftExpedition namespace
-// Compile: g++ -std=c++17 -O2 server.cpp -o server.exe -lws2_32
+// Compile: g++ -std=c++17 -O2 server.cpp -o server.exe -lws2_32 -lsodium
 // ============================================================
 
 // Windows socket requirement for httplib
