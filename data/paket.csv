@@ -1,12 +1,1001 @@
-id;resi;nama_penerima;alamat_tujuan;kota_asal;kota_tujuan;berat;biaya;status;id_layanan;id_klasifikasi;id_kurir
-1;SWFT-001;Bapak Rahmat;Jl. Merdeka No.10;Jakarta Pusat;Bandung;5.500000;85000.000000;terkirim;1;2;4
-2;SWFT-002;Ibu Sari;Jl. Sudirman No.25;Jakarta Selatan;Surabaya;12.000000;345000.000000;terkirim;2;2;4
-3;SWFT-003;PT Maju Jaya;Jl. Gatot Subroto No.100;Bandung;Yogyakarta;3.000000;60000.000000;sampai_tujuan;1;1;5
-4;SWFT-004;Toko Elektronik;Jl. Ahmad Yani No.5;Jakarta Timur;Semarang;2.000000;120000.000000;dalam_perjalanan;3;1;6
-5;SWFT-005;Bapak Hadi;Jl. Diponegoro No.30;Jakarta Barat;Bogor;45.000000;500000.000000;diproses;4;3;5
-6;SWFT-006;Ani Wijaya;Jl. Thamrin No.15;Jakarta Pusat;Bekasi;7.000000;100000.000000;dalam_perjalanan;1;2;6
-7;SWFT-007;Budi Utama;Jl. Kebon Jeruk No.8;Jakarta Selatan;Tangerang;3.500000;110000.000000;menunggu;2;1;4
-8;SWFT-008;CV Nusantara;Jl. Pahlawan No.45;Bogor;Semarang;8.000000;140000.000000;diproses;1;2;6
-9;SWFT-009;Dina Lestari;Jl. Mangga Dua No.12;Jakarta Timur;Depok;1.500000;80000.000000;menunggu;3;1;5
-10;SWFT-010;Koperasi Makmur;Jl. Raya Bogor No.200;Bekasi;Karawang;50.000000;550000.000000;sampai_tujuan;4;3;4
-11;SWF-20260609-0012;Dimitri;Jl. Depok Pedalaman Utara IV no 57;Depok;Depok;97.000000;876000.000000;menunggu;4;3;0
+id;resi;nama_penerima;alamat_tujuan;kota_asal;kota_tujuan;berat;biaya;status;id_layanan;id_klasifikasi;id_kurir;created_at
+1;SWF-20250101-0001;Eko Prasetyo;Jl. Gatot Subroto No. 55;Surabaya;Yogyakarta;1.664000;33280.000000;terkirim;2;1;4;2025-01-01 05:00:35
+2;SWF-20250101-0002;Roni Wijaya;Jl. Kebon Jeruk No. 60;Bekasi;Jakarta Timur;2.100000;42000.000000;terkirim;2;1;6;2025-01-01 14:48:56
+3;SWF-20250102-0003;Budi Santoso;Jl. Diponegoro No. 4;Bekasi;Jakarta Barat;3.264000;114240.000000;terkirim;3;1;4;2025-01-02 07:03:36
+4;SWF-20250103-0004;Rahmat Hidayat;Jl. Kamboja No. 115;Semarang;Bekasi;19.262500;410250.000000;terkirim;2;2;6;2025-01-03 08:55:44
+5;SWF-20250103-0005;Budi Santoso;Jl. Sudirman No. 123;Tangerang;Bogor;18.216000;207160.000000;terkirim;1;2;4;2025-01-03 20:31:49
+6;SWF-20250104-0006;Andi Pratama;Jl. Melati No. 98;Bandung;Karawang;39.417333;415338.666667;terkirim;4;3;4;2025-01-04 12:42:23
+7;SWF-20250105-0007;Roni Wijaya;Jl. Cempaka No. 116;Jakarta Barat;Bogor;36.640667;393125.333333;terkirim;4;3;6;2025-01-05 04:34:25
+8;SWF-20250108-0008;Andi Pratama;Jl. Mawar No. 40;Surabaya;Bogor;1.260000;12600.000000;terkirim;1;1;5;2025-01-08 02:36:58
+9;SWF-20250109-0009;Sari Indah;Jl. Melati No. 32;Tangerang;Bekasi;7.850667;274773.333333;terkirim;3;1;5;2025-01-09 15:18:01
+10;SWF-20250110-0010;Toni Hermanto;Jl. Pahlawan No. 28;Bekasi;Bandung;10.260000;230200.000000;terkirim;2;2;5;2025-01-10 01:07:42
+11;SWF-20250110-0011;Andi Pratama;Jl. Merdeka No. 47;Depok;Semarang;23.373000;258730.000000;terkirim;1;2;4;2025-01-10 03:05:39
+12;SWF-20250110-0012;Budi Santoso;Jl. Gatot Subroto No. 136;Jakarta Barat;Bogor;37.842000;856840.000000;terkirim;2;3;5;2025-01-10 16:27:18
+13;SWF-20250111-0013;Rahmat Hidayat;Jl. Sudirman No. 40;Jakarta Timur;Surabaya;2.346667;18773.333333;terkirim;4;1;6;2025-01-11 21:01:25
+14;SWF-20250112-0014;Wati Kurnia;Jl. Mangga Dua No. 56;Semarang;Karawang;14.040000;165400.000000;terkirim;1;2;5;2025-01-12 17:11:53
+15;SWF-20250117-0015;Hendra Wijaya;Jl. Sudirman No. 57;Tangerang;Surabaya;1.020000;35700.000000;terkirim;3;1;4;2025-01-17 17:25:17
+16;SWF-20250118-0016;Agus Setiawan;Jl. Merdeka No. 128;Yogyakarta;Tangerang;8.042667;160853.333333;terkirim;2;1;6;2025-01-18 04:44:21
+17;SWF-20250119-0017;Sari Indah;Jl. Cempaka No. 5;Bogor;Jakarta Selatan;32.533333;360266.666667;terkirim;4;3;5;2025-01-19 11:09:13
+18;SWF-20250121-0018;Dewi Lestari;Jl. Flamboyan No. 93;Jakarta Selatan;Bogor;10.215833;106726.666667;terkirim;4;2;6;2025-01-21 20:46:03
+19;SWF-20250122-0019;Lestari Wulandari;Jl. Pahlawan No. 86;Semarang;Jakarta Timur;5.700000;114000.000000;terkirim;2;1;5;2025-01-22 03:25:27
+20;SWF-20250122-0020;Siti Rahma;Jl. Mangga Dua No. 51;Jakarta Timur;Surabaya;2.938667;23509.333333;terkirim;4;1;5;2025-01-22 09:38:45
+21;SWF-20250124-0021;Dian Sasmita;Jl. Melati No. 81;Jakarta Timur;Karawang;13.860000;510100.000000;terkirim;3;2;5;2025-01-24 04:30:09
+22;SWF-20250126-0022;Rahmat Hidayat;Jl. Raya Bogor No. 119;Bogor;Jakarta Pusat;7.429000;74290.000000;terkirim;1;1;6;2025-01-26 06:18:05
+23;SWF-20250126-0023;Gita Saraswati;Jl. Sudirman No. 116;Semarang;Bandung;20.230000;429600.000000;terkirim;2;2;4;2025-01-26 12:58:14
+24;SWF-20250126-0024;Rahmat Hidayat;Jl. Thamrin No. 11;Jakarta Barat;Semarang;55.902000;1218040.000000;terkirim;2;3;5;2025-01-26 20:42:37
+25;SWF-20250126-0025;Lestari Wulandari;Jl. Sudirman No. 86;Jakarta Selatan;Tangerang;9.951333;348296.666667;terkirim;3;1;6;2025-01-26 21:53:57
+26;SWF-20250127-0026;Maya Kartika;Jl. Diponegoro No. 90;Depok;Yogyakarta;5.200000;182000.000000;terkirim;3;1;6;2025-01-27 11:28:39
+27;SWF-20250127-0027;Hadi Sunyoto;Jl. Gatot Subroto No. 109;Karawang;Bekasi;5.488000;109760.000000;terkirim;2;1;4;2025-01-27 17:45:50
+28;SWF-20250128-0028;Siti Rahma;Jl. Diponegoro No. 20;Depok;Jakarta Selatan;75.023667;850236.666667;terkirim;1;3;6;2025-01-28 11:08:10
+29;SWF-20250130-0029;Siti Rahma;Jl. Thamrin No. 47;Yogyakarta;Bandung;5.115000;40920.000000;terkirim;4;1;5;2025-01-30 02:58:39
+30;SWF-20250130-0030;Hendra Wijaya;Jl. Flamboyan No. 60;Karawang;Jakarta Barat;19.436667;705283.333333;terkirim;3;2;6;2025-01-30 05:46:35
+31;SWF-20250201-0031;Sri Wahyuni;Jl. Cempaka No. 42;Jakarta Barat;Surabaya;3.024000;24192.000000;terkirim;4;1;5;2025-02-01 06:19:27
+32;SWF-20250201-0032;Hendra Wijaya;Jl. Gatot Subroto No. 42;Depok;Karawang;22.750000;252500.000000;terkirim;1;2;4;2025-02-01 17:35:02
+33;SWF-20250203-0033;Sari Indah;Jl. Kenanga No. 129;Bekasi;Jakarta Barat;11.210000;249200.000000;terkirim;2;2;4;2025-02-03 04:21:59
+34;SWF-20250203-0034;Siti Rahma;Jl. Sudirman No. 74;Bogor;Semarang;21.105000;236050.000000;terkirim;1;2;4;2025-02-03 16:32:04
+35;SWF-20250203-0035;Gita Saraswati;Jl. Cempaka No. 29;Semarang;Depok;8.000000;80000.000000;terkirim;1;1;4;2025-02-03 20:27:12
+36;SWF-20250205-0036;Toni Hermanto;Jl. Merdeka No. 132;Bandung;Jakarta Barat;14.037333;165373.333333;terkirim;1;2;6;2025-02-05 07:14:07
+37;SWF-20250205-0037;Dewi Lestari;Jl. Gatot Subroto No. 135;Bekasi;Jakarta Selatan;75.023667;850236.666667;terkirim;1;3;5;2025-02-05 09:06:50
+38;SWF-20250205-0038;Andi Pratama;Jl. Merdeka No. 92;Semarang;Jakarta Selatan;8.280000;289800.000000;terkirim;3;1;4;2025-02-05 22:08:25
+39;SWF-20250206-0039;Dewi Lestari;Jl. Flamboyan No. 123;Surabaya;Jakarta Timur;5.508000;55080.000000;terkirim;1;1;5;2025-02-06 20:46:20
+40;SWF-20250207-0040;Lestari Wulandari;Jl. Raya Bogor No. 132;Tangerang;Bandung;6.860000;137200.000000;terkirim;2;1;5;2025-02-07 12:28:19
+41;SWF-20250209-0041;Agus Setiawan;Jl. Mawar No. 112;Tangerang;Semarang;34.397000;787940.000000;terkirim;2;3;5;2025-02-09 01:38:06
+42;SWF-20250209-0042;Andi Pratama;Jl. Gatot Subroto No. 109;Jakarta Selatan;Bogor;20.421500;739752.500000;terkirim;3;2;4;2025-02-09 10:55:03
+43;SWF-20250209-0043;Eko Prasetyo;Jl. Cempaka No. 43;Yogyakarta;Bogor;9.045000;316575.000000;terkirim;3;1;6;2025-02-09 13:36:22
+44;SWF-20250210-0044;Sri Wahyuni;Jl. Mawar No. 132;Semarang;Yogyakarta;1.820000;14560.000000;terkirim;4;1;4;2025-02-10 00:31:34
+45;SWF-20250210-0045;Yanto Sukarno;Jl. Mawar No. 99;Bandung;Jakarta Pusat;18.458500;671047.500000;terkirim;3;2;5;2025-02-10 17:11:49
+46;SWF-20250212-0046;Sri Wahyuni;Jl. Melati No. 72;Jakarta Barat;Jakarta Selatan;5.219500;41756.000000;terkirim;4;1;6;2025-02-12 02:23:37
+47;SWF-20250212-0047;Eko Prasetyo;Jl. Kebon Jeruk No. 74;Yogyakarta;Bogor;3.937500;39375.000000;terkirim;1;1;5;2025-02-12 03:09:18
+48;SWF-20250213-0048;Lestari Wulandari;Jl. Mawar No. 17;Karawang;Bandung;11.280000;250600.000000;terkirim;2;2;5;2025-02-13 18:12:24
+49;SWF-20250214-0049;Siti Rahma;Jl. Pahlawan No. 127;Jakarta Pusat;Tangerang;52.440000;1148800.000000;terkirim;2;3;6;2025-02-14 03:59:48
+50;SWF-20250216-0050;Toni Hermanto;Jl. Cempaka No. 105;Bandung;Jakarta Selatan;4.116667;32933.333333;terkirim;4;1;5;2025-02-16 11:02:27
+51;SWF-20250216-0051;Maya Kartika;Jl. Thamrin No. 34;Tangerang;Bandung;5.383333;107666.666667;terkirim;2;1;5;2025-02-16 12:25:21
+52;SWF-20250216-0052;Joko Susilo;Jl. Mawar No. 133;Depok;Jakarta Selatan;19.600000;711000.000000;terkirim;3;2;4;2025-02-16 20:42:33
+53;SWF-20250218-0053;Rahmat Hidayat;Jl. Thamrin No. 149;Jakarta Timur;Jakarta Barat;1.722500;17225.000000;terkirim;1;1;4;2025-02-18 07:03:06
+54;SWF-20250219-0054;Wati Kurnia;Jl. Merdeka No. 128;Surabaya;Karawang;26.696000;558920.000000;terkirim;2;2;6;2025-02-19 00:23:24
+55;SWF-20250224-0055;Sari Indah;Jl. Thamrin No. 113;Tangerang;Karawang;21.942000;463840.000000;terkirim;2;2;5;2025-02-24 01:18:05
+56;SWF-20250225-0056;Siti Rahma;Jl. Mawar No. 132;Karawang;Jakarta Selatan;23.000000;255000.000000;terkirim;1;2;5;2025-02-25 18:52:19
+57;SWF-20250226-0057;Sari Indah;Jl. Raya Bogor No. 99;Bandung;Tangerang;10.455000;390925.000000;terkirim;3;2;4;2025-02-26 09:53:13
+58;SWF-20250226-0058;Toni Hermanto;Jl. Raya Bogor No. 128;Jakarta Pusat;Jakarta Timur;50.320000;1106400.000000;terkirim;2;3;4;2025-02-26 12:01:12
+59;SWF-20250226-0059;Hendra Wijaya;Jl. Kamboja No. 121;Depok;Bandung;2.740833;54816.666667;terkirim;2;1;5;2025-02-26 18:00:01
+60;SWF-20250227-0060;Sari Indah;Jl. Kenanga No. 14;Bandung;Karawang;25.386667;913533.333333;terkirim;3;2;4;2025-02-27 11:06:38
+61;SWF-20250227-0061;Dian Sasmita;Jl. Ahmad Yani No. 33;Jakarta Selatan;Bogor;28.196000;588920.000000;terkirim;2;2;4;2025-02-27 13:51:43
+62;SWF-20250301-0062;Sari Indah;Jl. Sudirman No. 36;Yogyakarta;Bekasi;60.293333;1305866.666667;terkirim;2;3;6;2025-03-01 15:24:20
+63;SWF-20250302-0063;Lestari Wulandari;Jl. Thamrin No. 101;Bandung;Semarang;31.376000;351008.000000;terkirim;4;3;6;2025-03-02 16:53:07
+64;SWF-20250304-0064;Yanto Sukarno;Jl. Melati No. 29;Tangerang;Surabaya;7.431667;260108.333333;terkirim;3;1;6;2025-03-04 11:10:28
+65;SWF-20250307-0065;Toni Hermanto;Jl. Thamrin No. 135;Surabaya;Semarang;11.097333;135973.333333;terkirim;1;2;6;2025-03-07 04:15:14
+66;SWF-20250307-0066;Eko Prasetyo;Jl. Melati No. 108;Jakarta Timur;Bogor;27.528000;245224.000000;terkirim;4;2;6;2025-03-07 04:59:25
+67;SWF-20250309-0067;Roni Wijaya;Jl. Melati No. 123;Karawang;Tangerang;18.133333;659666.666667;terkirim;3;2;6;2025-03-09 19:49:35
+68;SWF-20250311-0068;Roni Wijaya;Jl. Pahlawan No. 72;Karawang;Depok;13.984000;304680.000000;terkirim;2;2;6;2025-03-11 10:13:47
+69;SWF-20250311-0069;Yanto Sukarno;Jl. Mangga Dua No. 74;Jakarta Selatan;Surabaya;45.820000;1703700.000000;terkirim;3;3;4;2025-03-11 11:59:26
+70;SWF-20250312-0070;Rahmat Hidayat;Jl. Mawar No. 114;Surabaya;Depok;15.324167;561345.833333;terkirim;3;2;6;2025-03-12 11:49:00
+71;SWF-20250314-0071;Dian Sasmita;Jl. Pahlawan No. 63;Jakarta Pusat;Yogyakarta;19.019000;215190.000000;terkirim;1;2;4;2025-03-14 13:49:03
+72;SWF-20250315-0072;Siti Rahma;Jl. Merdeka No. 141;Jakarta Timur;Bogor;28.991667;1039708.333333;terkirim;3;2;5;2025-03-15 10:04:59
+73;SWF-20250316-0073;Maya Kartika;Jl. Pahlawan No. 137;Yogyakarta;Semarang;4.704000;94080.000000;terkirim;2;1;4;2025-03-16 07:30:44
+74;SWF-20250316-0074;Hendra Wijaya;Jl. Sudirman No. 3;Depok;Surabaya;9.169333;73354.666667;terkirim;4;1;6;2025-03-16 13:18:37
+75;SWF-20250318-0075;Eko Prasetyo;Jl. Mangga Dua No. 50;Semarang;Jakarta Selatan;17.680000;643800.000000;terkirim;3;2;6;2025-03-18 11:16:53
+76;SWF-20250318-0076;Maya Kartika;Jl. Kebon Jeruk No. 45;Bandung;Yogyakarta;48.800000;1808000.000000;terkirim;3;3;4;2025-03-18 16:16:13
+77;SWF-20250319-0077;Toni Hermanto;Jl. Melati No. 64;Jakarta Pusat;Bekasi;26.353333;947366.666667;terkirim;3;2;5;2025-03-19 00:12:34
+78;SWF-20250319-0078;Yanto Sukarno;Jl. Pahlawan No. 16;Surabaya;Jakarta Selatan;16.905000;160240.000000;terkirim;4;2;6;2025-03-19 07:21:07
+79;SWF-20250319-0079;Hendra Wijaya;Jl. Mawar No. 57;Jakarta Barat;Jakarta Timur;23.335333;841736.666667;terkirim;3;2;5;2025-03-19 19:13:54
+80;SWF-20250320-0080;Roni Wijaya;Jl. Pahlawan No. 21;Karawang;Bogor;13.654667;161546.666667;terkirim;1;2;4;2025-03-20 00:25:34
+81;SWF-20250320-0081;Siti Rahma;Jl. Thamrin No. 84;Karawang;Bogor;10.368000;128680.000000;terkirim;1;2;6;2025-03-20 04:42:51
+82;SWF-20250321-0082;Hadi Sunyoto;Jl. Cempaka No. 117;Bandung;Jakarta Pusat;6.762000;54096.000000;terkirim;4;1;5;2025-03-21 19:16:06
+83;SWF-20250322-0083;Sari Indah;Jl. Cempaka No. 89;Yogyakarta;Jakarta Selatan;4.029000;32232.000000;terkirim;4;1;4;2025-03-22 01:14:59
+84;SWF-20250322-0084;Wati Kurnia;Jl. Mawar No. 98;Bogor;Tangerang;15.273333;330466.666667;terkirim;2;2;6;2025-03-22 09:06:15
+85;SWF-20250322-0085;Sri Wahyuni;Jl. Diponegoro No. 58;Jakarta Pusat;Jakarta Selatan;43.608000;448864.000000;terkirim;4;3;6;2025-03-22 11:03:35
+86;SWF-20250323-0086;Yanto Sukarno;Jl. Diponegoro No. 71;Jakarta Barat;Semarang;3.528000;35280.000000;terkirim;1;1;4;2025-03-23 04:31:09
+87;SWF-20250323-0087;Sari Indah;Jl. Flamboyan No. 13;Jakarta Barat;Semarang;10.065000;226300.000000;terkirim;2;2;6;2025-03-23 11:19:33
+88;SWF-20250324-0088;Hendra Wijaya;Jl. Pahlawan No. 148;Bekasi;Surabaya;16.320000;351400.000000;terkirim;2;2;6;2025-03-24 00:20:54
+89;SWF-20250325-0089;Andi Pratama;Jl. Sudirman No. 143;Bandung;Semarang;24.917333;274173.333333;terkirim;1;2;5;2025-03-25 01:44:11
+90;SWF-20250325-0090;Wati Kurnia;Jl. Cempaka No. 39;Depok;Bogor;30.030000;700600.000000;terkirim;2;3;4;2025-03-25 04:23:19
+91;SWF-20250325-0091;Gita Saraswati;Jl. Cempaka No. 107;Karawang;Bandung;10.885500;405992.500000;terkirim;3;2;4;2025-03-25 13:31:47
+92;SWF-20250325-0092;Rahmat Hidayat;Jl. Kebon Jeruk No. 14;Depok;Bogor;1.615000;32300.000000;terkirim;2;1;5;2025-03-25 14:27:39
+93;SWF-20250325-0093;Roni Wijaya;Jl. Kebon Jeruk No. 31;Yogyakarta;Bogor;14.760000;320200.000000;terkirim;2;2;6;2025-03-25 23:48:17
+94;SWF-20250326-0094;Gita Saraswati;Jl. Mawar No. 79;Depok;Tangerang;62.962500;729625.000000;terkirim;1;3;6;2025-03-26 23:14:53
+95;SWF-20250327-0095;Lestari Wulandari;Jl. Cempaka No. 12;Bandung;Jakarta Barat;2.408000;19264.000000;terkirim;4;1;5;2025-03-27 20:23:09
+96;SWF-20250328-0096;Sri Wahyuni;Jl. Pahlawan No. 128;Karawang;Yogyakarta;26.712000;238696.000000;terkirim;4;2;5;2025-03-28 20:55:13
+97;SWF-20250329-0097;Gita Saraswati;Jl. Kamboja No. 48;Karawang;Yogyakarta;3.054333;30543.333333;terkirim;1;1;6;2025-03-29 02:53:19
+98;SWF-20250331-0098;Joko Susilo;Jl. Gatot Subroto No. 39;Jakarta Pusat;Depok;47.804000;578040.000000;terkirim;1;3;6;2025-03-31 20:50:46
+99;SWF-20250401-0099;Budi Santoso;Jl. Cempaka No. 4;Jakarta Pusat;Bandung;26.910000;294100.000000;terkirim;1;2;6;2025-04-01 00:27:24
+100;SWF-20250401-0100;Agus Setiawan;Jl. Diponegoro No. 62;Jakarta Barat;Surabaya;29.645000;1062575.000000;terkirim;3;2;5;2025-04-01 18:13:45
+101;SWF-20250402-0101;Maya Kartika;Jl. Pahlawan No. 58;Depok;Yogyakarta;0.980000;7840.000000;terkirim;4;1;5;2025-04-02 01:52:49
+102;SWF-20250402-0102;Budi Santoso;Jl. Thamrin No. 22;Bogor;Tangerang;14.681333;171813.333333;terkirim;1;2;4;2025-04-02 04:18:15
+103;SWF-20250403-0103;Rahmat Hidayat;Jl. Mangga Dua No. 140;Bandung;Yogyakarta;3.733333;37333.333333;terkirim;1;1;4;2025-04-03 23:22:08
+104;SWF-20250406-0104;Hendra Wijaya;Jl. Thamrin No. 145;Jakarta Barat;Surabaya;40.395333;423162.666667;terkirim;4;3;6;2025-04-06 14:43:40
+105;SWF-20250406-0105;Yanto Sukarno;Jl. Sudirman No. 26;Tangerang;Jakarta Barat;10.070000;377450.000000;terkirim;3;2;4;2025-04-06 21:36:59
+106;SWF-20250407-0106;Joko Susilo;Jl. Mawar No. 142;Tangerang;Bogor;6.380000;223300.000000;terkirim;3;1;4;2025-04-07 03:17:16
+107;SWF-20250407-0107;Siti Rahma;Jl. Kenanga No. 40;Yogyakarta;Tangerang;10.733333;132333.333333;terkirim;1;2;4;2025-04-07 08:29:56
+108;SWF-20250407-0108;Agus Setiawan;Jl. Diponegoro No. 23;Jakarta Timur;Bogor;51.925000;619250.000000;terkirim;1;3;4;2025-04-07 16:21:00
+109;SWF-20250407-0109;Dian Sasmita;Jl. Melati No. 99;Jakarta Pusat;Bekasi;12.193333;268866.666667;terkirim;2;2;6;2025-04-07 17:53:45
+110;SWF-20250407-0110;Siti Rahma;Jl. Mangga Dua No. 78;Depok;Karawang;2.604000;20832.000000;terkirim;4;1;5;2025-04-07 19:09:20
+111;SWF-20250407-0111;Yanto Sukarno;Jl. Mangga Dua No. 64;Yogyakarta;Surabaya;28.956667;314566.666667;terkirim;1;2;4;2025-04-07 19:10:43
+112;SWF-20250407-0112;Dian Sasmita;Jl. Kenanga No. 85;Bogor;Bekasi;14.040000;516400.000000;terkirim;3;2;6;2025-04-07 21:29:06
+113;SWF-20250408-0113;Dewi Lestari;Jl. Kenanga No. 82;Depok;Semarang;25.092000;225736.000000;terkirim;4;2;5;2025-04-08 09:13:04
+114;SWF-20250408-0114;Roni Wijaya;Jl. Thamrin No. 141;Jakarta Pusat;Semarang;27.324000;981340.000000;terkirim;3;2;6;2025-04-08 09:23:18
+115;SWF-20250408-0115;Hendra Wijaya;Jl. Pahlawan No. 65;Surabaya;Jakarta Timur;11.754667;119037.333333;terkirim;4;2;6;2025-04-08 10:43:32
+116;SWF-20250408-0116;Wati Kurnia;Jl. Sudirman No. 93;Yogyakarta;Karawang;3.143333;110016.666667;terkirim;3;1;4;2025-04-08 17:24:35
+117;SWF-20250410-0117;Sri Wahyuni;Jl. Melati No. 111;Jakarta Selatan;Jakarta Pusat;5.991333;119826.666667;terkirim;2;1;5;2025-04-10 09:46:12
+118;SWF-20250411-0118;Maya Kartika;Jl. Diponegoro No. 89;Jakarta Pusat;Karawang;11.350500;138505.000000;terkirim;1;2;4;2025-04-11 09:15:24
+119;SWF-20250411-0119;Lestari Wulandari;Jl. Flamboyan No. 53;Karawang;Bogor;13.860000;135880.000000;terkirim;4;2;6;2025-04-11 23:43:07
+120;SWF-20250412-0120;Hendra Wijaya;Jl. Sudirman No. 30;Jakarta Pusat;Tangerang;4.872167;97443.333333;terkirim;2;1;6;2025-04-12 11:02:55
+121;SWF-20250412-0121;Eko Prasetyo;Jl. Pahlawan No. 104;Surabaya;Jakarta Timur;21.450000;239500.000000;terkirim;1;2;6;2025-04-12 16:03:19
+122;SWF-20250412-0122;Wati Kurnia;Jl. Kenanga No. 2;Yogyakarta;Jakarta Barat;4.860000;48600.000000;terkirim;1;1;6;2025-04-12 21:08:05
+123;SWF-20250416-0123;Eko Prasetyo;Jl. Ahmad Yani No. 68;Surabaya;Bogor;37.858333;402866.666667;terkirim;4;3;6;2025-04-16 15:02:18
+124;SWF-20250418-0124;Dian Sasmita;Jl. Thamrin No. 77;Bandung;Surabaya;4.500000;45000.000000;terkirim;1;1;4;2025-04-18 21:56:22
+125;SWF-20250419-0125;Siti Rahma;Jl. Kenanga No. 108;Bandung;Jakarta Timur;20.768000;191144.000000;terkirim;4;2;6;2025-04-19 07:09:37
+126;SWF-20250419-0126;Toni Hermanto;Jl. Raya Bogor No. 36;Jakarta Timur;Tangerang;9.826667;98266.666667;terkirim;1;1;5;2025-04-19 22:22:34
+127;SWF-20250420-0127;Hadi Sunyoto;Jl. Kamboja No. 105;Surabaya;Bogor;49.896000;1097920.000000;terkirim;2;3;4;2025-04-20 06:33:28
+128;SWF-20250420-0128;Sari Indah;Jl. Mangga Dua No. 58;Karawang;Depok;25.647333;281473.333333;terkirim;1;2;6;2025-04-20 11:58:27
+129;SWF-20250420-0129;Gita Saraswati;Jl. Sudirman No. 113;Karawang;Jakarta Barat;10.058667;377053.333333;terkirim;3;2;4;2025-04-20 14:49:22
+130;SWF-20250422-0130;Eko Prasetyo;Jl. Ahmad Yani No. 61;Jakarta Barat;Semarang;17.856000;382120.000000;terkirim;2;2;4;2025-04-22 09:28:18
+131;SWF-20250423-0131;Gita Saraswati;Jl. Mangga Dua No. 138;Jakarta Timur;Tangerang;16.199333;186993.333333;terkirim;1;2;4;2025-04-23 05:49:25
+132;SWF-20250423-0132;Siti Rahma;Jl. Diponegoro No. 64;Jakarta Timur;Semarang;20.910000;192280.000000;terkirim;4;2;4;2025-04-23 12:20:35
+133;SWF-20250423-0133;Eko Prasetyo;Jl. Gatot Subroto No. 24;Tangerang;Bandung;29.070000;257560.000000;terkirim;4;2;5;2025-04-23 21:20:00
+134;SWF-20250424-0134;Eko Prasetyo;Jl. Mawar No. 17;Semarang;Karawang;23.680000;498600.000000;terkirim;2;2;5;2025-04-24 18:38:04
+135;SWF-20250425-0135;Gita Saraswati;Jl. Diponegoro No. 145;Bogor;Bekasi;0.880000;7040.000000;terkirim;4;1;4;2025-04-25 11:48:47
+136;SWF-20250425-0136;Budi Santoso;Jl. Cempaka No. 52;Yogyakarta;Jakarta Timur;10.800000;133000.000000;terkirim;1;2;6;2025-04-25 13:54:03
+137;SWF-20250425-0137;Dewi Lestari;Jl. Sudirman No. 102;Surabaya;Depok;8.736000;87360.000000;terkirim;1;1;4;2025-04-25 20:34:41
+138;SWF-20250426-0138;Maya Kartika;Jl. Pahlawan No. 133;Surabaya;Bogor;1.068833;10688.333333;terkirim;1;1;5;2025-04-26 03:22:07
+139;SWF-20250426-0139;Joko Susilo;Jl. Kenanga No. 23;Yogyakarta;Jakarta Selatan;10.925000;407375.000000;terkirim;3;2;4;2025-04-26 09:42:43
+140;SWF-20250429-0140;Hadi Sunyoto;Jl. Merdeka No. 43;Bogor;Bekasi;11.087667;113701.333333;terkirim;4;2;4;2025-04-29 07:36:25
+141;SWF-20250430-0141;Maya Kartika;Jl. Kenanga No. 90;Tangerang;Bekasi;8.302500;83025.000000;terkirim;1;1;4;2025-04-30 19:34:28
+142;SWF-20250501-0142;Hendra Wijaya;Jl. Kebon Jeruk No. 133;Bandung;Karawang;15.980000;184800.000000;terkirim;1;2;4;2025-05-01 12:33:08
+143;SWF-20250502-0143;Toni Hermanto;Jl. Gatot Subroto No. 136;Jakarta Pusat;Tangerang;12.783333;127266.666667;terkirim;4;2;5;2025-05-02 05:56:40
+144;SWF-20250503-0144;Budi Santoso;Jl. Gatot Subroto No. 4;Depok;Jakarta Barat;2.550000;89250.000000;terkirim;3;1;6;2025-05-03 20:34:05
+145;SWF-20250504-0145;Sri Wahyuni;Jl. Gatot Subroto No. 138;Karawang;Surabaya;4.350000;152250.000000;terkirim;3;1;4;2025-05-04 09:37:45
+146;SWF-20250504-0146;Lestari Wulandari;Jl. Kenanga No. 17;Depok;Semarang;7.366667;147333.333333;terkirim;2;1;4;2025-05-04 20:17:26
+147;SWF-20250505-0147;Dian Sasmita;Jl. Sudirman No. 80;Surabaya;Semarang;1.466667;29333.333333;terkirim;2;1;6;2025-05-05 04:35:39
+148;SWF-20250513-0148;Hadi Sunyoto;Jl. Mangga Dua No. 43;Bekasi;Jakarta Timur;2.383333;83416.666667;terkirim;3;1;5;2025-05-13 22:34:47
+149;SWF-20250514-0149;Maya Kartika;Jl. Gatot Subroto No. 128;Bogor;Bandung;11.582667;256653.333333;terkirim;2;2;5;2025-05-14 03:55:47
+150;SWF-20250515-0150;Agus Setiawan;Jl. Pahlawan No. 131;Jakarta Pusat;Jakarta Selatan;1.127500;9020.000000;terkirim;4;1;5;2025-05-15 21:03:25
+151;SWF-20250516-0151;Gita Saraswati;Jl. Cempaka No. 58;Bekasi;Jakarta Barat;23.100000;256000.000000;terkirim;1;2;6;2025-05-16 02:47:06
+152;SWF-20250519-0152;Sari Indah;Jl. Thamrin No. 58;Semarang;Karawang;2.745000;21960.000000;terkirim;4;1;5;2025-05-19 03:57:39
+153;SWF-20250519-0153;Eko Prasetyo;Jl. Merdeka No. 95;Jakarta Barat;Bekasi;22.632000;817120.000000;terkirim;3;2;6;2025-05-19 07:48:15
+154;SWF-20250519-0154;Siti Rahma;Jl. Merdeka No. 105;Jakarta Pusat;Depok;7.821000;273735.000000;terkirim;3;1;4;2025-05-19 12:01:46
+155;SWF-20250520-0155;Roni Wijaya;Jl. Pahlawan No. 108;Bogor;Jakarta Pusat;4.410000;44100.000000;terkirim;1;1;4;2025-05-20 06:59:05
+156;SWF-20250521-0156;Rahmat Hidayat;Jl. Ahmad Yani No. 130;Jakarta Timur;Yogyakarta;3.230000;25840.000000;terkirim;4;1;6;2025-05-21 14:18:42
+157;SWF-20250525-0157;Lestari Wulandari;Jl. Kenanga No. 84;Bekasi;Karawang;5.434000;108680.000000;terkirim;2;1;4;2025-05-25 09:44:07
+158;SWF-20250525-0158;Dewi Lestari;Jl. Flamboyan No. 120;Bekasi;Bogor;17.875000;382500.000000;terkirim;2;2;5;2025-05-25 11:05:02
+159;SWF-20250526-0159;Rahmat Hidayat;Jl. Thamrin No. 78;Yogyakarta;Semarang;4.717500;94350.000000;terkirim;2;1;4;2025-05-26 18:44:53
+160;SWF-20250526-0160;Hadi Sunyoto;Jl. Sudirman No. 77;Depok;Jakarta Timur;8.855167;177103.333333;terkirim;2;1;4;2025-05-26 21:10:57
+161;SWF-20250527-0161;Budi Santoso;Jl. Sudirman No. 57;Jakarta Timur;Depok;11.590000;430650.000000;terkirim;3;2;4;2025-05-27 09:06:46
+162;SWF-20250527-0162;Eko Prasetyo;Jl. Diponegoro No. 24;Semarang;Bekasi;4.312500;43125.000000;terkirim;1;1;4;2025-05-27 21:01:38
+163;SWF-20250527-0163;Budi Santoso;Jl. Kenanga No. 110;Jakarta Timur;Tangerang;9.157500;320512.500000;terkirim;3;1;5;2025-05-27 22:57:44
+164;SWF-20250529-0164;Dian Sasmita;Jl. Pahlawan No. 76;Bogor;Tangerang;16.093333;185933.333333;terkirim;1;2;5;2025-05-29 07:51:56
+165;SWF-20250530-0165;Hadi Sunyoto;Jl. Pahlawan No. 140;Semarang;Jakarta Pusat;37.748333;401986.666667;terkirim;4;3;5;2025-05-30 01:31:18
+166;SWF-20250603-0166;Dewi Lestari;Jl. Merdeka No. 82;Bandung;Jakarta Barat;1.657500;13260.000000;terkirim;4;1;6;2025-06-03 00:24:36
+167;SWF-20250603-0167;Joko Susilo;Jl. Pahlawan No. 69;Karawang;Semarang;6.352333;222331.666667;terkirim;3;1;4;2025-06-03 11:06:35
+168;SWF-20250603-0168;Yanto Sukarno;Jl. Merdeka No. 91;Bandung;Surabaya;11.582667;430393.333333;terkirim;3;2;4;2025-06-03 23:40:58
+169;SWF-20250604-0169;Joko Susilo;Jl. Pahlawan No. 6;Karawang;Bogor;3.033333;60666.666667;terkirim;2;1;5;2025-06-04 00:02:06
+170;SWF-20250604-0170;Budi Santoso;Jl. Diponegoro No. 37;Semarang;Jakarta Selatan;13.654667;502913.333333;terkirim;3;2;6;2025-06-04 02:07:16
+171;SWF-20250604-0171;Lestari Wulandari;Jl. Raya Bogor No. 83;Jakarta Timur;Jakarta Barat;39.000000;880000.000000;terkirim;2;3;6;2025-06-04 09:32:43
+172;SWF-20250604-0172;Maya Kartika;Jl. Thamrin No. 97;Depok;Semarang;6.517333;65173.333333;terkirim;1;1;6;2025-06-04 10:41:17
+173;SWF-20250604-0173;Dewi Lestari;Jl. Melati No. 57;Surabaya;Bandung;7.835333;274236.666667;terkirim;3;1;6;2025-06-04 14:31:25
+174;SWF-20250604-0174;Dewi Lestari;Jl. Gatot Subroto No. 86;Bogor;Jakarta Pusat;10.578000;130780.000000;terkirim;1;2;5;2025-06-04 14:32:55
+175;SWF-20250606-0175;Sri Wahyuni;Jl. Flamboyan No. 108;Jakarta Timur;Bogor;38.106000;404848.000000;terkirim;4;3;4;2025-06-06 02:32:14
+176;SWF-20250607-0176;Rahmat Hidayat;Jl. Sudirman No. 76;Jakarta Pusat;Tangerang;3.131833;109614.166667;terkirim;3;1;4;2025-06-07 08:00:29
+177;SWF-20250608-0177;Rahmat Hidayat;Jl. Melati No. 124;Yogyakarta;Jakarta Pusat;21.829167;461583.333333;terkirim;2;2;4;2025-06-08 14:46:42
+178;SWF-20250608-0178;Wati Kurnia;Jl. Mangga Dua No. 73;Depok;Jakarta Barat;3.520000;28160.000000;terkirim;4;1;4;2025-06-08 16:32:36
+179;SWF-20250609-0179;Rahmat Hidayat;Jl. Raya Bogor No. 123;Jakarta Barat;Jakarta Selatan;2.418000;84630.000000;terkirim;3;1;4;2025-06-09 21:45:23
+180;SWF-20250611-0180;Toni Hermanto;Jl. Kamboja No. 68;Jakarta Selatan;Yogyakarta;25.635500;922242.500000;terkirim;3;2;5;2025-06-11 17:49:30
+181;SWF-20250613-0181;Andi Pratama;Jl. Flamboyan No. 120;Depok;Jakarta Barat;3.615333;36153.333333;terkirim;1;1;4;2025-06-13 17:51:16
+182;SWF-20250615-0182;Maya Kartika;Jl. Pahlawan No. 142;Jakarta Pusat;Bogor;62.244000;597952.000000;terkirim;4;3;6;2025-06-15 14:37:10
+183;SWF-20250616-0183;Sri Wahyuni;Jl. Sudirman No. 129;Bandung;Karawang;7.816667;156333.333333;terkirim;2;1;4;2025-06-16 01:52:23
+184;SWF-20250617-0184;Wati Kurnia;Jl. Gatot Subroto No. 112;Jakarta Barat;Yogyakarta;10.033333;125333.333333;terkirim;1;2;4;2025-06-17 06:34:51
+185;SWF-20250617-0185;Andi Pratama;Jl. Flamboyan No. 4;Semarang;Yogyakarta;19.152000;178216.000000;terkirim;4;2;4;2025-06-17 11:32:31
+186;SWF-20250618-0186;Agus Setiawan;Jl. Raya Bogor No. 138;Bekasi;Bogor;30.444000;343552.000000;terkirim;4;3;4;2025-06-18 00:15:22
+187;SWF-20250620-0187;Dian Sasmita;Jl. Kenanga No. 10;Tangerang;Bekasi;7.466667;261333.333333;terkirim;3;1;5;2025-06-20 11:08:09
+188;SWF-20250622-0188;Andi Pratama;Jl. Kamboja No. 26;Jakarta Barat;Jakarta Timur;26.928000;967480.000000;terkirim;3;2;6;2025-06-22 12:35:53
+189;SWF-20250623-0189;Roni Wijaya;Jl. Cempaka No. 125;Semarang;Karawang;12.112500;267250.000000;terkirim;2;2;4;2025-06-23 11:28:24
+190;SWF-20250627-0190;Maya Kartika;Jl. Merdeka No. 45;Jakarta Barat;Depok;1.626333;13010.666667;terkirim;4;1;4;2025-06-27 06:12:58
+191;SWF-20250627-0191;Eko Prasetyo;Jl. Kenanga No. 32;Surabaya;Jakarta Pusat;27.360000;243880.000000;terkirim;4;2;4;2025-06-27 09:16:34
+192;SWF-20250628-0192;Andi Pratama;Jl. Gatot Subroto No. 73;Jakarta Pusat;Bogor;2.960000;59200.000000;terkirim;2;1;6;2025-06-28 07:32:20
+193;SWF-20250702-0193;Wati Kurnia;Jl. Merdeka No. 3;Bogor;Jakarta Timur;2.229333;78026.666667;terkirim;3;1;6;2025-07-02 17:08:03
+194;SWF-20250703-0194;Yanto Sukarno;Jl. Flamboyan No. 65;Jakarta Barat;Karawang;36.480000;464800.000000;terkirim;1;3;4;2025-07-03 12:58:09
+195;SWF-20250704-0195;Dian Sasmita;Jl. Raya Bogor No. 77;Surabaya;Jakarta Selatan;11.289000;420115.000000;terkirim;3;2;6;2025-07-04 10:54:43
+196;SWF-20250705-0196;Hendra Wijaya;Jl. Kebon Jeruk No. 39;Karawang;Jakarta Barat;8.641667;172833.333333;terkirim;2;1;6;2025-07-05 23:27:00
+197;SWF-20250706-0197;Wati Kurnia;Jl. Kenanga No. 100;Yogyakarta;Jakarta Pusat;11.412667;116301.333333;terkirim;4;2;6;2025-07-06 16:03:57
+198;SWF-20250708-0198;Gita Saraswati;Jl. Thamrin No. 76;Jakarta Selatan;Karawang;6.149000;215215.000000;terkirim;3;1;6;2025-07-08 21:57:51
+199;SWF-20250710-0199;Hendra Wijaya;Jl. Cempaka No. 85;Bekasi;Depok;13.512500;133100.000000;terkirim;4;2;4;2025-07-10 19:34:35
+200;SWF-20250713-0200;Hadi Sunyoto;Jl. Ahmad Yani No. 98;Karawang;Depok;4.794667;95893.333333;terkirim;2;1;4;2025-07-13 03:02:29
+201;SWF-20250713-0201;Siti Rahma;Jl. Melati No. 47;Semarang;Jakarta Selatan;19.968000;723880.000000;terkirim;3;2;6;2025-07-13 13:53:52
+202;SWF-20250715-0202;Roni Wijaya;Jl. Thamrin No. 148;Semarang;Jakarta Timur;6.552000;52416.000000;terkirim;4;1;6;2025-07-15 17:14:58
+203;SWF-20250715-0203;Sri Wahyuni;Jl. Merdeka No. 10;Karawang;Jakarta Barat;5.329500;106590.000000;terkirim;2;1;4;2025-07-15 17:21:28
+204;SWF-20250715-0204;Yanto Sukarno;Jl. Raya Bogor No. 34;Jakarta Selatan;Bogor;18.734333;212343.333333;terkirim;1;2;4;2025-07-15 23:51:35
+205;SWF-20250716-0205;Hadi Sunyoto;Jl. Melati No. 112;Surabaya;Jakarta Timur;34.980000;799600.000000;terkirim;2;3;4;2025-07-16 12:50:21
+206;SWF-20250716-0206;Siti Rahma;Jl. Kebon Jeruk No. 6;Bandung;Karawang;7.233333;72333.333333;terkirim;1;1;5;2025-07-16 20:14:00
+207;SWF-20250716-0207;Sari Indah;Jl. Sudirman No. 28;Surabaya;Jakarta Pusat;4.032000;32256.000000;terkirim;4;1;5;2025-07-16 20:57:36
+208;SWF-20250717-0208;Siti Rahma;Jl. Kebon Jeruk No. 3;Depok;Bogor;12.261333;270226.666667;terkirim;2;2;5;2025-07-17 21:37:47
+209;SWF-20250718-0209;Agus Setiawan;Jl. Kamboja No. 51;Bandung;Jakarta Barat;19.063333;692216.666667;terkirim;3;2;6;2025-07-18 21:41:13
+210;SWF-20250719-0210;Gita Saraswati;Jl. Kamboja No. 54;Yogyakarta;Bogor;3.466667;34666.666667;terkirim;1;1;6;2025-07-19 03:22:14
+211;SWF-20250720-0211;Toni Hermanto;Jl. Diponegoro No. 24;Semarang;Karawang;2.926000;58520.000000;terkirim;2;1;5;2025-07-20 16:16:45
+212;SWF-20250720-0212;Agus Setiawan;Jl. Thamrin No. 11;Depok;Tangerang;12.800000;153000.000000;terkirim;1;2;4;2025-07-20 20:50:58
+213;SWF-20250721-0213;Yanto Sukarno;Jl. Flamboyan No. 69;Yogyakarta;Jakarta Selatan;16.615500;191155.000000;terkirim;1;2;5;2025-07-21 08:43:13
+214;SWF-20250721-0214;Toni Hermanto;Jl. Cempaka No. 43;Jakarta Selatan;Jakarta Barat;1.955000;15640.000000;terkirim;4;1;6;2025-07-21 11:52:32
+215;SWF-20250721-0215;Sri Wahyuni;Jl. Mawar No. 8;Surabaya;Semarang;22.152000;246520.000000;terkirim;1;2;5;2025-07-21 22:14:20
+216;SWF-20250722-0216;Lestari Wulandari;Jl. Merdeka No. 135;Semarang;Yogyakarta;25.510667;280106.666667;terkirim;1;2;5;2025-07-22 20:31:49
+217;SWF-20250723-0217;Sri Wahyuni;Jl. Diponegoro No. 143;Bandung;Jakarta Pusat;4.070000;32560.000000;terkirim;4;1;5;2025-07-23 06:52:46
+218;SWF-20250724-0218;Joko Susilo;Jl. Melati No. 72;Jakarta Pusat;Bandung;29.386667;260093.333333;terkirim;4;2;4;2025-07-24 21:35:04
+219;SWF-20250728-0219;Eko Prasetyo;Jl. Gatot Subroto No. 128;Bogor;Bekasi;3.650000;36500.000000;terkirim;1;1;5;2025-07-28 10:20:14
+220;SWF-20250730-0220;Budi Santoso;Jl. Gatot Subroto No. 78;Karawang;Bandung;21.624000;781840.000000;terkirim;3;2;4;2025-07-30 10:54:39
+221;SWF-20250730-0221;Dian Sasmita;Jl. Kamboja No. 94;Yogyakarta;Bogor;3.344000;33440.000000;terkirim;1;1;5;2025-07-30 17:36:16
+222;SWF-20250731-0222;Yanto Sukarno;Jl. Ahmad Yani No. 12;Jakarta Timur;Karawang;6.417000;224595.000000;terkirim;3;1;6;2025-07-31 09:37:09
+223;SWF-20250801-0223;Roni Wijaya;Jl. Flamboyan No. 49;Yogyakarta;Bekasi;3.622500;36225.000000;terkirim;1;1;5;2025-08-01 14:47:01
+224;SWF-20250802-0224;Hadi Sunyoto;Jl. Sudirman No. 142;Tangerang;Surabaya;28.400000;593000.000000;terkirim;2;2;6;2025-08-02 00:58:08
+225;SWF-20250802-0225;Dian Sasmita;Jl. Melati No. 130;Tangerang;Bogor;18.450000;670750.000000;terkirim;3;2;5;2025-08-02 05:23:44
+226;SWF-20250802-0226;Dian Sasmita;Jl. Raya Bogor No. 141;Bekasi;Semarang;17.266667;370333.333333;terkirim;2;2;6;2025-08-02 08:58:23
+227;SWF-20250803-0227;Siti Rahma;Jl. Thamrin No. 129;Karawang;Semarang;11.220000;114760.000000;terkirim;4;2;6;2025-08-03 17:35:03
+228;SWF-20250804-0228;Wati Kurnia;Jl. Merdeka No. 134;Jakarta Selatan;Jakarta Pusat;4.330667;43306.666667;terkirim;1;1;4;2025-08-04 01:58:02
+229;SWF-20250805-0229;Andi Pratama;Jl. Diponegoro No. 16;Yogyakarta;Depok;6.636000;232260.000000;terkirim;3;1;5;2025-08-05 23:59:15
+230;SWF-20250806-0230;Joko Susilo;Jl. Raya Bogor No. 13;Tangerang;Bogor;42.000000;520000.000000;terkirim;1;3;4;2025-08-06 04:30:26
+231;SWF-20250809-0231;Eko Prasetyo;Jl. Pahlawan No. 95;Semarang;Bandung;15.668333;573391.666667;terkirim;3;2;5;2025-08-09 08:38:23
+232;SWF-20250809-0232;Hadi Sunyoto;Jl. Ahmad Yani No. 97;Jakarta Pusat;Bogor;8.385000;167700.000000;terkirim;2;1;6;2025-08-09 18:18:32
+233;SWF-20250810-0233;Siti Rahma;Jl. Sudirman No. 40;Bekasi;Surabaya;9.216000;322560.000000;terkirim;3;1;4;2025-08-10 06:23:21
+234;SWF-20250811-0234;Dewi Lestari;Jl. Gatot Subroto No. 130;Jakarta Timur;Bogor;62.647000;726470.000000;terkirim;1;3;5;2025-08-11 06:34:43
+235;SWF-20250811-0235;Yanto Sukarno;Jl. Raya Bogor No. 56;Semarang;Bandung;9.881667;98816.666667;terkirim;1;1;6;2025-08-11 07:59:14
+236;SWF-20250812-0236;Dian Sasmita;Jl. Pahlawan No. 11;Surabaya;Bekasi;13.688000;504080.000000;terkirim;3;2;6;2025-08-12 06:17:49
+237;SWF-20250814-0237;Yanto Sukarno;Jl. Flamboyan No. 125;Jakarta Pusat;Bekasi;21.675000;241750.000000;terkirim;1;2;4;2025-08-14 18:13:58
+238;SWF-20250815-0238;Roni Wijaya;Jl. Cempaka No. 27;Jakarta Barat;Bandung;5.969167;59691.666667;terkirim;1;1;5;2025-08-15 01:46:54
+239;SWF-20250815-0239;Rahmat Hidayat;Jl. Sudirman No. 46;Semarang;Depok;5.310500;42484.000000;terkirim;4;1;5;2025-08-15 12:59:40
+240;SWF-20250818-0240;Budi Santoso;Jl. Kenanga No. 31;Karawang;Jakarta Pusat;0.855000;29925.000000;terkirim;3;1;6;2025-08-18 00:25:37
+241;SWF-20250819-0241;Rahmat Hidayat;Jl. Raya Bogor No. 113;Tangerang;Bogor;4.550000;91000.000000;terkirim;2;1;4;2025-08-19 08:27:42
+242;SWF-20250820-0242;Siti Rahma;Jl. Raya Bogor No. 96;Jakarta Pusat;Bandung;1.750000;17500.000000;terkirim;1;1;6;2025-08-20 11:55:27
+243;SWF-20250821-0243;Rahmat Hidayat;Jl. Raya Bogor No. 54;Yogyakarta;Semarang;20.646000;437920.000000;terkirim;2;2;4;2025-08-21 00:35:43
+244;SWF-20250821-0244;Roni Wijaya;Jl. Ahmad Yani No. 47;Surabaya;Bandung;14.720000;172200.000000;terkirim;1;2;5;2025-08-21 13:06:46
+245;SWF-20250822-0245;Roni Wijaya;Jl. Kamboja No. 85;Bekasi;Jakarta Timur;6.746667;67466.666667;terkirim;1;1;4;2025-08-22 05:11:50
+246;SWF-20250822-0246;Dian Sasmita;Jl. Raya Bogor No. 150;Jakarta Timur;Surabaya;29.866667;622333.333333;terkirim;2;2;4;2025-08-22 09:22:42
+247;SWF-20250822-0247;Wati Kurnia;Jl. Mangga Dua No. 93;Jakarta Timur;Yogyakarta;42.458000;439664.000000;terkirim;4;3;5;2025-08-22 14:23:51
+248;SWF-20250822-0248;Dewi Lestari;Jl. Gatot Subroto No. 72;Jakarta Timur;Bandung;4.765833;47658.333333;terkirim;1;1;4;2025-08-22 22:49:30
+249;SWF-20250823-0249;Sri Wahyuni;Jl. Kebon Jeruk No. 10;Karawang;Depok;72.811667;1556233.333333;terkirim;2;3;5;2025-08-23 03:22:47
+250;SWF-20250825-0250;Hendra Wijaya;Jl. Diponegoro No. 119;Karawang;Bandung;11.760000;142600.000000;terkirim;1;2;6;2025-08-25 12:47:23
+251;SWF-20250826-0251;Eko Prasetyo;Jl. Thamrin No. 46;Bandung;Surabaya;18.223333;207233.333333;terkirim;1;2;4;2025-08-26 04:55:53
+252;SWF-20250826-0252;Yanto Sukarno;Jl. Pahlawan No. 11;Surabaya;Jakarta Barat;41.850667;434805.333333;terkirim;4;3;5;2025-08-26 04:59:14
+253;SWF-20250827-0253;Hadi Sunyoto;Jl. Mangga Dua No. 68;Bandung;Karawang;17.941333;652946.666667;terkirim;3;2;6;2025-08-27 16:49:56
+254;SWF-20250828-0254;Sri Wahyuni;Jl. Pahlawan No. 133;Tangerang;Bekasi;46.008000;560080.000000;terkirim;1;3;6;2025-08-28 05:38:33
+255;SWF-20250831-0255;Rahmat Hidayat;Jl. Mangga Dua No. 55;Jakarta Timur;Jakarta Barat;7.000000;140000.000000;terkirim;2;1;5;2025-08-31 03:17:05
+256;SWF-20250831-0256;Toni Hermanto;Jl. Kamboja No. 54;Bandung;Jakarta Timur;5.084000;50840.000000;terkirim;1;1;4;2025-08-31 10:43:18
+257;SWF-20250902-0257;Hadi Sunyoto;Jl. Sudirman No. 147;Jakarta Timur;Jakarta Pusat;7.331500;58652.000000;terkirim;4;1;6;2025-09-02 04:14:42
+258;SWF-20250902-0258;Roni Wijaya;Jl. Flamboyan No. 121;Bogor;Jakarta Timur;10.994667;244893.333333;terkirim;2;2;6;2025-09-02 18:42:19
+259;SWF-20250903-0259;Lestari Wulandari;Jl. Flamboyan No. 18;Jakarta Barat;Bogor;5.880333;58803.333333;terkirim;1;1;4;2025-09-03 04:00:22
+260;SWF-20250903-0260;Agus Setiawan;Jl. Thamrin No. 122;Bandung;Surabaya;13.468000;159680.000000;terkirim;1;2;4;2025-09-03 18:40:23
+261;SWF-20250904-0261;Budi Santoso;Jl. Cempaka No. 134;Tangerang;Bekasi;12.320000;271400.000000;terkirim;2;2;5;2025-09-04 10:51:42
+262;SWF-20250904-0262;Maya Kartika;Jl. Ahmad Yani No. 109;Jakarta Timur;Bekasi;9.230000;323050.000000;terkirim;3;1;6;2025-09-04 23:53:14
+263;SWF-20250906-0263;Budi Santoso;Jl. Merdeka No. 148;Karawang;Jakarta Selatan;7.346667;146933.333333;terkirim;2;1;6;2025-09-06 19:46:57
+264;SWF-20250907-0264;Siti Rahma;Jl. Cempaka No. 150;Depok;Bekasi;46.592000;1730720.000000;terkirim;3;3;6;2025-09-07 21:13:14
+265;SWF-20250912-0265;Gita Saraswati;Jl. Kamboja No. 46;Bekasi;Bandung;24.353000;877355.000000;terkirim;3;2;6;2025-09-12 19:42:03
+266;SWF-20250914-0266;Joko Susilo;Jl. Flamboyan No. 42;Jakarta Selatan;Depok;40.412500;504125.000000;terkirim;1;3;4;2025-09-14 19:00:34
+267;SWF-20250915-0267;Toni Hermanto;Jl. Cempaka No. 23;Jakarta Selatan;Bekasi;7.220000;72200.000000;terkirim;1;1;6;2025-09-15 04:02:56
+268;SWF-20250916-0268;Hadi Sunyoto;Jl. Raya Bogor No. 15;Semarang;Jakarta Timur;8.833000;176660.000000;terkirim;2;1;6;2025-09-16 16:57:32
+269;SWF-20250919-0269;Dian Sasmita;Jl. Pahlawan No. 44;Surabaya;Jakarta Pusat;3.733333;74666.666667;terkirim;2;1;4;2025-09-19 09:50:23
+270;SWF-20250919-0270;Sri Wahyuni;Jl. Kenanga No. 52;Karawang;Jakarta Pusat;5.040000;176400.000000;terkirim;3;1;6;2025-09-19 22:16:57
+271;SWF-20250920-0271;Joko Susilo;Jl. Kebon Jeruk No. 117;Tangerang;Surabaya;2.293333;18346.666667;terkirim;4;1;6;2025-09-20 05:15:22
+272;SWF-20250920-0272;Lestari Wulandari;Jl. Ahmad Yani No. 132;Depok;Bandung;26.796000;239368.000000;terkirim;4;2;4;2025-09-20 14:12:23
+273;SWF-20250920-0273;Budi Santoso;Jl. Kamboja No. 30;Depok;Jakarta Selatan;14.326000;526410.000000;terkirim;3;2;5;2025-09-20 17:02:49
+274;SWF-20250921-0274;Hendra Wijaya;Jl. Gatot Subroto No. 103;Surabaya;Semarang;13.426667;293533.333333;terkirim;2;2;5;2025-09-21 01:31:22
+275;SWF-20250923-0275;Andi Pratama;Jl. Thamrin No. 49;Bogor;Semarang;9.333333;326666.666667;terkirim;3;1;4;2025-09-23 22:03:16
+276;SWF-20250924-0276;Yanto Sukarno;Jl. Diponegoro No. 28;Jakarta Selatan;Jakarta Timur;9.611667;96116.666667;terkirim;1;1;5;2025-09-24 02:42:15
+277;SWF-20250924-0277;Andi Pratama;Jl. Kamboja No. 47;Semarang;Karawang;17.100000;367000.000000;terkirim;2;2;4;2025-09-24 03:09:01
+278;SWF-20250924-0278;Sari Indah;Jl. Mawar No. 101;Surabaya;Jakarta Timur;21.533333;197266.666667;terkirim;4;2;5;2025-09-24 08:27:00
+279;SWF-20250924-0279;Roni Wijaya;Jl. Kenanga No. 149;Jakarta Selatan;Tangerang;13.244000;488540.000000;terkirim;3;2;4;2025-09-24 10:11:45
+280;SWF-20250926-0280;Yanto Sukarno;Jl. Thamrin No. 128;Tangerang;Jakarta Barat;33.516000;368128.000000;terkirim;4;3;5;2025-09-26 19:29:15
+281;SWF-20250926-0281;Maya Kartika;Jl. Pahlawan No. 26;Yogyakarta;Depok;25.133333;527666.666667;terkirim;2;2;4;2025-09-26 20:18:16
+282;SWF-20250928-0282;Dewi Lestari;Jl. Cempaka No. 128;Jakarta Timur;Yogyakarta;49.400000;495200.000000;terkirim;4;3;5;2025-09-28 13:10:57
+283;SWF-20250928-0283;Dewi Lestari;Jl. Sudirman No. 56;Depok;Karawang;12.774667;472113.333333;terkirim;3;2;5;2025-09-28 19:28:56
+284;SWF-20251001-0284;Wati Kurnia;Jl. Ahmad Yani No. 90;Surabaya;Bandung;14.560000;534600.000000;terkirim;3;2;5;2025-10-01 00:15:56
+285;SWF-20251002-0285;Sri Wahyuni;Jl. Raya Bogor No. 119;Surabaya;Jakarta Timur;17.251500;163012.000000;terkirim;4;2;4;2025-10-02 10:19:57
+286;SWF-20251005-0286;Lestari Wulandari;Jl. Melati No. 75;Yogyakarta;Depok;29.040000;1041400.000000;terkirim;3;2;6;2025-10-05 14:52:29
+287;SWF-20251006-0287;Dewi Lestari;Jl. Merdeka No. 33;Yogyakarta;Jakarta Barat;5.040000;100800.000000;terkirim;2;1;5;2025-10-06 07:35:39
+288;SWF-20251007-0288;Gita Saraswati;Jl. Sudirman No. 7;Semarang;Tangerang;5.903333;206616.666667;terkirim;3;1;6;2025-10-07 12:42:33
+289;SWF-20251009-0289;Joko Susilo;Jl. Pahlawan No. 73;Bogor;Yogyakarta;8.675333;173506.666667;terkirim;2;1;4;2025-10-09 11:00:15
+290;SWF-20251011-0290;Eko Prasetyo;Jl. Mangga Dua No. 141;Bogor;Jakarta Timur;28.650667;254205.333333;terkirim;4;2;6;2025-10-11 05:45:32
+291;SWF-20251012-0291;Gita Saraswati;Jl. Pahlawan No. 23;Bogor;Depok;24.882667;522653.333333;terkirim;2;2;5;2025-10-12 04:46:03
+292;SWF-20251012-0292;Yanto Sukarno;Jl. Raya Bogor No. 121;Karawang;Jakarta Pusat;40.896000;508960.000000;terkirim;1;3;5;2025-10-12 17:49:05
+293;SWF-20251014-0293;Yanto Sukarno;Jl. Kebon Jeruk No. 106;Karawang;Tangerang;12.300000;123400.000000;terkirim;4;2;5;2025-10-14 04:27:29
+294;SWF-20251014-0294;Joko Susilo;Jl. Mangga Dua No. 73;Surabaya;Semarang;35.464000;809280.000000;terkirim;2;3;4;2025-10-14 09:15:57
+295;SWF-20251015-0295;Eko Prasetyo;Jl. Flamboyan No. 70;Yogyakarta;Bandung;20.808000;233080.000000;terkirim;1;2;4;2025-10-15 09:24:01
+296;SWF-20251017-0296;Hendra Wijaya;Jl. Mangga Dua No. 33;Yogyakarta;Bogor;1.501500;30030.000000;terkirim;2;1;4;2025-10-17 02:36:54
+297;SWF-20251018-0297;Hendra Wijaya;Jl. Kamboja No. 96;Bogor;Semarang;2.426667;48533.333333;terkirim;2;1;4;2025-10-18 07:13:34
+298;SWF-20251018-0298;Toni Hermanto;Jl. Thamrin No. 50;Depok;Bogor;1.879167;15033.333333;terkirim;4;1;5;2025-10-18 14:01:52
+299;SWF-20251020-0299;Agus Setiawan;Jl. Kebon Jeruk No. 122;Tangerang;Yogyakarta;12.495000;149950.000000;terkirim;1;2;6;2025-10-20 19:34:46
+300;SWF-20251022-0300;Hendra Wijaya;Jl. Kebon Jeruk No. 93;Jakarta Pusat;Yogyakarta;5.920000;47360.000000;terkirim;4;1;5;2025-10-22 02:58:35
+301;SWF-20251022-0301;Agus Setiawan;Jl. Kenanga No. 63;Jakarta Pusat;Jakarta Selatan;19.285000;217850.000000;terkirim;1;2;4;2025-10-22 14:26:36
+302;SWF-20251022-0302;Dian Sasmita;Jl. Melati No. 16;Jakarta Pusat;Tangerang;8.671000;173420.000000;terkirim;2;1;5;2025-10-22 17:40:24
+303;SWF-20251023-0303;Yanto Sukarno;Jl. Flamboyan No. 50;Jakarta Pusat;Semarang;14.355000;527425.000000;terkirim;3;2;4;2025-10-23 10:36:38
+304;SWF-20251023-0304;Gita Saraswati;Jl. Kamboja No. 49;Bandung;Jakarta Timur;36.261000;390088.000000;terkirim;4;3;5;2025-10-23 22:09:49
+305;SWF-20251023-0305;Siti Rahma;Jl. Flamboyan No. 76;Depok;Bandung;6.346667;50773.333333;terkirim;4;1;6;2025-10-23 22:21:36
+306;SWF-20251026-0306;Dian Sasmita;Jl. Pahlawan No. 83;Yogyakarta;Jakarta Selatan;26.078000;233624.000000;terkirim;4;2;6;2025-10-26 01:17:54
+307;SWF-20251026-0307;Lestari Wulandari;Jl. Ahmad Yani No. 25;Karawang;Yogyakarta;1.170000;23400.000000;terkirim;2;1;4;2025-10-26 05:49:55
+308;SWF-20251030-0308;Agus Setiawan;Jl. Sudirman No. 147;Surabaya;Tangerang;38.808000;488080.000000;terkirim;1;3;5;2025-10-30 17:35:04
+309;SWF-20251031-0309;Toni Hermanto;Jl. Gatot Subroto No. 120;Semarang;Surabaya;9.996000;349860.000000;terkirim;3;1;6;2025-10-31 13:23:23
+310;SWF-20251101-0310;Rahmat Hidayat;Jl. Raya Bogor No. 20;Jakarta Barat;Bandung;3.146000;25168.000000;terkirim;4;1;4;2025-11-01 07:36:20
+311;SWF-20251101-0311;Dewi Lestari;Jl. Cempaka No. 28;Semarang;Surabaya;39.893333;498933.333333;terkirim;1;3;4;2025-11-01 15:03:07
+312;SWF-20251102-0312;Dewi Lestari;Jl. Flamboyan No. 91;Bekasi;Bandung;30.039000;340312.000000;terkirim;4;3;6;2025-11-02 03:36:05
+313;SWF-20251104-0313;Roni Wijaya;Jl. Kenanga No. 141;Yogyakarta;Depok;41.897333;435178.666667;terkirim;4;3;4;2025-11-04 15:22:57
+314;SWF-20251105-0314;Budi Santoso;Jl. Diponegoro No. 78;Jakarta Pusat;Bekasi;11.716667;142166.666667;terkirim;1;2;6;2025-11-05 19:52:05
+315;SWF-20251106-0315;Eko Prasetyo;Jl. Mawar No. 40;Jakarta Timur;Bekasi;14.924000;547340.000000;terkirim;3;2;5;2025-11-06 08:03:01
+316;SWF-20251106-0316;Rahmat Hidayat;Jl. Melati No. 124;Jakarta Timur;Karawang;2.464000;19712.000000;terkirim;4;1;4;2025-11-06 12:36:49
+317;SWF-20251106-0317;Wati Kurnia;Jl. Ahmad Yani No. 59;Yogyakarta;Surabaya;1.701333;59546.666667;terkirim;3;1;6;2025-11-06 18:34:27
+318;SWF-20251108-0318;Siti Rahma;Jl. Melati No. 129;Yogyakarta;Jakarta Barat;4.640000;37120.000000;terkirim;4;1;6;2025-11-08 05:49:33
+319;SWF-20251110-0319;Hendra Wijaya;Jl. Kenanga No. 38;Jakarta Timur;Tangerang;3.733333;29866.666667;terkirim;4;1;5;2025-11-10 09:16:35
+320;SWF-20251110-0320;Siti Rahma;Jl. Diponegoro No. 124;Karawang;Jakarta Barat;25.200000;529000.000000;terkirim;2;2;4;2025-11-10 18:24:21
+321;SWF-20251111-0321;Maya Kartika;Jl. Gatot Subroto No. 29;Surabaya;Tangerang;32.256000;745120.000000;terkirim;2;3;5;2025-11-11 03:45:15
+322;SWF-20251111-0322;Yanto Sukarno;Jl. Flamboyan No. 38;Bogor;Jakarta Pusat;12.967500;284350.000000;terkirim;2;2;6;2025-11-11 04:25:47
+323;SWF-20251111-0323;Dian Sasmita;Jl. Diponegoro No. 74;Jakarta Pusat;Tangerang;13.132000;130056.000000;terkirim;4;2;4;2025-11-11 09:25:04
+324;SWF-20251111-0324;Roni Wijaya;Jl. Mangga Dua No. 141;Bogor;Surabaya;3.248000;32480.000000;terkirim;1;1;5;2025-11-11 12:15:04
+325;SWF-20251111-0325;Dian Sasmita;Jl. Mangga Dua No. 14;Bogor;Yogyakarta;1.947000;68145.000000;terkirim;3;1;6;2025-11-11 12:33:07
+326;SWF-20251112-0326;Hendra Wijaya;Jl. Kenanga No. 60;Tangerang;Bandung;13.200000;157000.000000;terkirim;1;2;4;2025-11-12 09:12:02
+327;SWF-20251112-0327;Budi Santoso;Jl. Sudirman No. 64;Karawang;Depok;37.440000;848800.000000;terkirim;2;3;4;2025-11-12 11:43:53
+328;SWF-20251112-0328;Hendra Wijaya;Jl. Pahlawan No. 129;Depok;Jakarta Pusat;5.369000;187915.000000;terkirim;3;1;4;2025-11-12 13:56:44
+329;SWF-20251114-0329;Siti Rahma;Jl. Gatot Subroto No. 98;Karawang;Yogyakarta;16.380000;352600.000000;terkirim;2;2;5;2025-11-14 17:44:32
+330;SWF-20251115-0330;Siti Rahma;Jl. Kebon Jeruk No. 36;Bandung;Karawang;7.717500;154350.000000;terkirim;2;1;5;2025-11-15 08:10:50
+331;SWF-20251115-0331;Gita Saraswati;Jl. Ahmad Yani No. 48;Bekasi;Jakarta Timur;6.716667;53733.333333;terkirim;4;1;5;2025-11-15 10:30:47
+332;SWF-20251116-0332;Agus Setiawan;Jl. Diponegoro No. 48;Jakarta Pusat;Surabaya;11.154000;248080.000000;terkirim;2;2;6;2025-11-16 16:28:17
+333;SWF-20251116-0333;Toni Hermanto;Jl. Diponegoro No. 129;Bandung;Bogor;18.496500;172972.000000;terkirim;4;2;5;2025-11-16 20:58:48
+334;SWF-20251117-0334;Sari Indah;Jl. Cempaka No. 4;Depok;Bogor;7.980000;79800.000000;terkirim;1;1;4;2025-11-17 11:21:49
+335;SWF-20251117-0335;Joko Susilo;Jl. Cempaka No. 104;Semarang;Jakarta Pusat;29.000000;315000.000000;terkirim;1;2;6;2025-11-17 17:36:12
+336;SWF-20251117-0336;Joko Susilo;Jl. Kenanga No. 11;Karawang;Tangerang;6.890667;241173.333333;terkirim;3;1;5;2025-11-17 22:24:25
+337;SWF-20251118-0337;Dewi Lestari;Jl. Cempaka No. 76;Bandung;Jakarta Pusat;24.472000;220776.000000;terkirim;4;2;4;2025-11-18 12:22:11
+338;SWF-20251118-0338;Gita Saraswati;Jl. Diponegoro No. 101;Tangerang;Bekasi;4.645333;37162.666667;terkirim;4;1;6;2025-11-18 17:12:20
+339;SWF-20251119-0339;Andi Pratama;Jl. Melati No. 42;Yogyakarta;Semarang;2.100000;16800.000000;terkirim;4;1;6;2025-11-19 08:00:42
+340;SWF-20251119-0340;Sri Wahyuni;Jl. Thamrin No. 97;Karawang;Tangerang;4.030000;80600.000000;terkirim;2;1;4;2025-11-19 17:01:11
+341;SWF-20251121-0341;Hendra Wijaya;Jl. Raya Bogor No. 115;Depok;Yogyakarta;3.575000;71500.000000;terkirim;2;1;4;2025-11-21 22:54:59
+342;SWF-20251122-0342;Toni Hermanto;Jl. Kamboja No. 140;Semarang;Jakarta Pusat;18.006667;169053.333333;terkirim;4;2;5;2025-11-22 15:29:33
+343;SWF-20251124-0343;Dian Sasmita;Jl. Merdeka No. 63;Karawang;Depok;3.168000;63360.000000;terkirim;2;1;4;2025-11-24 16:55:41
+344;SWF-20251125-0344;Sari Indah;Jl. Raya Bogor No. 85;Jakarta Selatan;Jakarta Pusat;7.728000;154560.000000;terkirim;2;1;6;2025-11-25 02:34:46
+345;SWF-20251125-0345;Maya Kartika;Jl. Mawar No. 10;Jakarta Selatan;Bekasi;28.101000;306010.000000;terkirim;1;2;5;2025-11-25 03:04:39
+346;SWF-20251126-0346;Siti Rahma;Jl. Ahmad Yani No. 71;Bekasi;Bandung;28.644000;597880.000000;terkirim;2;2;6;2025-11-26 22:24:50
+347;SWF-20251127-0347;Hadi Sunyoto;Jl. Gatot Subroto No. 124;Yogyakarta;Semarang;24.533333;883666.666667;terkirim;3;2;6;2025-11-27 10:44:50
+348;SWF-20251127-0348;Maya Kartika;Jl. Kamboja No. 134;Yogyakarta;Surabaya;29.309500;611190.000000;terkirim;2;2;6;2025-11-27 11:28:44
+349;SWF-20251130-0349;Budi Santoso;Jl. Flamboyan No. 31;Yogyakarta;Jakarta Barat;9.765000;341775.000000;terkirim;3;1;5;2025-11-30 02:37:10
+350;SWF-20251130-0350;Roni Wijaya;Jl. Raya Bogor No. 66;Semarang;Jakarta Selatan;29.008000;1040280.000000;terkirim;3;2;4;2025-11-30 19:26:11
+351;SWF-20251203-0351;Maya Kartika;Jl. Merdeka No. 45;Jakarta Barat;Tangerang;43.901667;539016.666667;terkirim;1;3;6;2025-12-03 23:48:23
+352;SWF-20251204-0352;Eko Prasetyo;Jl. Melati No. 119;Semarang;Tangerang;10.336000;386760.000000;terkirim;3;2;6;2025-12-04 20:02:17
+353;SWF-20251205-0353;Lestari Wulandari;Jl. Mawar No. 17;Jakarta Timur;Bekasi;6.660333;133206.666667;terkirim;2;1;6;2025-12-05 02:58:28
+354;SWF-20251206-0354;Agus Setiawan;Jl. Raya Bogor No. 81;Yogyakarta;Jakarta Pusat;9.548000;76384.000000;terkirim;4;1;4;2025-12-06 02:54:13
+355;SWF-20251206-0355;Hadi Sunyoto;Jl. Raya Bogor No. 45;Jakarta Selatan;Tangerang;1.715000;13720.000000;terkirim;4;1;6;2025-12-06 09:45:26
+356;SWF-20251206-0356;Roni Wijaya;Jl. Melati No. 124;Yogyakarta;Karawang;11.662000;141620.000000;terkirim;1;2;6;2025-12-06 17:56:48
+357;SWF-20251207-0357;Sari Indah;Jl. Flamboyan No. 100;Yogyakarta;Karawang;1.960000;19600.000000;terkirim;1;1;6;2025-12-07 15:21:06
+358;SWF-20251208-0358;Sari Indah;Jl. Ahmad Yani No. 134;Semarang;Surabaya;4.802000;96040.000000;terkirim;2;1;5;2025-12-08 04:01:35
+359;SWF-20251208-0359;Gita Saraswati;Jl. Melati No. 113;Surabaya;Jakarta Selatan;6.380000;223300.000000;terkirim;3;1;4;2025-12-08 11:06:16
+360;SWF-20251208-0360;Yanto Sukarno;Jl. Melati No. 70;Jakarta Timur;Semarang;9.744333;97443.333333;terkirim;1;1;5;2025-12-08 21:05:38
+361;SWF-20251209-0361;Sari Indah;Jl. Diponegoro No. 8;Bogor;Yogyakarta;3.618667;36186.666667;terkirim;1;1;4;2025-12-09 17:01:35
+362;SWF-20251209-0362;Dian Sasmita;Jl. Flamboyan No. 92;Depok;Tangerang;9.100000;72800.000000;terkirim;4;1;6;2025-12-09 19:43:01
+363;SWF-20251211-0363;Eko Prasetyo;Jl. Raya Bogor No. 120;Bogor;Jakarta Barat;7.625333;266886.666667;terkirim;3;1;5;2025-12-11 03:53:19
+364;SWF-20251212-0364;Toni Hermanto;Jl. Merdeka No. 17;Bogor;Jakarta Selatan;44.091000;981820.000000;terkirim;2;3;5;2025-12-12 15:16:36
+365;SWF-20251215-0365;Sri Wahyuni;Jl. Ahmad Yani No. 84;Karawang;Yogyakarta;11.856000;119848.000000;terkirim;4;2;5;2025-12-15 03:25:38
+366;SWF-20251216-0366;Joko Susilo;Jl. Thamrin No. 124;Tangerang;Jakarta Selatan;20.670000;190360.000000;terkirim;4;2;6;2025-12-16 09:11:10
+367;SWF-20251216-0367;Rahmat Hidayat;Jl. Kamboja No. 30;Bandung;Surabaya;12.903000;128224.000000;terkirim;4;2;4;2025-12-16 10:06:08
+368;SWF-20251217-0368;Agus Setiawan;Jl. Kenanga No. 84;Bogor;Yogyakarta;2.201500;44030.000000;terkirim;2;1;6;2025-12-17 16:25:22
+369;SWF-20251218-0369;Siti Rahma;Jl. Flamboyan No. 137;Depok;Bogor;14.070000;517450.000000;terkirim;3;2;5;2025-12-18 07:48:01
+370;SWF-20251219-0370;Yanto Sukarno;Jl. Gatot Subroto No. 150;Jakarta Pusat;Surabaya;19.825000;718875.000000;terkirim;3;2;4;2025-12-19 21:56:53
+371;SWF-20251220-0371;Gita Saraswati;Jl. Mawar No. 29;Depok;Jakarta Pusat;26.000000;935000.000000;terkirim;3;2;6;2025-12-20 13:53:37
+372;SWF-20251220-0372;Gita Saraswati;Jl. Kebon Jeruk No. 45;Bogor;Jakarta Timur;18.722667;174781.333333;terkirim;4;2;4;2025-12-20 16:24:25
+373;SWF-20251221-0373;Rahmat Hidayat;Jl. Merdeka No. 37;Yogyakarta;Bogor;5.850000;117000.000000;terkirim;2;1;6;2025-12-21 04:42:32
+374;SWF-20251221-0374;Dian Sasmita;Jl. Thamrin No. 117;Karawang;Tangerang;52.706667;1944733.333333;terkirim;3;3;4;2025-12-21 10:38:46
+375;SWF-20251222-0375;Maya Kartika;Jl. Kamboja No. 61;Yogyakarta;Karawang;35.918667;1357153.333333;terkirim;3;3;4;2025-12-22 04:29:37
+376;SWF-20251223-0376;Maya Kartika;Jl. Kamboja No. 21;Jakarta Timur;Semarang;39.847500;498475.000000;terkirim;1;3;6;2025-12-23 07:33:52
+377;SWF-20251225-0377;Rahmat Hidayat;Jl. Raya Bogor No. 14;Bekasi;Bandung;8.726667;69813.333333;terkirim;4;1;6;2025-12-25 02:52:15
+378;SWF-20251226-0378;Hendra Wijaya;Jl. Raya Bogor No. 43;Jakarta Pusat;Semarang;5.848000;46784.000000;terkirim;4;1;6;2025-12-26 05:17:13
+379;SWF-20251226-0379;Dian Sasmita;Jl. Merdeka No. 74;Bogor;Jakarta Selatan;6.092667;213243.333333;terkirim;3;1;5;2025-12-26 15:18:18
+380;SWF-20251227-0380;Budi Santoso;Jl. Ahmad Yani No. 45;Bandung;Semarang;18.458500;394170.000000;terkirim;2;2;5;2025-12-27 08:09:40
+381;SWF-20251228-0381;Hadi Sunyoto;Jl. Sudirman No. 88;Jakarta Selatan;Jakarta Barat;21.875667;200005.333333;terkirim;4;2;4;2025-12-28 04:13:27
+382;SWF-20251230-0382;Maya Kartika;Jl. Mawar No. 14;Surabaya;Depok;1.984000;15872.000000;terkirim;4;1;5;2025-12-30 05:30:29
+383;SWF-20251230-0383;Gita Saraswati;Jl. Pahlawan No. 98;Surabaya;Semarang;29.598333;616966.666667;terkirim;2;2;6;2025-12-30 07:54:08
+384;SWF-20251230-0384;Sri Wahyuni;Jl. Melati No. 136;Surabaya;Jakarta Pusat;15.730000;150840.000000;terkirim;4;2;6;2025-12-30 13:48:16
+385;SWF-20251230-0385;Andi Pratama;Jl. Ahmad Yani No. 66;Surabaya;Bandung;27.600000;577000.000000;terkirim;2;2;6;2025-12-30 14:01:22
+386;SWF-20251231-0386;Budi Santoso;Jl. Merdeka No. 18;Jakarta Pusat;Bogor;6.493667;51949.333333;terkirim;4;1;5;2025-12-31 02:25:44
+387;SWF-20251231-0387;Sari Indah;Jl. Merdeka No. 24;Jakarta Pusat;Surabaya;3.854167;38541.666667;terkirim;1;1;6;2025-12-31 10:27:38
+388;SWF-20251231-0388;Agus Setiawan;Jl. Thamrin No. 65;Depok;Karawang;9.690000;77520.000000;terkirim;4;1;6;2025-12-31 17:42:50
+389;SWF-20260101-0389;Rahmat Hidayat;Jl. Mangga Dua No. 16;Tangerang;Bogor;6.335333;221736.666667;terkirim;3;1;5;2026-01-01 09:41:48
+390;SWF-20260102-0390;Sri Wahyuni;Jl. Thamrin No. 126;Jakarta Selatan;Jakarta Barat;31.665833;416658.333333;terkirim;1;3;6;2026-01-02 10:03:22
+391;SWF-20260102-0391;Rahmat Hidayat;Jl. Mangga Dua No. 115;Jakarta Pusat;Karawang;0.676667;5413.333333;terkirim;4;1;4;2026-01-02 12:47:15
+392;SWF-20260103-0392;Budi Santoso;Jl. Kamboja No. 123;Tangerang;Bogor;9.006000;90060.000000;terkirim;1;1;6;2026-01-03 02:26:28
+393;SWF-20260103-0393;Yanto Sukarno;Jl. Melati No. 78;Tangerang;Jakarta Pusat;15.288000;560080.000000;terkirim;3;2;5;2026-01-03 03:16:25
+394;SWF-20260104-0394;Sari Indah;Jl. Kenanga No. 49;Depok;Semarang;12.439167;124513.333333;terkirim;4;2;6;2026-01-04 18:41:21
+395;SWF-20260105-0395;Roni Wijaya;Jl. Merdeka No. 62;Bogor;Tangerang;11.613000;117904.000000;terkirim;4;2;5;2026-01-05 08:00:31
+396;SWF-20260105-0396;Lestari Wulandari;Jl. Sudirman No. 104;Jakarta Selatan;Depok;67.184000;1443680.000000;terkirim;2;3;6;2026-01-05 22:33:49
+397;SWF-20260106-0397;Siti Rahma;Jl. Kamboja No. 5;Bogor;Surabaya;2.665000;26650.000000;terkirim;1;1;6;2026-01-06 10:05:53
+398;SWF-20260106-0398;Dian Sasmita;Jl. Thamrin No. 17;Jakarta Selatan;Jakarta Timur;8.322000;166440.000000;terkirim;2;1;5;2026-01-06 14:09:32
+399;SWF-20260107-0399;Maya Kartika;Jl. Diponegoro No. 83;Semarang;Jakarta Barat;4.160000;41600.000000;terkirim;1;1;5;2026-01-07 00:27:19
+400;SWF-20260107-0400;Yanto Sukarno;Jl. Thamrin No. 113;Jakarta Barat;Surabaya;1.485000;11880.000000;sampai_tujuan;4;1;4;2026-01-07 01:47:58
+401;SWF-20260107-0401;Budi Santoso;Jl. Merdeka No. 46;Jakarta Selatan;Semarang;33.810000;776200.000000;terkirim;2;3;4;2026-01-07 14:10:40
+402;SWF-20260107-0402;Wati Kurnia;Jl. Pahlawan No. 45;Bandung;Semarang;5.621000;56210.000000;terkirim;1;1;5;2026-01-07 22:40:16
+403;SWF-20260108-0403;Joko Susilo;Jl. Kebon Jeruk No. 31;Karawang;Jakarta Selatan;54.562667;1191253.333333;terkirim;2;3;6;2026-01-08 09:44:10
+404;SWF-20260108-0404;Roni Wijaya;Jl. Ahmad Yani No. 39;Surabaya;Bogor;11.680000;141800.000000;terkirim;1;2;6;2026-01-08 18:11:21
+405;SWF-20260109-0405;Andi Pratama;Jl. Melati No. 117;Jakarta Pusat;Jakarta Timur;6.656000;133120.000000;terkirim;2;1;5;2026-01-09 02:16:45
+406;SWF-20260110-0406;Eko Prasetyo;Jl. Melati No. 108;Jakarta Barat;Semarang;7.956000;278460.000000;terkirim;3;1;4;2026-01-10 13:05:54
+407;SWF-20260111-0407;Joko Susilo;Jl. Gatot Subroto No. 121;Bandung;Bogor;4.853333;97066.666667;terkirim;2;1;5;2026-01-11 07:57:24
+408;SWF-20260111-0408;Eko Prasetyo;Jl. Kebon Jeruk No. 92;Depok;Jakarta Barat;3.154667;31546.666667;terkirim;1;1;4;2026-01-11 18:47:21
+409;SWF-20260112-0409;Dewi Lestari;Jl. Melati No. 57;Depok;Surabaya;12.400000;273000.000000;terkirim;2;2;5;2026-01-12 04:28:25
+410;SWF-20260112-0410;Toni Hermanto;Jl. Flamboyan No. 72;Jakarta Pusat;Semarang;17.930667;652573.333333;terkirim;3;2;6;2026-01-12 08:02:06
+411;SWF-20260112-0411;Wati Kurnia;Jl. Sudirman No. 11;Bogor;Semarang;11.050667;113405.333333;terkirim;4;2;6;2026-01-12 11:24:40
+412;SWF-20260112-0412;Rahmat Hidayat;Jl. Merdeka No. 105;Jakarta Barat;Jakarta Timur;17.233333;197333.333333;terkirim;1;2;5;2026-01-12 22:10:52
+413;SWF-20260113-0413;Eko Prasetyo;Jl. Merdeka No. 117;Bogor;Jakarta Timur;19.123500;177988.000000;terkirim;4;2;6;2026-01-13 03:31:16
+414;SWF-20260113-0414;Lestari Wulandari;Jl. Sudirman No. 76;Tangerang;Depok;9.480000;331800.000000;terkirim;3;1;4;2026-01-13 22:15:40
+415;SWF-20260114-0415;Sri Wahyuni;Jl. Mawar No. 120;Bandung;Jakarta Pusat;16.725333;192253.333333;terkirim;1;2;6;2026-01-14 02:03:58
+416;SWF-20260114-0416;Gita Saraswati;Jl. Ahmad Yani No. 123;Yogyakarta;Bandung;11.628000;431980.000000;terkirim;3;2;6;2026-01-14 14:38:35
+417;SWF-20260114-0417;Rahmat Hidayat;Jl. Mawar No. 89;Bogor;Karawang;23.741667;214933.333333;terkirim;4;2;6;2026-01-14 18:39:44
+418;SWF-20260114-0418;Yanto Sukarno;Jl. Gatot Subroto No. 49;Bogor;Jakarta Selatan;6.400000;224000.000000;terkirim;3;1;4;2026-01-14 18:58:07
+419;SWF-20260115-0419;Siti Rahma;Jl. Kamboja No. 39;Jakarta Barat;Bandung;5.922000;118440.000000;terkirim;2;1;5;2026-01-15 01:13:31
+420;SWF-20260115-0420;Roni Wijaya;Jl. Gatot Subroto No. 6;Semarang;Jakarta Barat;40.837333;1529306.666667;terkirim;3;3;6;2026-01-15 01:47:24
+421;SWF-20260115-0421;Hadi Sunyoto;Jl. Flamboyan No. 118;Depok;Surabaya;6.582333;230381.666667;terkirim;3;1;5;2026-01-15 16:13:25
+422;SWF-20260115-0422;Yanto Sukarno;Jl. Raya Bogor No. 117;Jakarta Timur;Surabaya;17.940000;383800.000000;terkirim;2;2;6;2026-01-15 20:45:28
+423;SWF-20260115-0423;Agus Setiawan;Jl. Sudirman No. 82;Bandung;Jakarta Timur;26.961000;564220.000000;terkirim;2;2;6;2026-01-15 22:51:15
+424;SWF-20260116-0424;Siti Rahma;Jl. Mawar No. 115;Karawang;Jakarta Timur;15.600000;181000.000000;terkirim;1;2;5;2026-01-16 00:03:40
+425;SWF-20260116-0425;Budi Santoso;Jl. Melati No. 76;Bogor;Depok;16.324000;188240.000000;terkirim;1;2;5;2026-01-16 04:18:23
+426;SWF-20260116-0426;Hendra Wijaya;Jl. Merdeka No. 103;Bandung;Jakarta Barat;12.897500;476412.500000;terkirim;3;2;6;2026-01-16 09:17:25
+427;SWF-20260116-0427;Joko Susilo;Jl. Mangga Dua No. 51;Jakarta Pusat;Jakarta Timur;18.291000;171328.000000;terkirim;4;2;5;2026-01-16 22:28:22
+428;SWF-20260117-0428;Siti Rahma;Jl. Cempaka No. 95;Tangerang;Bekasi;4.554000;159390.000000;terkirim;3;1;5;2026-01-17 08:38:46
+429;SWF-20260118-0429;Eko Prasetyo;Jl. Cempaka No. 114;Depok;Jakarta Timur;18.144000;206440.000000;terkirim;1;2;4;2026-01-18 09:22:29
+430;SWF-20260118-0430;Rahmat Hidayat;Jl. Kenanga No. 23;Jakarta Pusat;Bogor;14.784000;143272.000000;terkirim;4;2;6;2026-01-18 17:41:50
+431;SWF-20260118-0431;Hendra Wijaya;Jl. Kamboja No. 11;Depok;Surabaya;40.296000;905920.000000;terkirim;2;3;4;2026-01-18 21:16:06
+432;SWF-20260119-0432;Toni Hermanto;Jl. Ahmad Yani No. 74;Tangerang;Jakarta Timur;6.396000;63960.000000;terkirim;1;1;5;2026-01-19 01:15:58
+433;SWF-20260119-0433;Yanto Sukarno;Jl. Kamboja No. 145;Tangerang;Depok;16.625000;191250.000000;terkirim;1;2;4;2026-01-19 05:15:24
+434;SWF-20260119-0434;Eko Prasetyo;Jl. Diponegoro No. 92;Jakarta Timur;Jakarta Pusat;25.872000;930520.000000;terkirim;3;2;5;2026-01-19 06:42:12
+435;SWF-20260119-0435;Dewi Lestari;Jl. Ahmad Yani No. 43;Karawang;Bekasi;17.600000;641000.000000;terkirim;3;2;6;2026-01-19 08:02:53
+436;SWF-20260119-0436;Siti Rahma;Jl. Raya Bogor No. 96;Semarang;Bogor;16.430000;189300.000000;terkirim;1;2;4;2026-01-19 10:42:24
+437;SWF-20260119-0437;Dian Sasmita;Jl. Ahmad Yani No. 107;Bogor;Jakarta Selatan;1.248000;9984.000000;terkirim;4;1;5;2026-01-19 18:39:27
+438;SWF-20260120-0438;Dian Sasmita;Jl. Melati No. 45;Yogyakarta;Depok;2.058333;41166.666667;terkirim;2;1;4;2026-01-20 01:38:12
+439;SWF-20260120-0439;Roni Wijaya;Jl. Diponegoro No. 21;Tangerang;Semarang;0.912000;7296.000000;terkirim;4;1;5;2026-01-20 22:56:49
+440;SWF-20260121-0440;Hadi Sunyoto;Jl. Sudirman No. 121;Jakarta Selatan;Bekasi;2.160000;21600.000000;terkirim;1;1;4;2026-01-21 11:38:47
+441;SWF-20260122-0441;Dewi Lestari;Jl. Mawar No. 8;Jakarta Selatan;Jakarta Barat;22.275000;470500.000000;terkirim;2;2;6;2026-01-22 02:33:06
+442;SWF-20260122-0442;Rahmat Hidayat;Jl. Ahmad Yani No. 149;Semarang;Jakarta Pusat;16.144333;590051.666667;terkirim;3;2;6;2026-01-22 06:06:12
+443;SWF-20260122-0443;Toni Hermanto;Jl. Mawar No. 48;Bogor;Yogyakarta;6.957500;55660.000000;terkirim;4;1;4;2026-01-22 14:39:30
+444;SWF-20260122-0444;Lestari Wulandari;Jl. Ahmad Yani No. 120;Jakarta Selatan;Bandung;18.396000;668860.000000;terkirim;3;2;6;2026-01-22 23:32:41
+445;SWF-20260123-0445;Agus Setiawan;Jl. Kenanga No. 73;Bogor;Surabaya;20.482000;188856.000000;terkirim;4;2;5;2026-01-23 10:30:35
+446;SWF-20260123-0446;Yanto Sukarno;Jl. Thamrin No. 4;Surabaya;Bogor;15.180000;176800.000000;terkirim;1;2;4;2026-01-23 12:41:31
+447;SWF-20260124-0447;Dewi Lestari;Jl. Gatot Subroto No. 94;Jakarta Barat;Tangerang;8.895833;177916.666667;terkirim;2;1;6;2026-01-24 07:24:18
+448;SWF-20260124-0448;Andi Pratama;Jl. Kenanga No. 92;Bogor;Yogyakarta;54.900000;2021500.000000;terkirim;3;3;5;2026-01-24 07:59:27
+449;SWF-20260124-0449;Toni Hermanto;Jl. Pahlawan No. 35;Jakarta Pusat;Jakarta Timur;3.504000;35040.000000;terkirim;1;1;5;2026-01-24 17:10:29
+450;SWF-20260124-0450;Dian Sasmita;Jl. Ahmad Yani No. 20;Surabaya;Karawang;29.382500;1053387.500000;terkirim;3;2;5;2026-01-24 20:30:12
+451;SWF-20260124-0451;Gita Saraswati;Jl. Merdeka No. 9;Tangerang;Jakarta Selatan;32.941667;363533.333333;terkirim;4;3;5;2026-01-24 21:57:44
+452;SWF-20260126-0452;Hendra Wijaya;Jl. Thamrin No. 126;Tangerang;Jakarta Timur;34.692000;446920.000000;terkirim;1;3;6;2026-01-26 01:18:14
+453;SWF-20260126-0453;Dewi Lestari;Jl. Sudirman No. 101;Depok;Karawang;24.456667;880983.333333;terkirim;3;2;4;2026-01-26 16:01:14
+454;SWF-20260127-0454;Yanto Sukarno;Jl. Merdeka No. 88;Tangerang;Jakarta Selatan;31.680000;353440.000000;terkirim;4;3;4;2026-01-27 05:54:00
+455;SWF-20260127-0455;Hendra Wijaya;Jl. Gatot Subroto No. 17;Depok;Jakarta Selatan;3.286000;115010.000000;terkirim;3;1;5;2026-01-27 12:31:10
+456;SWF-20260128-0456;Wati Kurnia;Jl. Mangga Dua No. 6;Yogyakarta;Bogor;5.800000;46400.000000;terkirim;4;1;6;2026-01-28 02:17:45
+457;SWF-20260128-0457;Roni Wijaya;Jl. Melati No. 128;Karawang;Yogyakarta;13.144000;485040.000000;terkirim;3;2;4;2026-01-28 09:42:59
+458;SWF-20260128-0458;Hendra Wijaya;Jl. Mangga Dua No. 13;Depok;Surabaya;8.113000;81130.000000;terkirim;1;1;5;2026-01-28 10:59:15
+459;SWF-20260128-0459;Toni Hermanto;Jl. Cempaka No. 54;Bekasi;Jakarta Selatan;28.416000;252328.000000;terkirim;4;2;6;2026-01-28 20:08:02
+460;SWF-20260128-0460;Andi Pratama;Jl. Flamboyan No. 141;Jakarta Timur;Jakarta Pusat;30.514000;710280.000000;terkirim;2;3;6;2026-01-28 22:58:58
+461;SWF-20260129-0461;Wati Kurnia;Jl. Sudirman No. 134;Jakarta Barat;Tangerang;12.880000;282600.000000;terkirim;2;2;6;2026-01-29 07:47:56
+462;SWF-20260129-0462;Rahmat Hidayat;Jl. Kebon Jeruk No. 106;Depok;Bekasi;8.400000;67200.000000;terkirim;4;1;4;2026-01-29 11:40:34
+463;SWF-20260129-0463;Hendra Wijaya;Jl. Flamboyan No. 125;Karawang;Tangerang;5.226667;104533.333333;terkirim;2;1;4;2026-01-29 15:51:58
+464;SWF-20260130-0464;Gita Saraswati;Jl. Thamrin No. 11;Yogyakarta;Bogor;0.680000;23800.000000;terkirim;3;1;5;2026-01-30 01:55:31
+465;SWF-20260130-0465;Rahmat Hidayat;Jl. Kenanga No. 36;Jakarta Barat;Jakarta Selatan;23.433333;845166.666667;terkirim;3;2;4;2026-01-30 07:28:55
+466;SWF-20260131-0466;Maya Kartika;Jl. Kenanga No. 61;Tangerang;Jakarta Barat;3.434667;68693.333333;terkirim;2;1;5;2026-01-31 01:57:44
+467;SWF-20260131-0467;Toni Hermanto;Jl. Mawar No. 29;Bekasi;Bandung;30.613333;1171466.666667;terkirim;3;3;5;2026-01-31 17:41:41
+468;SWF-20260201-0468;Dian Sasmita;Jl. Sudirman No. 14;Yogyakarta;Surabaya;22.400000;204200.000000;terkirim;4;2;6;2026-02-01 09:01:23
+469;SWF-20260201-0469;Joko Susilo;Jl. Flamboyan No. 100;Jakarta Pusat;Bogor;7.056000;141120.000000;terkirim;2;1;4;2026-02-01 20:45:18
+470;SWF-20260202-0470;Wati Kurnia;Jl. Sudirman No. 71;Jakarta Selatan;Karawang;37.613333;400906.666667;terkirim;4;3;4;2026-02-02 00:43:20
+471;SWF-20260202-0471;Yanto Sukarno;Jl. Cempaka No. 141;Yogyakarta;Bekasi;2.357333;47146.666667;terkirim;2;1;5;2026-02-02 16:10:40
+472;SWF-20260203-0472;Roni Wijaya;Jl. Raya Bogor No. 81;Bandung;Jakarta Selatan;4.920000;98400.000000;terkirim;2;1;6;2026-02-03 10:14:04
+473;SWF-20260203-0473;Siti Rahma;Jl. Mangga Dua No. 45;Surabaya;Bandung;13.685000;161850.000000;terkirim;1;2;5;2026-02-03 11:03:55
+474;SWF-20260204-0474;Joko Susilo;Jl. Merdeka No. 6;Karawang;Yogyakarta;9.418500;188370.000000;terkirim;2;1;6;2026-02-04 01:53:24
+475;SWF-20260204-0475;Wati Kurnia;Jl. Mangga Dua No. 39;Jakarta Selatan;Tangerang;1.420833;11366.666667;sampai_tujuan;4;1;5;2026-02-04 08:23:56
+476;SWF-20260204-0476;Joko Susilo;Jl. Kebon Jeruk No. 49;Semarang;Depok;32.460667;749213.333333;terkirim;2;3;4;2026-02-04 22:52:11
+477;SWF-20260205-0477;Roni Wijaya;Jl. Cempaka No. 47;Tangerang;Jakarta Timur;4.378833;87576.666667;terkirim;2;1;5;2026-02-05 06:25:48
+478;SWF-20260205-0478;Eko Prasetyo;Jl. Gatot Subroto No. 3;Bogor;Jakarta Timur;18.870000;175960.000000;terkirim;4;2;5;2026-02-05 07:22:13
+479;SWF-20260205-0479;Gita Saraswati;Jl. Sudirman No. 14;Bekasi;Jakarta Barat;9.625000;96250.000000;terkirim;1;1;6;2026-02-05 19:38:00
+480;SWF-20260206-0480;Yanto Sukarno;Jl. Diponegoro No. 144;Jakarta Pusat;Surabaya;7.109333;56874.666667;terkirim;4;1;5;2026-02-06 03:12:50
+481;SWF-20260206-0481;Hadi Sunyoto;Jl. Cempaka No. 37;Depok;Jakarta Selatan;3.250000;26000.000000;terkirim;4;1;6;2026-02-06 08:46:01
+482;SWF-20260206-0482;Dian Sasmita;Jl. Mangga Dua No. 133;Bekasi;Bogor;18.600000;397000.000000;terkirim;2;2;6;2026-02-06 19:16:50
+483;SWF-20260206-0483;Siti Rahma;Jl. Sudirman No. 59;Jakarta Timur;Jakarta Pusat;15.050000;145400.000000;terkirim;4;2;4;2026-02-06 19:45:39
+484;SWF-20260207-0484;Gita Saraswati;Jl. Kamboja No. 118;Bogor;Jakarta Selatan;6.300000;63000.000000;terkirim;1;1;5;2026-02-07 18:21:21
+485;SWF-20260207-0485;Maya Kartika;Jl. Kebon Jeruk No. 150;Jakarta Pusat;Bandung;6.583500;131670.000000;sampai_tujuan;2;1;5;2026-02-07 19:19:59
+486;SWF-20260207-0486;Budi Santoso;Jl. Raya Bogor No. 32;Tangerang;Bekasi;5.669500;56695.000000;terkirim;1;1;5;2026-02-07 23:05:12
+487;SWF-20260208-0487;Andi Pratama;Jl. Merdeka No. 85;Jakarta Pusat;Yogyakarta;14.807000;321140.000000;terkirim;2;2;6;2026-02-08 08:24:49
+488;SWF-20260208-0488;Rahmat Hidayat;Jl. Kenanga No. 24;Tangerang;Depok;13.013333;155133.333333;terkirim;1;2;4;2026-02-08 13:18:14
+489;SWF-20260208-0489;Siti Rahma;Jl. Ahmad Yani No. 77;Bogor;Tangerang;11.678333;141783.333333;terkirim;1;2;6;2026-02-08 19:15:34
+490;SWF-20260210-0490;Toni Hermanto;Jl. Mangga Dua No. 145;Bandung;Tangerang;12.768000;280360.000000;terkirim;2;2;6;2026-02-10 12:39:55
+491;SWF-20260210-0491;Lestari Wulandari;Jl. Flamboyan No. 58;Surabaya;Yogyakarta;27.168167;296681.666667;terkirim;1;2;5;2026-02-10 16:42:28
+492;SWF-20260210-0492;Siti Rahma;Jl. Diponegoro No. 77;Jakarta Barat;Bandung;8.021333;80213.333333;terkirim;1;1;6;2026-02-10 18:46:42
+493;SWF-20260210-0493;Eko Prasetyo;Jl. Mangga Dua No. 91;Depok;Surabaya;2.960000;29600.000000;terkirim;1;1;6;2026-02-10 21:48:03
+494;SWF-20260211-0494;Sari Indah;Jl. Gatot Subroto No. 107;Yogyakarta;Depok;37.966667;1428833.333333;terkirim;3;3;4;2026-02-11 06:53:30
+495;SWF-20260211-0495;Dian Sasmita;Jl. Mangga Dua No. 28;Tangerang;Bandung;1.200000;12000.000000;terkirim;1;1;4;2026-02-11 10:06:15
+496;SWF-20260211-0496;Sri Wahyuni;Jl. Kamboja No. 78;Bandung;Surabaya;26.880000;293800.000000;terkirim;1;2;4;2026-02-11 10:43:00
+497;SWF-20260211-0497;Roni Wijaya;Jl. Merdeka No. 54;Bogor;Yogyakarta;12.133333;267666.666667;terkirim;2;2;5;2026-02-11 17:07:13
+498;SWF-20260211-0498;Budi Santoso;Jl. Ahmad Yani No. 43;Jakarta Timur;Semarang;55.440000;654400.000000;terkirim;1;3;6;2026-02-11 17:11:50
+499;SWF-20260212-0499;Sri Wahyuni;Jl. Sudirman No. 86;Jakarta Pusat;Jakarta Timur;49.822500;1843787.500000;terkirim;3;3;5;2026-02-12 17:00:30
+500;SWF-20260212-0500;Dian Sasmita;Jl. Kamboja No. 60;Yogyakarta;Jakarta Pusat;9.856000;344960.000000;terkirim;3;1;4;2026-02-12 17:35:13
+501;SWF-20260213-0501;Toni Hermanto;Jl. Mawar No. 115;Yogyakarta;Tangerang;2.760000;55200.000000;terkirim;2;1;5;2026-02-13 05:10:03
+502;SWF-20260213-0502;Maya Kartika;Jl. Melati No. 120;Jakarta Timur;Bekasi;34.692000;377536.000000;terkirim;4;3;6;2026-02-13 12:30:04
+503;SWF-20260213-0503;Toni Hermanto;Jl. Diponegoro No. 45;Jakarta Barat;Jakarta Timur;16.632000;158056.000000;terkirim;4;2;4;2026-02-13 13:55:28
+504;SWF-20260213-0504;Andi Pratama;Jl. Mawar No. 41;Jakarta Timur;Bandung;2.226000;17808.000000;terkirim;4;1;6;2026-02-13 23:31:24
+505;SWF-20260214-0505;Toni Hermanto;Jl. Mangga Dua No. 88;Semarang;Bekasi;3.190000;31900.000000;terkirim;1;1;4;2026-02-14 07:09:53
+506;SWF-20260214-0506;Dian Sasmita;Jl. Ahmad Yani No. 144;Jakarta Pusat;Bandung;2.970833;59416.666667;terkirim;2;1;4;2026-02-14 13:28:48
+507;SWF-20260214-0507;Toni Hermanto;Jl. Ahmad Yani No. 40;Surabaya;Bekasi;5.850000;117000.000000;terkirim;2;1;5;2026-02-14 13:54:58
+508;SWF-20260215-0508;Hendra Wijaya;Jl. Thamrin No. 22;Depok;Tangerang;24.108000;507160.000000;terkirim;2;2;6;2026-02-15 01:57:58
+509;SWF-20260215-0509;Wati Kurnia;Jl. Cempaka No. 118;Karawang;Yogyakarta;8.008000;160160.000000;sampai_tujuan;2;1;4;2026-02-15 15:08:13
+510;SWF-20260215-0510;Lestari Wulandari;Jl. Melati No. 103;Semarang;Jakarta Timur;11.050000;135500.000000;terkirim;1;2;6;2026-02-15 21:05:59
+511;SWF-20260215-0511;Wati Kurnia;Jl. Kenanga No. 142;Depok;Semarang;4.950000;173250.000000;terkirim;3;1;6;2026-02-15 23:01:01
+512;SWF-20260216-0512;Roni Wijaya;Jl. Flamboyan No. 89;Semarang;Surabaya;17.080000;195800.000000;terkirim;1;2;6;2026-02-16 02:41:52
+513;SWF-20260216-0513;Gita Saraswati;Jl. Raya Bogor No. 55;Jakarta Selatan;Bandung;49.653333;1837866.666667;terkirim;3;3;6;2026-02-16 05:41:26
+514;SWF-20260216-0514;Maya Kartika;Jl. Mangga Dua No. 62;Semarang;Depok;18.944000;214440.000000;terkirim;1;2;5;2026-02-16 10:47:06
+515;SWF-20260216-0515;Agus Setiawan;Jl. Flamboyan No. 77;Bandung;Semarang;6.006667;120133.333333;terkirim;2;1;6;2026-02-16 15:34:21
+516;SWF-20260217-0516;Hendra Wijaya;Jl. Diponegoro No. 97;Karawang;Semarang;8.015500;160310.000000;sampai_tujuan;2;1;5;2026-02-17 11:48:36
+517;SWF-20260217-0517;Wati Kurnia;Jl. Cempaka No. 21;Jakarta Selatan;Jakarta Pusat;19.413333;413266.666667;terkirim;2;2;4;2026-02-17 19:34:47
+518;SWF-20260218-0518;Hadi Sunyoto;Jl. Kenanga No. 68;Bandung;Bogor;50.688000;505504.000000;terkirim;4;3;4;2026-02-18 14:07:15
+519;SWF-20260218-0519;Eko Prasetyo;Jl. Diponegoro No. 132;Karawang;Jakarta Selatan;29.353333;318533.333333;terkirim;1;2;4;2026-02-18 16:05:35
+520;SWF-20260218-0520;Wati Kurnia;Jl. Ahmad Yani No. 31;Bekasi;Surabaya;8.930000;178600.000000;terkirim;2;1;5;2026-02-18 19:32:38
+521;SWF-20260219-0521;Toni Hermanto;Jl. Merdeka No. 37;Jakarta Timur;Surabaya;8.232000;288120.000000;terkirim;3;1;4;2026-02-19 19:12:30
+522;SWF-20260219-0522;Gita Saraswati;Jl. Mawar No. 18;Jakarta Pusat;Bogor;38.848833;1459709.166667;terkirim;3;3;5;2026-02-19 22:47:15
+523;SWF-20260220-0523;Eko Prasetyo;Jl. Flamboyan No. 115;Jakarta Timur;Semarang;11.067000;113536.000000;terkirim;4;2;5;2026-02-20 07:54:34
+524;SWF-20260221-0524;Andi Pratama;Jl. Gatot Subroto No. 43;Yogyakarta;Jakarta Pusat;4.083333;81666.666667;terkirim;2;1;6;2026-02-21 02:56:44
+525;SWF-20260221-0525;Roni Wijaya;Jl. Kamboja No. 129;Jakarta Pusat;Jakarta Timur;5.148000;180180.000000;terkirim;3;1;4;2026-02-21 03:30:14
+526;SWF-20260221-0526;Dian Sasmita;Jl. Melati No. 103;Bandung;Jakarta Pusat;7.632000;61056.000000;terkirim;4;1;5;2026-02-21 09:23:16
+527;SWF-20260221-0527;Rahmat Hidayat;Jl. Ahmad Yani No. 26;Karawang;Jakarta Timur;7.084000;247940.000000;sampai_tujuan;3;1;4;2026-02-21 12:37:18
+528;SWF-20260222-0528;Dewi Lestari;Jl. Sudirman No. 84;Jakarta Timur;Jakarta Pusat;8.024000;80240.000000;terkirim;1;1;4;2026-02-22 02:43:44
+529;SWF-20260222-0529;Agus Setiawan;Jl. Sudirman No. 52;Jakarta Barat;Surabaya;36.500000;392000.000000;terkirim;4;3;5;2026-02-22 04:19:47
+530;SWF-20260222-0530;Wati Kurnia;Jl. Gatot Subroto No. 124;Jakarta Pusat;Bogor;3.432000;34320.000000;terkirim;1;1;6;2026-02-22 10:15:58
+531;SWF-20260222-0531;Wati Kurnia;Jl. Flamboyan No. 22;Surabaya;Karawang;9.576000;191520.000000;terkirim;2;1;6;2026-02-22 13:00:38
+532;SWF-20260223-0532;Eko Prasetyo;Jl. Raya Bogor No. 43;Jakarta Pusat;Jakarta Selatan;21.868000;199944.000000;terkirim;4;2;6;2026-02-23 04:48:39
+533;SWF-20260224-0533;Gita Saraswati;Jl. Gatot Subroto No. 77;Jakarta Selatan;Bogor;5.062500;40500.000000;terkirim;4;1;6;2026-02-24 03:50:02
+534;SWF-20260224-0534;Andi Pratama;Jl. Flamboyan No. 70;Jakarta Barat;Yogyakarta;16.218000;154744.000000;terkirim;4;2;5;2026-02-24 15:05:17
+535;SWF-20260225-0535;Toni Hermanto;Jl. Merdeka No. 3;Surabaya;Jakarta Timur;44.640000;546400.000000;terkirim;1;3;6;2026-02-25 05:34:07
+536;SWF-20260225-0536;Agus Setiawan;Jl. Mawar No. 97;Bandung;Bekasi;3.461333;34613.333333;terkirim;1;1;5;2026-02-25 22:48:01
+537;SWF-20260225-0537;Budi Santoso;Jl. Mangga Dua No. 92;Jakarta Barat;Jakarta Selatan;11.856000;119848.000000;terkirim;4;2;4;2026-02-25 22:56:55
+538;SWF-20260226-0538;Budi Santoso;Jl. Kebon Jeruk No. 102;Jakarta Selatan;Bekasi;27.910333;583206.666667;terkirim;2;2;6;2026-02-26 14:25:26
+539;SWF-20260227-0539;Siti Rahma;Jl. Gatot Subroto No. 33;Depok;Surabaya;22.230000;469600.000000;terkirim;2;2;4;2026-02-27 05:27:25
+540;SWF-20260227-0540;Budi Santoso;Jl. Cempaka No. 14;Bekasi;Bogor;11.625000;118000.000000;terkirim;4;2;5;2026-02-27 09:09:14
+541;SWF-20260227-0541;Andi Pratama;Jl. Cempaka No. 137;Bogor;Bekasi;3.400000;119000.000000;terkirim;3;1;6;2026-02-27 22:06:56
+542;SWF-20260228-0542;Joko Susilo;Jl. Kebon Jeruk No. 43;Bekasi;Depok;0.858000;6864.000000;terkirim;4;1;4;2026-02-28 02:07:41
+543;SWF-20260228-0543;Agus Setiawan;Jl. Kamboja No. 62;Bekasi;Jakarta Pusat;26.346667;288466.666667;sampai_tujuan;1;2;6;2026-02-28 07:08:57
+544;SWF-20260302-0544;Eko Prasetyo;Jl. Ahmad Yani No. 22;Jakarta Pusat;Jakarta Selatan;8.700000;174000.000000;terkirim;2;1;5;2026-03-02 02:51:28
+545;SWF-20260302-0545;Wati Kurnia;Jl. Gatot Subroto No. 27;Surabaya;Jakarta Pusat;7.269333;58154.666667;terkirim;4;1;6;2026-03-02 12:09:49
+546;SWF-20260303-0546;Dian Sasmita;Jl. Merdeka No. 117;Tangerang;Karawang;12.437333;149373.333333;terkirim;1;2;6;2026-03-03 00:43:49
+547;SWF-20260303-0547;Budi Santoso;Jl. Gatot Subroto No. 50;Bandung;Jakarta Timur;28.875000;256000.000000;terkirim;4;2;6;2026-03-03 15:00:42
+548;SWF-20260303-0548;Siti Rahma;Jl. Sudirman No. 16;Jakarta Timur;Bekasi;44.687500;1664062.500000;terkirim;3;3;6;2026-03-03 15:39:50
+549;SWF-20260303-0549;Dian Sasmita;Jl. Melati No. 75;Bekasi;Jakarta Pusat;6.029333;120586.666667;terkirim;2;1;6;2026-03-03 21:45:44
+550;SWF-20260304-0550;Roni Wijaya;Jl. Kebon Jeruk No. 18;Bekasi;Jakarta Barat;41.860000;1565100.000000;terkirim;3;3;5;2026-03-04 09:36:32
+551;SWF-20260304-0551;Eko Prasetyo;Jl. Sudirman No. 127;Jakarta Barat;Jakarta Pusat;17.043000;365860.000000;terkirim;2;2;5;2026-03-04 15:32:29
+552;SWF-20260304-0552;Sri Wahyuni;Jl. Thamrin No. 2;Bekasi;Jakarta Pusat;2.264167;22641.666667;terkirim;1;1;5;2026-03-04 15:45:04
+553;SWF-20260305-0553;Sari Indah;Jl. Merdeka No. 51;Jakarta Barat;Bekasi;8.714667;174293.333333;terkirim;2;1;6;2026-03-05 06:54:54
+554;SWF-20260306-0554;Dewi Lestari;Jl. Mangga Dua No. 26;Jakarta Pusat;Yogyakarta;6.264000;219240.000000;terkirim;3;1;5;2026-03-06 01:41:43
+555;SWF-20260306-0555;Dewi Lestari;Jl. Cempaka No. 17;Jakarta Selatan;Jakarta Barat;5.009333;40074.666667;terkirim;4;1;5;2026-03-06 04:42:12
+556;SWF-20260306-0556;Dian Sasmita;Jl. Kebon Jeruk No. 138;Depok;Jakarta Timur;5.576000;195160.000000;terkirim;3;1;6;2026-03-06 06:01:32
+557;SWF-20260306-0557;Rahmat Hidayat;Jl. Kamboja No. 17;Jakarta Timur;Bandung;42.037500;436300.000000;terkirim;4;3;5;2026-03-06 16:26:30
+558;SWF-20260307-0558;Toni Hermanto;Jl. Kamboja No. 122;Depok;Surabaya;5.124000;102480.000000;terkirim;2;1;5;2026-03-07 05:40:18
+559;SWF-20260307-0559;Wati Kurnia;Jl. Kenanga No. 147;Jakarta Timur;Tangerang;11.200000;249000.000000;terkirim;2;2;4;2026-03-07 12:42:44
+560;SWF-20260307-0560;Joko Susilo;Jl. Sudirman No. 120;Karawang;Surabaya;37.877333;403018.666667;terkirim;4;3;5;2026-03-07 18:12:19
+561;SWF-20260307-0561;Sri Wahyuni;Jl. Merdeka No. 46;Bogor;Jakarta Barat;7.489167;74891.666667;terkirim;1;1;6;2026-03-07 18:31:18
+562;SWF-20260308-0562;Agus Setiawan;Jl. Ahmad Yani No. 19;Bekasi;Jakarta Pusat;23.963333;504266.666667;terkirim;2;2;5;2026-03-08 03:43:57
+563;SWF-20260308-0563;Dian Sasmita;Jl. Diponegoro No. 140;Depok;Jakarta Pusat;19.872000;183976.000000;terkirim;4;2;6;2026-03-08 11:40:10
+564;SWF-20260308-0564;Hadi Sunyoto;Jl. Diponegoro No. 102;Jakarta Barat;Depok;16.380000;156040.000000;terkirim;4;2;5;2026-03-08 12:15:31
+565;SWF-20260308-0565;Wati Kurnia;Jl. Cempaka No. 54;Bogor;Karawang;3.334500;66690.000000;terkirim;2;1;6;2026-03-08 13:32:35
+566;SWF-20260308-0566;Joko Susilo;Jl. Cempaka No. 109;Surabaya;Tangerang;31.824000;418240.000000;terkirim;1;3;4;2026-03-08 16:49:43
+567;SWF-20260308-0567;Dian Sasmita;Jl. Kenanga No. 98;Jakarta Barat;Bogor;13.806000;301120.000000;terkirim;2;2;4;2026-03-08 20:25:14
+568;SWF-20260308-0568;Dewi Lestari;Jl. Ahmad Yani No. 142;Jakarta Timur;Jakarta Pusat;5.148000;102960.000000;terkirim;2;1;5;2026-03-08 22:49:12
+569;SWF-20260308-0569;Hadi Sunyoto;Jl. Gatot Subroto No. 117;Jakarta Pusat;Tangerang;4.319333;151176.666667;terkirim;3;1;5;2026-03-08 23:53:27
+570;SWF-20260310-0570;Wati Kurnia;Jl. Kamboja No. 18;Tangerang;Jakarta Barat;7.644000;61152.000000;terkirim;4;1;6;2026-03-10 00:37:31
+571;SWF-20260310-0571;Hendra Wijaya;Jl. Kebon Jeruk No. 129;Yogyakarta;Surabaya;17.850000;203500.000000;terkirim;1;2;5;2026-03-10 00:39:51
+572;SWF-20260310-0572;Hadi Sunyoto;Jl. Melati No. 146;Bogor;Karawang;3.622500;126787.500000;terkirim;3;1;5;2026-03-10 12:00:17
+573;SWF-20260310-0573;Dewi Lestari;Jl. Cempaka No. 64;Jakarta Timur;Surabaya;43.463333;969266.666667;terkirim;2;3;6;2026-03-10 13:24:33
+574;SWF-20260310-0574;Dewi Lestari;Jl. Mangga Dua No. 138;Depok;Yogyakarta;8.103000;64824.000000;terkirim;4;1;6;2026-03-10 16:08:39
+575;SWF-20260310-0575;Hadi Sunyoto;Jl. Melati No. 105;Bogor;Jakarta Timur;18.648000;211480.000000;terkirim;1;2;4;2026-03-10 16:17:20
+576;SWF-20260310-0576;Sri Wahyuni;Jl. Kebon Jeruk No. 102;Jakarta Pusat;Jakarta Selatan;4.536000;158760.000000;terkirim;3;1;6;2026-03-10 18:10:07
+577;SWF-20260310-0577;Rahmat Hidayat;Jl. Pahlawan No. 113;Jakarta Timur;Karawang;6.975000;69750.000000;terkirim;1;1;4;2026-03-10 23:54:25
+578;SWF-20260311-0578;Sri Wahyuni;Jl. Thamrin No. 20;Surabaya;Jakarta Pusat;14.036000;516260.000000;terkirim;3;2;4;2026-03-11 15:12:25
+579;SWF-20260311-0579;Eko Prasetyo;Jl. Sudirman No. 134;Surabaya;Yogyakarta;11.082167;113657.333333;terkirim;4;2;6;2026-03-11 16:17:13
+580;SWF-20260312-0580;Joko Susilo;Jl. Mawar No. 62;Jakarta Barat;Jakarta Selatan;1.638000;16380.000000;terkirim;1;1;4;2026-03-12 04:06:12
+581;SWF-20260312-0581;Dewi Lestari;Jl. Thamrin No. 12;Tangerang;Bandung;9.970500;199410.000000;terkirim;2;1;4;2026-03-12 21:05:39
+582;SWF-20260312-0582;Joko Susilo;Jl. Kebon Jeruk No. 28;Bekasi;Tangerang;3.578667;125253.333333;terkirim;3;1;5;2026-03-12 21:26:01
+583;SWF-20260313-0583;Andi Pratama;Jl. Mawar No. 12;Jakarta Selatan;Depok;36.208000;462080.000000;terkirim;1;3;6;2026-03-13 01:05:41
+584;SWF-20260313-0584;Dian Sasmita;Jl. Melati No. 100;Surabaya;Semarang;7.488000;262080.000000;terkirim;3;1;5;2026-03-13 11:05:45
+585;SWF-20260314-0585;Maya Kartika;Jl. Flamboyan No. 98;Karawang;Yogyakarta;5.291000;105820.000000;terkirim;2;1;6;2026-03-14 03:17:25
+586;SWF-20260314-0586;Wati Kurnia;Jl. Pahlawan No. 21;Jakarta Pusat;Jakarta Barat;32.594500;751890.000000;terkirim;2;3;5;2026-03-14 18:12:59
+587;SWF-20260314-0587;Dian Sasmita;Jl. Flamboyan No. 85;Jakarta Timur;Bekasi;9.500000;76000.000000;terkirim;4;1;5;2026-03-14 23:08:45
+588;SWF-20260315-0588;Joko Susilo;Jl. Kebon Jeruk No. 139;Jakarta Pusat;Yogyakarta;15.060667;552123.333333;terkirim;3;2;5;2026-03-15 00:11:41
+589;SWF-20260315-0589;Rahmat Hidayat;Jl. Kebon Jeruk No. 14;Surabaya;Jakarta Timur;3.276000;65520.000000;terkirim;2;1;6;2026-03-15 02:44:07
+590;SWF-20260315-0590;Wati Kurnia;Jl. Flamboyan No. 80;Jakarta Timur;Semarang;15.306667;331133.333333;terkirim;2;2;4;2026-03-15 18:36:21
+591;SWF-20260315-0591;Roni Wijaya;Jl. Mangga Dua No. 124;Jakarta Selatan;Tangerang;17.980000;168840.000000;terkirim;4;2;5;2026-03-15 21:23:36
+592;SWF-20260315-0592;Budi Santoso;Jl. Kenanga No. 110;Jakarta Selatan;Bekasi;30.160000;703200.000000;terkirim;2;3;5;2026-03-15 22:27:23
+593;SWF-20260316-0593;Sri Wahyuni;Jl. Kamboja No. 19;Bekasi;Jakarta Timur;11.841667;261833.333333;terkirim;2;2;4;2026-03-16 02:44:10
+594;SWF-20260316-0594;Wati Kurnia;Jl. Kenanga No. 96;Tangerang;Karawang;9.620333;96203.333333;terkirim;1;1;5;2026-03-16 02:56:39
+595;SWF-20260316-0595;Andi Pratama;Jl. Mawar No. 131;Yogyakarta;Bogor;9.528500;76228.000000;terkirim;4;1;4;2026-03-16 06:00:51
+596;SWF-20260316-0596;Budi Santoso;Jl. Diponegoro No. 67;Bandung;Bogor;8.036000;160720.000000;terkirim;2;1;4;2026-03-16 09:16:17
+597;SWF-20260316-0597;Maya Kartika;Jl. Gatot Subroto No. 133;Jakarta Barat;Bogor;13.888000;511080.000000;terkirim;3;2;6;2026-03-16 13:30:49
+598;SWF-20260316-0598;Wati Kurnia;Jl. Gatot Subroto No. 28;Surabaya;Bandung;11.088000;246760.000000;terkirim;2;2;5;2026-03-16 19:04:15
+599;SWF-20260317-0599;Toni Hermanto;Jl. Merdeka No. 25;Jakarta Selatan;Semarang;50.935500;1882742.500000;terkirim;3;3;5;2026-03-17 00:08:22
+600;SWF-20260317-0600;Siti Rahma;Jl. Kebon Jeruk No. 125;Jakarta Timur;Bandung;9.916000;198320.000000;terkirim;2;1;4;2026-03-17 06:06:45
+601;SWF-20260317-0601;Wati Kurnia;Jl. Flamboyan No. 28;Surabaya;Jakarta Timur;3.133333;25066.666667;terkirim;4;1;5;2026-03-17 13:42:39
+602;SWF-20260317-0602;Joko Susilo;Jl. Kamboja No. 125;Surabaya;Jakarta Selatan;1.371333;13713.333333;terkirim;1;1;6;2026-03-17 20:18:10
+603;SWF-20260318-0603;Budi Santoso;Jl. Kenanga No. 134;Semarang;Depok;44.520000;456160.000000;terkirim;4;3;5;2026-03-18 09:36:06
+604;SWF-20260318-0604;Yanto Sukarno;Jl. Kenanga No. 97;Bandung;Jakarta Pusat;10.486667;129866.666667;terkirim;1;2;6;2026-03-18 16:02:28
+605;SWF-20260318-0605;Agus Setiawan;Jl. Mangga Dua No. 64;Bekasi;Karawang;54.250000;1185000.000000;terkirim;2;3;6;2026-03-18 17:51:53
+606;SWF-20260318-0606;Lestari Wulandari;Jl. Flamboyan No. 60;Bandung;Bogor;10.980000;112840.000000;terkirim;4;2;6;2026-03-18 20:09:07
+607;SWF-20260319-0607;Dian Sasmita;Jl. Kebon Jeruk No. 37;Karawang;Surabaya;4.489333;35914.666667;terkirim;4;1;5;2026-03-19 16:53:48
+608;SWF-20260320-0608;Agus Setiawan;Jl. Kamboja No. 139;Jakarta Barat;Depok;4.014500;40145.000000;terkirim;1;1;6;2026-03-20 21:48:09
+609;SWF-20260321-0609;Andi Pratama;Jl. Pahlawan No. 66;Surabaya;Bogor;8.775000;70200.000000;terkirim;4;1;6;2026-03-21 05:17:01
+610;SWF-20260321-0610;Rahmat Hidayat;Jl. Melati No. 97;Yogyakarta;Semarang;24.505000;515100.000000;terkirim;2;2;4;2026-03-21 10:02:47
+611;SWF-20260322-0611;Lestari Wulandari;Jl. Kebon Jeruk No. 30;Bandung;Bekasi;12.566667;150666.666667;terkirim;1;2;4;2026-03-22 03:48:31
+612;SWF-20260322-0612;Lestari Wulandari;Jl. Mawar No. 33;Karawang;Yogyakarta;8.740000;87400.000000;terkirim;1;1;5;2026-03-22 04:03:39
+613;SWF-20260322-0613;Toni Hermanto;Jl. Flamboyan No. 38;Bandung;Depok;3.266667;114333.333333;terkirim;3;1;6;2026-03-22 04:56:47
+614;SWF-20260322-0614;Roni Wijaya;Jl. Kamboja No. 75;Yogyakarta;Tangerang;4.272667;85453.333333;terkirim;2;1;4;2026-03-22 15:42:19
+615;SWF-20260322-0615;Sri Wahyuni;Jl. Raya Bogor No. 41;Jakarta Pusat;Bandung;33.920000;371360.000000;terkirim;4;3;5;2026-03-22 21:58:15
+616;SWF-20260323-0616;Hendra Wijaya;Jl. Raya Bogor No. 50;Yogyakarta;Karawang;5.720000;200200.000000;terkirim;3;1;6;2026-03-23 00:32:16
+617;SWF-20260323-0617;Dewi Lestari;Jl. Diponegoro No. 114;Yogyakarta;Bogor;7.896000;157920.000000;terkirim;2;1;4;2026-03-23 06:20:18
+618;SWF-20260323-0618;Maya Kartika;Jl. Ahmad Yani No. 38;Tangerang;Bogor;1.932333;67631.666667;terkirim;3;1;4;2026-03-23 07:48:57
+619;SWF-20260323-0619;Lestari Wulandari;Jl. Cempaka No. 39;Surabaya;Semarang;5.835667;58356.666667;terkirim;1;1;5;2026-03-23 10:48:48
+620;SWF-20260323-0620;Sri Wahyuni;Jl. Gatot Subroto No. 119;Surabaya;Tangerang;28.215000;307150.000000;terkirim;1;2;4;2026-03-23 22:21:32
+621;SWF-20260324-0621;Hadi Sunyoto;Jl. Pahlawan No. 6;Bandung;Surabaya;11.715000;259300.000000;terkirim;2;2;5;2026-03-24 01:23:25
+622;SWF-20260324-0622;Siti Rahma;Jl. Ahmad Yani No. 84;Jakarta Selatan;Semarang;26.169000;286690.000000;terkirim;1;2;6;2026-03-24 05:08:38
+623;SWF-20260324-0623;Maya Kartika;Jl. Ahmad Yani No. 54;Surabaya;Jakarta Selatan;1.815000;14520.000000;terkirim;4;1;4;2026-03-24 05:29:38
+624;SWF-20260324-0624;Dewi Lestari;Jl. Gatot Subroto No. 144;Depok;Jakarta Pusat;6.166667;215833.333333;terkirim;3;1;6;2026-03-24 22:22:18
+625;SWF-20260325-0625;Hendra Wijaya;Jl. Sudirman No. 133;Semarang;Depok;23.166000;210328.000000;terkirim;4;2;5;2026-03-25 01:32:59
+626;SWF-20260325-0626;Hadi Sunyoto;Jl. Kebon Jeruk No. 26;Surabaya;Jakarta Pusat;3.173333;63466.666667;terkirim;2;1;4;2026-03-25 04:14:25
+627;SWF-20260325-0627;Andi Pratama;Jl. Diponegoro No. 109;Jakarta Selatan;Bandung;17.458000;374160.000000;terkirim;2;2;5;2026-03-25 05:47:04
+628;SWF-20260325-0628;Siti Rahma;Jl. Kebon Jeruk No. 19;Surabaya;Semarang;14.212000;309240.000000;terkirim;2;2;4;2026-03-25 08:08:54
+629;SWF-20260325-0629;Dian Sasmita;Jl. Pahlawan No. 20;Depok;Jakarta Selatan;24.960000;224680.000000;terkirim;4;2;5;2026-03-25 09:21:32
+630;SWF-20260325-0630;Andi Pratama;Jl. Diponegoro No. 58;Depok;Jakarta Pusat;8.081333;64650.666667;terkirim;4;1;4;2026-03-25 13:22:21
+631;SWF-20260326-0631;Agus Setiawan;Jl. Mawar No. 147;Depok;Bandung;2.581333;51626.666667;terkirim;2;1;5;2026-03-26 18:32:24
+632;SWF-20260326-0632;Dian Sasmita;Jl. Kenanga No. 123;Bandung;Jakarta Timur;5.912500;118250.000000;terkirim;2;1;4;2026-03-26 23:43:49
+633;SWF-20260327-0633;Andi Pratama;Jl. Sudirman No. 95;Yogyakarta;Jakarta Barat;23.562000;213496.000000;terkirim;4;2;5;2026-03-27 10:55:23
+634;SWF-20260327-0634;Hadi Sunyoto;Jl. Pahlawan No. 79;Surabaya;Jakarta Selatan;25.316667;278166.666667;terkirim;1;2;4;2026-03-27 10:55:35
+635;SWF-20260327-0635;Maya Kartika;Jl. Sudirman No. 22;Yogyakarta;Depok;10.706667;110653.333333;terkirim;4;2;6;2026-03-27 22:48:22
+636;SWF-20260328-0636;Hadi Sunyoto;Jl. Ahmad Yani No. 104;Jakarta Pusat;Surabaya;3.626667;126933.333333;terkirim;3;1;6;2026-03-28 08:11:40
+637;SWF-20260328-0637;Dewi Lestari;Jl. Pahlawan No. 45;Jakarta Selatan;Tangerang;18.562500;210625.000000;terkirim;1;2;5;2026-03-28 08:38:51
+638;SWF-20260328-0638;Lestari Wulandari;Jl. Pahlawan No. 139;Semarang;Jakarta Selatan;26.696000;959360.000000;terkirim;3;2;4;2026-03-28 16:24:30
+639;SWF-20260328-0639;Hadi Sunyoto;Jl. Sudirman No. 119;Bandung;Bogor;1.558333;12466.666667;terkirim;4;1;5;2026-03-28 19:07:05
+640;SWF-20260328-0640;Dewi Lestari;Jl. Kenanga No. 91;Jakarta Pusat;Jakarta Timur;27.300000;298000.000000;terkirim;1;2;6;2026-03-28 20:31:17
+641;SWF-20260329-0641;Budi Santoso;Jl. Diponegoro No. 65;Jakarta Barat;Karawang;27.360000;982600.000000;terkirim;3;2;4;2026-03-29 12:22:31
+642;SWF-20260329-0642;Eko Prasetyo;Jl. Thamrin No. 36;Bekasi;Semarang;5.958333;119166.666667;terkirim;2;1;4;2026-03-29 19:33:26
+643;SWF-20260330-0643;Wati Kurnia;Jl. Melati No. 9;Jakarta Timur;Yogyakarta;18.223333;207233.333333;terkirim;1;2;5;2026-03-30 06:26:44
+644;SWF-20260330-0644;Sri Wahyuni;Jl. Kenanga No. 34;Jakarta Selatan;Jakarta Timur;1.508000;52780.000000;terkirim;3;1;4;2026-03-30 09:14:03
+645;SWF-20260330-0645;Lestari Wulandari;Jl. Cempaka No. 3;Tangerang;Karawang;25.944000;284440.000000;terkirim;1;2;5;2026-03-30 15:03:43
+646;SWF-20260330-0646;Joko Susilo;Jl. Mangga Dua No. 30;Depok;Semarang;15.306667;147453.333333;terkirim;4;2;4;2026-03-30 17:21:34
+647;SWF-20260331-0647;Siti Rahma;Jl. Pahlawan No. 31;Jakarta Timur;Bogor;3.570000;71400.000000;terkirim;2;1;4;2026-03-31 02:48:49
+648;SWF-20260331-0648;Sri Wahyuni;Jl. Cempaka No. 135;Depok;Semarang;13.091000;129728.000000;terkirim;4;2;4;2026-03-31 15:58:17
+649;SWF-20260401-0649;Agus Setiawan;Jl. Mangga Dua No. 94;Depok;Tangerang;21.525000;240250.000000;terkirim;1;2;4;2026-04-01 15:53:29
+650;SWF-20260402-0650;Hendra Wijaya;Jl. Kamboja No. 72;Bandung;Jakarta Selatan;15.015000;145120.000000;terkirim;4;2;5;2026-04-02 13:17:41
+651;SWF-20260402-0651;Budi Santoso;Jl. Diponegoro No. 85;Bekasi;Semarang;40.964000;919280.000000;terkirim;2;3;5;2026-04-02 13:37:01
+652;SWF-20260402-0652;Siti Rahma;Jl. Ahmad Yani No. 11;Bandung;Yogyakarta;12.908667;154086.666667;terkirim;1;2;6;2026-04-02 16:00:12
+653;SWF-20260402-0653;Toni Hermanto;Jl. Kebon Jeruk No. 137;Yogyakarta;Jakarta Timur;2.210000;17680.000000;terkirim;4;1;6;2026-04-02 22:33:02
+654;SWF-20260403-0654;Agus Setiawan;Jl. Cempaka No. 18;Bogor;Tangerang;11.396000;252920.000000;terkirim;2;2;5;2026-04-03 01:18:08
+655;SWF-20260403-0655;Maya Kartika;Jl. Sudirman No. 49;Yogyakarta;Tangerang;71.175000;811750.000000;terkirim;1;3;5;2026-04-03 03:50:30
+656;SWF-20260404-0656;Sri Wahyuni;Jl. Mangga Dua No. 53;Jakarta Timur;Jakarta Pusat;2.035000;16280.000000;terkirim;4;1;6;2026-04-04 13:49:48
+657;SWF-20260404-0657;Hendra Wijaya;Jl. Mangga Dua No. 142;Jakarta Selatan;Jakarta Barat;7.410000;148200.000000;terkirim;2;1;4;2026-04-04 18:06:33
+658;SWF-20260404-0658;Andi Pratama;Jl. Sudirman No. 64;Jakarta Barat;Bandung;2.160000;75600.000000;terkirim;3;1;4;2026-04-04 18:36:10
+659;SWF-20260405-0659;Dian Sasmita;Jl. Raya Bogor No. 84;Jakarta Pusat;Yogyakarta;3.831667;134108.333333;terkirim;3;1;5;2026-04-05 09:12:36
+660;SWF-20260405-0660;Andi Pratama;Jl. Kebon Jeruk No. 114;Jakarta Barat;Tangerang;15.840000;341800.000000;terkirim;2;2;4;2026-04-05 10:28:51
+661;SWF-20260405-0661;Toni Hermanto;Jl. Gatot Subroto No. 127;Jakarta Timur;Karawang;5.984000;47872.000000;terkirim;4;1;4;2026-04-05 17:07:34
+662;SWF-20260405-0662;Dewi Lestari;Jl. Thamrin No. 101;Surabaya;Bandung;2.856000;28560.000000;terkirim;1;1;4;2026-04-05 20:46:15
+663;SWF-20260406-0663;Hadi Sunyoto;Jl. Diponegoro No. 4;Bandung;Jakarta Selatan;6.844000;68440.000000;terkirim;1;1;6;2026-04-06 01:06:39
+664;SWF-20260406-0664;Andi Pratama;Jl. Diponegoro No. 4;Semarang;Jakarta Pusat;16.050167;185501.666667;terkirim;1;2;4;2026-04-06 07:19:38
+665;SWF-20260406-0665;Lestari Wulandari;Jl. Kamboja No. 40;Jakarta Barat;Jakarta Pusat;45.767333;557673.333333;terkirim;1;3;4;2026-04-06 16:42:07
+666;SWF-20260406-0666;Wati Kurnia;Jl. Diponegoro No. 1;Jakarta Barat;Jakarta Pusat;24.544000;515880.000000;terkirim;2;2;6;2026-04-06 20:27:34
+667;SWF-20260406-0667;Agus Setiawan;Jl. Kamboja No. 44;Jakarta Selatan;Depok;9.698333;96983.333333;terkirim;1;1;5;2026-04-06 23:21:36
+668;SWF-20260407-0668;Dian Sasmita;Jl. Diponegoro No. 46;Tangerang;Bandung;18.304000;391080.000000;terkirim;2;2;6;2026-04-07 03:06:10
+669;SWF-20260407-0669;Andi Pratama;Jl. Kamboja No. 95;Depok;Semarang;0.918333;18366.666667;terkirim;2;1;4;2026-04-07 11:30:49
+670;SWF-20260408-0670;Agus Setiawan;Jl. Cempaka No. 72;Jakarta Timur;Jakarta Selatan;7.293000;58344.000000;terkirim;4;1;5;2026-04-08 12:45:06
+671;SWF-20260408-0671;Wati Kurnia;Jl. Melati No. 36;Semarang;Surabaya;25.399500;228196.000000;terkirim;4;2;6;2026-04-08 14:20:17
+672;SWF-20260408-0672;Maya Kartika;Jl. Cempaka No. 135;Bandung;Semarang;5.320000;186200.000000;terkirim;3;1;4;2026-04-08 19:01:41
+673;SWF-20260409-0673;Siti Rahma;Jl. Ahmad Yani No. 16;Bekasi;Tangerang;14.382000;312640.000000;terkirim;2;2;5;2026-04-09 03:00:28
+674;SWF-20260409-0674;Siti Rahma;Jl. Ahmad Yani No. 37;Tangerang;Semarang;7.904000;79040.000000;terkirim;1;1;4;2026-04-09 09:04:12
+675;SWF-20260409-0675;Dewi Lestari;Jl. Merdeka No. 38;Bekasi;Jakarta Timur;2.596667;25966.666667;terkirim;1;1;5;2026-04-09 20:55:38
+676;SWF-20260410-0676;Siti Rahma;Jl. Raya Bogor No. 121;Tangerang;Semarang;6.413000;224455.000000;terkirim;3;1;4;2026-04-10 07:21:39
+677;SWF-20260410-0677;Hadi Sunyoto;Jl. Thamrin No. 3;Tangerang;Bogor;38.986667;1464533.333333;terkirim;3;3;4;2026-04-10 09:25:28
+678;SWF-20260410-0678;Hadi Sunyoto;Jl. Kenanga No. 33;Yogyakarta;Jakarta Barat;6.567667;52541.333333;terkirim;4;1;6;2026-04-10 12:52:25
+679;SWF-20260410-0679;Lestari Wulandari;Jl. Kenanga No. 98;Jakarta Timur;Jakarta Pusat;20.672000;748520.000000;terkirim;3;2;4;2026-04-10 17:23:28
+680;SWF-20260410-0680;Budi Santoso;Jl. Pahlawan No. 73;Jakarta Timur;Bandung;2.553000;25530.000000;terkirim;1;1;5;2026-04-10 20:07:37
+681;SWF-20260411-0681;Andi Pratama;Jl. Gatot Subroto No. 146;Bandung;Jakarta Pusat;2.840000;99400.000000;terkirim;3;1;5;2026-04-11 05:12:29
+682;SWF-20260412-0682;Hadi Sunyoto;Jl. Kebon Jeruk No. 81;Semarang;Tangerang;5.243333;183516.666667;terkirim;3;1;6;2026-04-12 04:33:49
+683;SWF-20260412-0683;Budi Santoso;Jl. Kenanga No. 123;Bandung;Jakarta Pusat;6.815000;54520.000000;terkirim;4;1;6;2026-04-12 05:50:30
+684;SWF-20260412-0684;Siti Rahma;Jl. Thamrin No. 129;Karawang;Semarang;44.979333;999586.666667;terkirim;2;3;5;2026-04-12 12:20:53
+685;SWF-20260412-0685;Sri Wahyuni;Jl. Pahlawan No. 54;Bandung;Surabaya;6.703833;67038.333333;terkirim;1;1;4;2026-04-12 12:33:46
+686;SWF-20260412-0686;Eko Prasetyo;Jl. Melati No. 44;Depok;Jakarta Timur;7.560000;264600.000000;terkirim;3;1;4;2026-04-12 14:19:47
+687;SWF-20260413-0687;Andi Pratama;Jl. Flamboyan No. 36;Jakarta Selatan;Surabaya;10.080000;377800.000000;terkirim;3;2;5;2026-04-13 07:39:41
+688;SWF-20260413-0688;Hadi Sunyoto;Jl. Melati No. 96;Jakarta Selatan;Yogyakarta;51.232667;1893143.333333;terkirim;3;3;4;2026-04-13 08:13:05
+689;SWF-20260414-0689;Gita Saraswati;Jl. Merdeka No. 40;Jakarta Selatan;Bekasi;17.690000;201900.000000;terkirim;1;2;5;2026-04-14 12:54:18
+690;SWF-20260414-0690;Eko Prasetyo;Jl. Flamboyan No. 28;Jakarta Selatan;Jakarta Barat;14.950000;324000.000000;terkirim;2;2;5;2026-04-14 13:20:13
+691;SWF-20260414-0691;Toni Hermanto;Jl. Kebon Jeruk No. 122;Jakarta Selatan;Bekasi;12.534667;275693.333333;terkirim;2;2;4;2026-04-14 19:04:57
+692;SWF-20260414-0692;Sari Indah;Jl. Kenanga No. 16;Semarang;Bekasi;28.058333;305583.333333;terkirim;1;2;4;2026-04-14 23:46:07
+693;SWF-20260415-0693;Dewi Lestari;Jl. Gatot Subroto No. 37;Jakarta Selatan;Bekasi;9.760000;78080.000000;terkirim;4;1;6;2026-04-15 06:46:04
+694;SWF-20260415-0694;Rahmat Hidayat;Jl. Cempaka No. 88;Semarang;Depok;9.765000;78120.000000;terkirim;4;1;5;2026-04-15 06:47:11
+695;SWF-20260415-0695;Maya Kartika;Jl. Kenanga No. 3;Karawang;Surabaya;3.103333;108616.666667;terkirim;3;1;6;2026-04-15 11:02:11
+696;SWF-20260415-0696;Eko Prasetyo;Jl. Diponegoro No. 128;Bekasi;Jakarta Selatan;33.769333;437693.333333;terkirim;1;3;4;2026-04-15 14:21:40
+697;SWF-20260415-0697;Sari Indah;Jl. Kebon Jeruk No. 49;Tangerang;Semarang;23.673667;498473.333333;terkirim;2;2;4;2026-04-15 17:52:23
+698;SWF-20260415-0698;Budi Santoso;Jl. Raya Bogor No. 79;Karawang;Jakarta Selatan;51.294667;510357.333333;terkirim;4;3;5;2026-04-15 19:03:36
+699;SWF-20260416-0699;Agus Setiawan;Jl. Thamrin No. 118;Tangerang;Bekasi;12.800000;127400.000000;terkirim;4;2;5;2026-04-16 07:26:25
+700;SWF-20260416-0700;Dian Sasmita;Jl. Ahmad Yani No. 23;Semarang;Jakarta Selatan;2.604000;26040.000000;terkirim;1;1;6;2026-04-16 07:44:02
+701;SWF-20260416-0701;Maya Kartika;Jl. Sudirman No. 75;Tangerang;Jakarta Barat;34.453333;375626.666667;terkirim;4;3;4;2026-04-16 10:27:28
+702;SWF-20260416-0702;Wati Kurnia;Jl. Kenanga No. 2;Bekasi;Jakarta Barat;24.962667;898693.333333;terkirim;3;2;5;2026-04-16 15:50:04
+703;SWF-20260416-0703;Sari Indah;Jl. Merdeka No. 7;Jakarta Timur;Tangerang;32.933333;758666.666667;terkirim;2;3;5;2026-04-16 21:05:22
+704;SWF-20260417-0704;Sri Wahyuni;Jl. Sudirman No. 148;Tangerang;Jakarta Timur;19.194667;696813.333333;terkirim;3;2;4;2026-04-17 03:08:46
+705;SWF-20260417-0705;Siti Rahma;Jl. Ahmad Yani No. 148;Semarang;Tangerang;17.200000;627000.000000;terkirim;3;2;4;2026-04-17 03:37:36
+706;SWF-20260417-0706;Maya Kartika;Jl. Diponegoro No. 8;Bandung;Semarang;15.273333;177733.333333;terkirim;1;2;6;2026-04-17 11:44:44
+707;SWF-20260417-0707;Joko Susilo;Jl. Pahlawan No. 77;Jakarta Barat;Bandung;17.042333;195423.333333;terkirim;1;2;4;2026-04-17 18:00:27
+708;SWF-20260417-0708;Agus Setiawan;Jl. Flamboyan No. 32;Jakarta Selatan;Jakarta Barat;10.879000;133790.000000;terkirim;1;2;5;2026-04-17 19:17:10
+709;SWF-20260419-0709;Toni Hermanto;Jl. Merdeka No. 106;Jakarta Selatan;Karawang;7.182000;57456.000000;terkirim;4;1;6;2026-04-19 04:58:12
+710;SWF-20260419-0710;Budi Santoso;Jl. Thamrin No. 146;Surabaya;Bandung;3.091667;108208.333333;terkirim;3;1;6;2026-04-19 12:37:54
+711;SWF-20260419-0711;Andi Pratama;Jl. Ahmad Yani No. 50;Bandung;Jakarta Pusat;11.856000;262120.000000;terkirim;2;2;5;2026-04-19 17:33:01
+712;SWF-20260419-0712;Siti Rahma;Jl. Pahlawan No. 22;Yogyakarta;Semarang;8.580000;68640.000000;terkirim;4;1;4;2026-04-19 20:38:39
+713;SWF-20260420-0713;Toni Hermanto;Jl. Cempaka No. 132;Tangerang;Jakarta Barat;7.840000;274400.000000;terkirim;3;1;4;2026-04-20 02:08:10
+714;SWF-20260420-0714;Toni Hermanto;Jl. Cempaka No. 115;Tangerang;Surabaya;8.433333;67466.666667;terkirim;4;1;4;2026-04-20 08:33:40
+715;SWF-20260420-0715;Rahmat Hidayat;Jl. Flamboyan No. 43;Jakarta Pusat;Bandung;20.398000;738930.000000;terkirim;3;2;4;2026-04-20 09:53:45
+716;SWF-20260421-0716;Dewi Lestari;Jl. Mawar No. 63;Jakarta Selatan;Depok;15.162000;555670.000000;terkirim;3;2;4;2026-04-21 09:14:19
+717;SWF-20260421-0717;Eko Prasetyo;Jl. Melati No. 60;Karawang;Jakarta Selatan;16.736333;359726.666667;terkirim;2;2;6;2026-04-21 14:04:17
+718;SWF-20260421-0718;Wati Kurnia;Jl. Cempaka No. 82;Bekasi;Jakarta Barat;6.813333;54506.666667;terkirim;4;1;5;2026-04-21 19:16:26
+719;SWF-20260422-0719;Dewi Lestari;Jl. Melati No. 99;Jakarta Barat;Surabaya;1.104000;11040.000000;terkirim;1;1;5;2026-04-22 18:05:00
+720;SWF-20260423-0720;Hadi Sunyoto;Jl. Sudirman No. 87;Surabaya;Jakarta Pusat;4.620000;36960.000000;terkirim;4;1;5;2026-04-23 01:58:57
+721;SWF-20260423-0721;Rahmat Hidayat;Jl. Melati No. 127;Bandung;Jakarta Pusat;32.640000;361120.000000;terkirim;4;3;4;2026-04-23 05:08:22
+722;SWF-20260423-0722;Sari Indah;Jl. Merdeka No. 36;Jakarta Selatan;Tangerang;12.761667;152616.666667;terkirim;1;2;6;2026-04-23 10:40:46
+723;SWF-20260423-0723;Sari Indah;Jl. Ahmad Yani No. 13;Depok;Jakarta Selatan;21.614667;781513.333333;terkirim;3;2;4;2026-04-23 10:48:40
+724;SWF-20260423-0724;Lestari Wulandari;Jl. Diponegoro No. 150;Tangerang;Yogyakarta;21.216667;449333.333333;terkirim;2;2;5;2026-04-23 15:16:11
+725;SWF-20260423-0725;Toni Hermanto;Jl. Pahlawan No. 24;Depok;Bekasi;7.516667;150333.333333;terkirim;2;1;4;2026-04-23 17:31:51
+726;SWF-20260423-0726;Budi Santoso;Jl. Kebon Jeruk No. 120;Tangerang;Jakarta Barat;14.628000;317560.000000;terkirim;2;2;6;2026-04-23 18:16:51
+727;SWF-20260423-0727;Eko Prasetyo;Jl. Diponegoro No. 130;Jakarta Selatan;Jakarta Barat;20.925333;192402.666667;terkirim;4;2;6;2026-04-23 20:52:13
+728;SWF-20260424-0728;Andi Pratama;Jl. Cempaka No. 43;Surabaya;Depok;7.406000;74060.000000;terkirim;1;1;4;2026-04-24 02:13:21
+729;SWF-20260425-0729;Andi Pratama;Jl. Merdeka No. 122;Surabaya;Karawang;26.409167;289091.666667;terkirim;1;2;4;2026-04-25 04:43:04
+730;SWF-20260425-0730;Sri Wahyuni;Jl. Cempaka No. 131;Bekasi;Jakarta Pusat;27.588000;300880.000000;terkirim;1;2;6;2026-04-25 05:20:59
+731;SWF-20260425-0731;Roni Wijaya;Jl. Kenanga No. 46;Bandung;Depok;71.199333;669594.666667;terkirim;4;3;6;2026-04-25 11:35:18
+732;SWF-20260425-0732;Agus Setiawan;Jl. Sudirman No. 10;Bandung;Depok;9.360000;93600.000000;terkirim;1;1;4;2026-04-25 16:04:19
+733;SWF-20260425-0733;Agus Setiawan;Jl. Pahlawan No. 69;Bogor;Jakarta Barat;10.044000;376540.000000;terkirim;3;2;6;2026-04-25 18:12:19
+734;SWF-20260426-0734;Hadi Sunyoto;Jl. Kamboja No. 79;Yogyakarta;Jakarta Barat;4.650000;93000.000000;terkirim;2;1;5;2026-04-26 02:10:29
+735;SWF-20260426-0735;Toni Hermanto;Jl. Cempaka No. 86;Jakarta Pusat;Jakarta Barat;4.221167;42211.666667;terkirim;1;1;5;2026-04-26 10:20:34
+736;SWF-20260427-0736;Toni Hermanto;Jl. Ahmad Yani No. 12;Jakarta Pusat;Surabaya;23.523500;495470.000000;terkirim;2;2;4;2026-04-27 15:28:13
+737;SWF-20260428-0737;Lestari Wulandari;Jl. Flamboyan No. 126;Yogyakarta;Bekasi;39.816000;1493560.000000;terkirim;3;3;5;2026-04-28 02:34:22
+738;SWF-20260429-0738;Lestari Wulandari;Jl. Kamboja No. 29;Depok;Yogyakarta;4.256000;34048.000000;terkirim;4;1;6;2026-04-29 04:16:13
+739;SWF-20260429-0739;Joko Susilo;Jl. Cempaka No. 93;Jakarta Barat;Semarang;6.902000;69020.000000;terkirim;1;1;6;2026-04-29 23:05:18
+740;SWF-20260430-0740;Andi Pratama;Jl. Mawar No. 85;Tangerang;Surabaya;23.152500;488050.000000;terkirim;2;2;6;2026-04-30 06:58:55
+741;SWF-20260430-0741;Wati Kurnia;Jl. Flamboyan No. 146;Semarang;Bekasi;2.024000;16192.000000;terkirim;4;1;4;2026-04-30 09:25:52
+742;SWF-20260430-0742;Dian Sasmita;Jl. Thamrin No. 78;Bogor;Depok;1.551000;12408.000000;terkirim;4;1;4;2026-04-30 09:38:40
+743;SWF-20260430-0743;Hendra Wijaya;Jl. Merdeka No. 111;Bekasi;Yogyakarta;1.120000;22400.000000;terkirim;2;1;5;2026-04-30 16:05:25
+744;SWF-20260430-0744;Andi Pratama;Jl. Diponegoro No. 51;Tangerang;Surabaya;5.953333;59533.333333;terkirim;1;1;5;2026-04-30 17:35:18
+745;SWF-20260501-0745;Agus Setiawan;Jl. Mangga Dua No. 78;Bandung;Depok;17.680000;378600.000000;terkirim;2;2;4;2026-05-01 05:13:25
+746;SWF-20260501-0746;Roni Wijaya;Jl. Raya Bogor No. 79;Jakarta Selatan;Bekasi;29.980500;264844.000000;terkirim;4;2;4;2026-05-01 11:20:39
+747;SWF-20260501-0747;Yanto Sukarno;Jl. Flamboyan No. 91;Tangerang;Karawang;44.919000;549190.000000;terkirim;1;3;4;2026-05-01 15:04:07
+748;SWF-20260502-0748;Hendra Wijaya;Jl. Pahlawan No. 149;Karawang;Bekasi;16.089667;185896.666667;terkirim;1;2;5;2026-05-02 11:49:31
+749;SWF-20260502-0749;Hadi Sunyoto;Jl. Flamboyan No. 14;Jakarta Selatan;Jakarta Pusat;8.770667;87706.666667;terkirim;1;1;6;2026-05-02 11:59:24
+750;SWF-20260502-0750;Maya Kartika;Jl. Sudirman No. 53;Karawang;Jakarta Timur;12.483000;274660.000000;terkirim;2;2;6;2026-05-02 18:42:50
+751;SWF-20260503-0751;Roni Wijaya;Jl. Ahmad Yani No. 18;Jakarta Pusat;Jakarta Barat;6.966667;139333.333333;terkirim;2;1;4;2026-05-03 00:54:49
+752;SWF-20260503-0752;Sri Wahyuni;Jl. Sudirman No. 32;Depok;Bogor;15.620000;571700.000000;terkirim;3;2;6;2026-05-03 12:32:44
+753;SWF-20260503-0753;Budi Santoso;Jl. Thamrin No. 37;Yogyakarta;Surabaya;15.500000;335000.000000;terkirim;2;2;5;2026-05-03 20:21:47
+754;SWF-20260504-0754;Toni Hermanto;Jl. Mawar No. 71;Tangerang;Bogor;16.663500;158308.000000;terkirim;4;2;4;2026-05-04 21:40:15
+755;SWF-20260504-0755;Sri Wahyuni;Jl. Merdeka No. 149;Depok;Jakarta Pusat;9.075000;181500.000000;terkirim;2;1;6;2026-05-04 22:23:20
+756;SWF-20260505-0756;Yanto Sukarno;Jl. Kebon Jeruk No. 90;Yogyakarta;Karawang;13.275000;290500.000000;terkirim;2;2;4;2026-05-05 03:20:48
+757;SWF-20260505-0757;Siti Rahma;Jl. Mangga Dua No. 78;Tangerang;Jakarta Selatan;48.043333;1060866.666667;terkirim;2;3;6;2026-05-05 04:07:37
+758;SWF-20260505-0758;Lestari Wulandari;Jl. Mawar No. 150;Bandung;Tangerang;0.585000;11700.000000;terkirim;2;1;4;2026-05-05 04:26:24
+759;SWF-20260505-0759;Toni Hermanto;Jl. Melati No. 60;Semarang;Yogyakarta;4.906667;39253.333333;terkirim;4;1;5;2026-05-05 09:39:05
+760;SWF-20260505-0760;Agus Setiawan;Jl. Sudirman No. 19;Bogor;Bekasi;3.536000;35360.000000;terkirim;1;1;5;2026-05-05 12:40:32
+761;SWF-20260505-0761;Roni Wijaya;Jl. Kebon Jeruk No. 65;Bogor;Karawang;10.196667;228933.333333;terkirim;2;2;6;2026-05-05 19:42:39
+762;SWF-20260506-0762;Agus Setiawan;Jl. Kebon Jeruk No. 9;Semarang;Jakarta Timur;5.786667;57866.666667;terkirim;1;1;4;2026-05-06 03:14:06
+763;SWF-20260506-0763;Maya Kartika;Jl. Kamboja No. 129;Bekasi;Tangerang;5.346000;42768.000000;terkirim;4;1;5;2026-05-06 09:37:57
+764;SWF-20260506-0764;Hendra Wijaya;Jl. Ahmad Yani No. 31;Bogor;Jakarta Barat;10.954667;134546.666667;terkirim;1;2;5;2026-05-06 10:34:08
+765;SWF-20260506-0765;Dewi Lestari;Jl. Raya Bogor No. 20;Karawang;Surabaya;37.493333;1412266.666667;terkirim;3;3;6;2026-05-06 15:41:11
+766;SWF-20260507-0766;Andi Pratama;Jl. Merdeka No. 9;Bekasi;Bogor;13.043333;155433.333333;terkirim;1;2;4;2026-05-07 01:02:21
+767;SWF-20260507-0767;Toni Hermanto;Jl. Gatot Subroto No. 145;Bandung;Semarang;2.394000;19152.000000;terkirim;4;1;6;2026-05-07 05:30:49
+768;SWF-20260507-0768;Siti Rahma;Jl. Mangga Dua No. 11;Jakarta Selatan;Jakarta Pusat;34.212667;1297443.333333;terkirim;3;3;5;2026-05-07 14:08:00
+769;SWF-20260508-0769;Budi Santoso;Jl. Kebon Jeruk No. 137;Bandung;Tangerang;11.360000;138600.000000;terkirim;1;2;5;2026-05-08 15:22:52
+770;SWF-20260509-0770;Wati Kurnia;Jl. Diponegoro No. 30;Bogor;Jakarta Selatan;17.765000;646775.000000;terkirim;3;2;4;2026-05-09 01:16:19
+771;SWF-20260509-0771;Budi Santoso;Jl. Pahlawan No. 106;Yogyakarta;Karawang;1.127500;11275.000000;terkirim;1;1;4;2026-05-09 06:51:42
+772;SWF-20260509-0772;Sari Indah;Jl. Melati No. 90;Bandung;Yogyakarta;8.350333;66802.666667;terkirim;4;1;6;2026-05-09 09:27:44
+773;SWF-20260509-0773;Gita Saraswati;Jl. Kebon Jeruk No. 127;Yogyakarta;Semarang;22.990000;829650.000000;terkirim;3;2;6;2026-05-09 11:51:10
+774;SWF-20260509-0774;Lestari Wulandari;Jl. Ahmad Yani No. 14;Bekasi;Bogor;10.800000;241000.000000;terkirim;2;2;6;2026-05-09 14:36:29
+775;SWF-20260509-0775;Agus Setiawan;Jl. Mawar No. 37;Jakarta Pusat;Depok;17.952000;204520.000000;terkirim;1;2;4;2026-05-09 14:47:49
+776;SWF-20260509-0776;Hendra Wijaya;Jl. Gatot Subroto No. 16;Depok;Surabaya;8.614000;68912.000000;terkirim;4;1;5;2026-05-09 16:53:05
+777;SWF-20260510-0777;Dewi Lestari;Jl. Cempaka No. 137;Jakarta Pusat;Yogyakarta;9.032333;316131.666667;terkirim;3;1;6;2026-05-10 04:09:04
+778;SWF-20260510-0778;Budi Santoso;Jl. Melati No. 112;Tangerang;Semarang;5.213333;41706.666667;terkirim;4;1;6;2026-05-10 12:25:28
+779;SWF-20260510-0779;Maya Kartika;Jl. Mangga Dua No. 42;Tangerang;Karawang;1.906667;66733.333333;terkirim;3;1;5;2026-05-10 18:15:21
+780;SWF-20260510-0780;Lestari Wulandari;Jl. Kenanga No. 10;Bandung;Depok;17.248000;197480.000000;terkirim;1;2;5;2026-05-10 21:08:57
+781;SWF-20260510-0781;Eko Prasetyo;Jl. Flamboyan No. 5;Bogor;Jakarta Pusat;8.855000;70840.000000;terkirim;4;1;6;2026-05-10 21:14:37
+782;SWF-20260511-0782;Rahmat Hidayat;Jl. Mangga Dua No. 142;Bekasi;Jakarta Selatan;15.609000;571315.000000;terkirim;3;2;5;2026-05-11 11:14:00
+783;SWF-20260512-0783;Dian Sasmita;Jl. Sudirman No. 60;Jakarta Selatan;Yogyakarta;5.698000;45584.000000;terkirim;4;1;5;2026-05-12 03:18:11
+784;SWF-20260512-0784;Andi Pratama;Jl. Mangga Dua No. 5;Surabaya;Bekasi;7.900000;276500.000000;terkirim;3;1;4;2026-05-12 07:47:37
+785;SWF-20260512-0785;Rahmat Hidayat;Jl. Pahlawan No. 53;Bekasi;Surabaya;11.371500;115972.000000;terkirim;4;2;4;2026-05-12 11:55:20
+786;SWF-20260512-0786;Lestari Wulandari;Jl. Cempaka No. 96;Bogor;Depok;3.705000;37050.000000;terkirim;1;1;4;2026-05-12 17:30:56
+787;SWF-20260512-0787;Roni Wijaya;Jl. Melati No. 131;Yogyakarta;Semarang;24.975000;224800.000000;terkirim;4;2;4;2026-05-12 18:13:36
+788;SWF-20260512-0788;Rahmat Hidayat;Jl. Gatot Subroto No. 58;Bandung;Karawang;65.520000;755200.000000;terkirim;1;3;4;2026-05-12 18:44:09
+789;SWF-20260513-0789;Eko Prasetyo;Jl. Melati No. 69;Jakarta Barat;Surabaya;16.700667;359013.333333;sampai_tujuan;2;2;5;2026-05-13 00:03:56
+790;SWF-20260513-0790;Agus Setiawan;Jl. Pahlawan No. 114;Yogyakarta;Tangerang;10.266667;127666.666667;terkirim;1;2;6;2026-05-13 18:40:41
+791;SWF-20260513-0791;Joko Susilo;Jl. Diponegoro No. 138;Jakarta Barat;Bogor;8.901000;311535.000000;terkirim;3;1;4;2026-05-13 22:16:45
+792;SWF-20260514-0792;Siti Rahma;Jl. Kamboja No. 51;Jakarta Timur;Karawang;1.420833;11366.666667;terkirim;4;1;6;2026-05-14 03:01:52
+793;SWF-20260514-0793;Sari Indah;Jl. Cempaka No. 7;Yogyakarta;Jakarta Timur;6.175000;49400.000000;terkirim;4;1;5;2026-05-14 12:28:00
+794;SWF-20260514-0794;Hendra Wijaya;Jl. Ahmad Yani No. 87;Bekasi;Surabaya;1.092500;38237.500000;terkirim;3;1;5;2026-05-14 23:25:38
+795;SWF-20260517-0795;Toni Hermanto;Jl. Diponegoro No. 47;Yogyakarta;Bandung;7.250000;72500.000000;terkirim;1;1;6;2026-05-17 01:58:57
+796;SWF-20260517-0796;Eko Prasetyo;Jl. Thamrin No. 131;Yogyakarta;Bandung;6.435000;225225.000000;terkirim;3;1;5;2026-05-17 09:56:05
+797;SWF-20260517-0797;Sri Wahyuni;Jl. Melati No. 46;Jakarta Timur;Jakarta Pusat;29.640000;1062400.000000;terkirim;3;2;6;2026-05-17 10:00:30
+798;SWF-20260517-0798;Dewi Lestari;Jl. Ahmad Yani No. 74;Depok;Karawang;12.958000;478530.000000;terkirim;3;2;6;2026-05-17 12:39:30
+799;SWF-20260518-0799;Agus Setiawan;Jl. Kebon Jeruk No. 142;Karawang;Jakarta Timur;2.567500;51350.000000;terkirim;2;1;5;2026-05-18 04:04:58
+800;SWF-20260518-0800;Maya Kartika;Jl. Cempaka No. 114;Karawang;Jakarta Timur;12.784000;152840.000000;terkirim;1;2;5;2026-05-18 07:37:13
+801;SWF-20260518-0801;Andi Pratama;Jl. Ahmad Yani No. 91;Semarang;Jakarta Selatan;6.137000;122740.000000;terkirim;2;1;5;2026-05-18 20:05:31
+802;SWF-20260518-0802;Rahmat Hidayat;Jl. Melati No. 10;Tangerang;Jakarta Selatan;21.533333;240333.333333;terkirim;1;2;6;2026-05-18 20:27:27
+803;SWF-20260518-0803;Sri Wahyuni;Jl. Pahlawan No. 51;Depok;Karawang;11.484000;116872.000000;terkirim;4;2;4;2026-05-18 22:28:35
+804;SWF-20260519-0804;Roni Wijaya;Jl. Merdeka No. 112;Jakarta Selatan;Karawang;2.688000;21504.000000;terkirim;4;1;5;2026-05-19 04:53:13
+805;SWF-20260519-0805;Yanto Sukarno;Jl. Kamboja No. 136;Surabaya;Jakarta Timur;14.664000;142312.000000;terkirim;4;2;6;2026-05-19 07:50:51
+806;SWF-20260520-0806;Hendra Wijaya;Jl. Ahmad Yani No. 57;Jakarta Selatan;Bekasi;35.878500;817570.000000;terkirim;2;3;5;2026-05-20 01:26:48
+807;SWF-20260520-0807;Agus Setiawan;Jl. Mawar No. 102;Yogyakarta;Jakarta Timur;52.824000;1156480.000000;terkirim;2;3;5;2026-05-20 04:50:59
+808;SWF-20260520-0808;Gita Saraswati;Jl. Melati No. 67;Surabaya;Bekasi;40.920000;427360.000000;terkirim;4;3;5;2026-05-20 12:15:12
+809;SWF-20260521-0809;Joko Susilo;Jl. Melati No. 12;Depok;Karawang;12.172667;268453.333333;sampai_tujuan;2;2;6;2026-05-21 01:53:08
+810;SWF-20260521-0810;Dian Sasmita;Jl. Merdeka No. 6;Semarang;Tangerang;10.010000;125100.000000;terkirim;1;2;4;2026-05-21 23:36:51
+811;SWF-20260522-0811;Roni Wijaya;Jl. Thamrin No. 138;Tangerang;Semarang;9.165000;320775.000000;terkirim;3;1;5;2026-05-22 01:42:57
+812;SWF-20260522-0812;Budi Santoso;Jl. Ahmad Yani No. 129;Tangerang;Karawang;3.450000;120750.000000;terkirim;3;1;4;2026-05-22 23:37:03
+813;SWF-20260523-0813;Agus Setiawan;Jl. Kenanga No. 103;Jakarta Timur;Semarang;2.786667;27866.666667;terkirim;1;1;6;2026-05-23 02:24:51
+814;SWF-20260523-0814;Gita Saraswati;Jl. Diponegoro No. 25;Yogyakarta;Bandung;16.660000;608100.000000;terkirim;3;2;6;2026-05-23 08:15:30
+815;SWF-20260523-0815;Eko Prasetyo;Jl. Kebon Jeruk No. 26;Depok;Yogyakarta;31.803333;354426.666667;terkirim;4;3;4;2026-05-23 17:22:52
+816;SWF-20260523-0816;Gita Saraswati;Jl. Pahlawan No. 98;Jakarta Pusat;Karawang;45.030000;550300.000000;terkirim;1;3;4;2026-05-23 20:12:35
+817;SWF-20260523-0817;Eko Prasetyo;Jl. Mawar No. 123;Bandung;Jakarta Selatan;11.890667;143906.666667;terkirim;1;2;6;2026-05-23 21:15:05
+818;SWF-20260524-0818;Joko Susilo;Jl. Gatot Subroto No. 37;Tangerang;Surabaya;34.580000;445800.000000;sampai_tujuan;1;3;5;2026-05-24 02:03:59
+819;SWF-20260524-0819;Lestari Wulandari;Jl. Diponegoro No. 10;Bekasi;Semarang;4.546667;90933.333333;terkirim;2;1;6;2026-05-24 03:46:42
+820;SWF-20260524-0820;Joko Susilo;Jl. Melati No. 119;Yogyakarta;Bogor;5.750000;46000.000000;terkirim;4;1;4;2026-05-24 12:48:42
+821;SWF-20260524-0821;Hadi Sunyoto;Jl. Ahmad Yani No. 43;Jakarta Barat;Karawang;3.584000;28672.000000;terkirim;4;1;6;2026-05-24 13:38:57
+822;SWF-20260524-0822;Gita Saraswati;Jl. Cempaka No. 103;Jakarta Pusat;Bekasi;12.729167;470520.833333;terkirim;3;2;5;2026-05-24 16:18:49
+823;SWF-20260526-0823;Dewi Lestari;Jl. Diponegoro No. 75;Karawang;Yogyakarta;25.992000;934720.000000;terkirim;3;2;5;2026-05-26 01:53:37
+824;SWF-20260526-0824;Hadi Sunyoto;Jl. Kamboja No. 3;Bekasi;Bogor;10.826667;133266.666667;terkirim;1;2;5;2026-05-26 05:57:56
+825;SWF-20260526-0825;Agus Setiawan;Jl. Flamboyan No. 85;Jakarta Selatan;Jakarta Pusat;6.210000;217350.000000;terkirim;3;1;6;2026-05-26 09:31:30
+826;SWF-20260526-0826;Andi Pratama;Jl. Raya Bogor No. 110;Bandung;Semarang;28.395500;1018842.500000;terkirim;3;2;6;2026-05-26 18:52:35
+827;SWF-20260526-0827;Siti Rahma;Jl. Ahmad Yani No. 56;Depok;Jakarta Timur;4.285667;34285.333333;terkirim;4;1;6;2026-05-26 22:35:47
+828;SWF-20260527-0828;Toni Hermanto;Jl. Kebon Jeruk No. 44;Jakarta Pusat;Depok;3.626000;72520.000000;terkirim;2;1;5;2026-05-27 01:23:07
+829;SWF-20260527-0829;Siti Rahma;Jl. Flamboyan No. 109;Surabaya;Bogor;30.192000;401920.000000;terkirim;1;3;6;2026-05-27 08:23:37
+830;SWF-20260527-0830;Toni Hermanto;Jl. Mawar No. 80;Karawang;Bekasi;9.496667;189933.333333;terkirim;2;1;5;2026-05-27 11:56:57
+831;SWF-20260527-0831;Eko Prasetyo;Jl. Kamboja No. 65;Surabaya;Jakarta Selatan;18.720000;212200.000000;terkirim;1;2;5;2026-05-27 16:40:40
+832;SWF-20260527-0832;Dian Sasmita;Jl. Kebon Jeruk No. 98;Bekasi;Jakarta Timur;4.235000;148225.000000;terkirim;3;1;4;2026-05-27 22:41:01
+833;SWF-20260528-0833;Yanto Sukarno;Jl. Mangga Dua No. 129;Jakarta Pusat;Surabaya;4.620000;36960.000000;terkirim;4;1;4;2026-05-28 02:50:40
+834;SWF-20260528-0834;Sari Indah;Jl. Merdeka No. 121;Bandung;Yogyakarta;26.112000;233896.000000;terkirim;4;2;6;2026-05-28 11:13:24
+835;SWF-20260528-0835;Budi Santoso;Jl. Diponegoro No. 46;Jakarta Timur;Jakarta Selatan;4.462500;35700.000000;terkirim;4;1;6;2026-05-28 15:42:03
+836;SWF-20260528-0836;Andi Pratama;Jl. Kebon Jeruk No. 5;Bekasi;Yogyakarta;14.466667;169666.666667;terkirim;1;2;5;2026-05-28 16:04:13
+837;SWF-20260528-0837;Hadi Sunyoto;Jl. Diponegoro No. 69;Jakarta Selatan;Jakarta Barat;7.425000;148500.000000;terkirim;2;1;6;2026-05-28 23:18:37
+838;SWF-20260529-0838;Andi Pratama;Jl. Mawar No. 31;Bekasi;Karawang;5.071500;50715.000000;terkirim;1;1;4;2026-05-29 00:24:22
+839;SWF-20260529-0839;Maya Kartika;Jl. Merdeka No. 44;Semarang;Jakarta Pusat;23.902000;264020.000000;terkirim;1;2;4;2026-05-29 02:29:04
+840;SWF-20260529-0840;Sari Indah;Jl. Kenanga No. 74;Jakarta Timur;Bekasi;13.950000;304000.000000;terkirim;2;2;5;2026-05-29 13:27:05
+841;SWF-20260530-0841;Eko Prasetyo;Jl. Mangga Dua No. 24;Bogor;Bekasi;38.304000;406432.000000;terkirim;4;3;6;2026-05-30 04:56:37
+842;SWF-20260530-0842;Siti Rahma;Jl. Kebon Jeruk No. 112;Bekasi;Yogyakarta;14.628000;536980.000000;terkirim;3;2;6;2026-05-30 11:52:22
+843;SWF-20260530-0843;Andi Pratama;Jl. Sudirman No. 30;Karawang;Yogyakarta;10.395000;108160.000000;terkirim;4;2;5;2026-05-30 19:56:22
+844;SWF-20260530-0844;Lestari Wulandari;Jl. Ahmad Yani No. 92;Jakarta Pusat;Jakarta Barat;38.220000;1437700.000000;terkirim;3;3;4;2026-05-30 21:30:56
+845;SWF-20260531-0845;Eko Prasetyo;Jl. Thamrin No. 6;Bogor;Surabaya;44.936667;459493.333333;terkirim;4;3;5;2026-05-31 01:57:32
+846;SWF-20260531-0846;Toni Hermanto;Jl. Kenanga No. 77;Jakarta Pusat;Depok;17.871000;167968.000000;sampai_tujuan;4;2;5;2026-05-31 14:40:16
+847;SWF-20260531-0847;Budi Santoso;Jl. Thamrin No. 132;Jakarta Timur;Bekasi;12.127500;267550.000000;terkirim;2;2;5;2026-05-31 20:01:18
+848;SWF-20260531-0848;Yanto Sukarno;Jl. Flamboyan No. 102;Jakarta Timur;Karawang;1.633333;32666.666667;terkirim;2;1;5;2026-05-31 22:27:00
+849;SWF-20260601-0849;Wati Kurnia;Jl. Gatot Subroto No. 63;Jakarta Timur;Yogyakarta;6.745000;134900.000000;terkirim;2;1;4;2026-06-01 02:41:19
+850;SWF-20260601-0850;Sri Wahyuni;Jl. Flamboyan No. 63;Semarang;Jakarta Selatan;12.783333;280666.666667;terkirim;2;2;5;2026-06-01 08:50:19
+851;SWF-20260601-0851;Gita Saraswati;Jl. Gatot Subroto No. 89;Bogor;Yogyakarta;2.634667;52693.333333;terkirim;2;1;5;2026-06-01 09:17:35
+852;SWF-20260601-0852;Sri Wahyuni;Jl. Gatot Subroto No. 59;Jakarta Timur;Karawang;3.145000;110075.000000;terkirim;3;1;4;2026-06-01 11:42:33
+853;SWF-20260601-0853;Siti Rahma;Jl. Raya Bogor No. 80;Tangerang;Yogyakarta;7.123667;56989.333333;terkirim;4;1;4;2026-06-01 12:17:48
+854;SWF-20260601-0854;Yanto Sukarno;Jl. Ahmad Yani No. 104;Semarang;Jakarta Pusat;6.500000;52000.000000;terkirim;4;1;4;2026-06-01 12:21:30
+855;SWF-20260601-0855;Hendra Wijaya;Jl. Cempaka No. 67;Yogyakarta;Surabaya;19.832000;719120.000000;terkirim;3;2;6;2026-06-01 13:14:07
+856;SWF-20260601-0856;Wati Kurnia;Jl. Kenanga No. 21;Jakarta Timur;Jakarta Pusat;13.294167;131353.333333;terkirim;4;2;4;2026-06-01 22:55:47
+857;SWF-20260602-0857;Toni Hermanto;Jl. Flamboyan No. 94;Jakarta Pusat;Surabaya;25.536000;918760.000000;terkirim;3;2;4;2026-06-02 05:17:18
+858;SWF-20260602-0858;Yanto Sukarno;Jl. Cempaka No. 5;Bogor;Bekasi;2.688000;94080.000000;terkirim;3;1;6;2026-06-02 11:19:56
+859;SWF-20260602-0859;Rahmat Hidayat;Jl. Ahmad Yani No. 33;Yogyakarta;Jakarta Timur;35.587500;1345562.500000;terkirim;3;3;6;2026-06-02 13:20:57
+860;SWF-20260603-0860;Eko Prasetyo;Jl. Sudirman No. 20;Bekasi;Tangerang;1.437333;11498.666667;terkirim;4;1;6;2026-06-03 01:17:34
+861;SWF-20260603-0861;Sri Wahyuni;Jl. Merdeka No. 48;Yogyakarta;Depok;5.200000;104000.000000;sampai_tujuan;2;1;5;2026-06-03 04:13:37
+862;SWF-20260603-0862;Yanto Sukarno;Jl. Kamboja No. 56;Semarang;Tangerang;11.137500;136375.000000;sampai_tujuan;1;2;5;2026-06-03 09:33:24
+863;SWF-20260603-0863;Budi Santoso;Jl. Cempaka No. 54;Jakarta Pusat;Bogor;8.580000;68640.000000;sampai_tujuan;4;1;6;2026-06-03 10:11:53
+864;SWF-20260603-0864;Joko Susilo;Jl. Merdeka No. 84;Jakarta Barat;Jakarta Selatan;32.844000;1249540.000000;terkirim;3;3;5;2026-06-03 13:52:44
+865;SWF-20260603-0865;Lestari Wulandari;Jl. Mawar No. 114;Jakarta Timur;Karawang;34.164000;783280.000000;terkirim;2;3;5;2026-06-03 15:05:54
+866;SWF-20260603-0866;Toni Hermanto;Jl. Mawar No. 22;Jakarta Barat;Semarang;35.112000;1328920.000000;terkirim;3;3;5;2026-06-03 21:29:10
+867;SWF-20260604-0867;Dian Sasmita;Jl. Thamrin No. 91;Bandung;Tangerang;5.796000;46368.000000;terkirim;4;1;5;2026-06-04 03:15:37
+868;SWF-20260604-0868;Agus Setiawan;Jl. Ahmad Yani No. 102;Jakarta Barat;Depok;6.016000;120320.000000;terkirim;2;1;6;2026-06-04 04:30:42
+869;SWF-20260604-0869;Dian Sasmita;Jl. Mangga Dua No. 82;Semarang;Bekasi;14.183333;138466.666667;terkirim;4;2;5;2026-06-04 18:54:30
+870;SWF-20260604-0870;Dewi Lestari;Jl. Thamrin No. 103;Depok;Jakarta Pusat;46.644000;1032880.000000;terkirim;2;3;5;2026-06-04 22:18:59
+871;SWF-20260605-0871;Roni Wijaya;Jl. Merdeka No. 58;Jakarta Timur;Surabaya;15.293333;177933.333333;terkirim;1;2;6;2026-06-05 00:31:01
+872;SWF-20260605-0872;Toni Hermanto;Jl. Gatot Subroto No. 95;Jakarta Pusat;Semarang;59.000000;1280000.000000;terkirim;2;3;5;2026-06-05 03:23:30
+873;SWF-20260605-0873;Roni Wijaya;Jl. Melati No. 34;Depok;Jakarta Selatan;5.382000;43056.000000;terkirim;4;1;6;2026-06-05 04:03:22
+874;SWF-20260605-0874;Eko Prasetyo;Jl. Ahmad Yani No. 85;Jakarta Timur;Depok;2.070000;20700.000000;terkirim;1;1;6;2026-06-05 04:33:56
+875;SWF-20260605-0875;Andi Pratama;Jl. Ahmad Yani No. 137;Yogyakarta;Jakarta Pusat;13.277000;489695.000000;terkirim;3;2;6;2026-06-05 09:27:18
+876;SWF-20260605-0876;Hadi Sunyoto;Jl. Flamboyan No. 110;Semarang;Jakarta Selatan;4.615333;46153.333333;terkirim;1;1;5;2026-06-05 16:44:28
+877;SWF-20260605-0877;Toni Hermanto;Jl. Kebon Jeruk No. 68;Jakarta Selatan;Tangerang;15.504000;335080.000000;terkirim;2;2;5;2026-06-05 19:02:08
+878;SWF-20260605-0878;Andi Pratama;Jl. Mangga Dua No. 10;Semarang;Jakarta Timur;16.314667;188146.666667;terkirim;1;2;5;2026-06-05 22:11:28
+879;SWF-20260606-0879;Dewi Lestari;Jl. Raya Bogor No. 122;Yogyakarta;Bogor;5.906333;118126.666667;sampai_tujuan;2;1;5;2026-06-06 03:54:07
+880;SWF-20260606-0880;Budi Santoso;Jl. Kebon Jeruk No. 150;Depok;Jakarta Timur;4.414667;35317.333333;terkirim;4;1;6;2026-06-06 05:12:58
+881;SWF-20260606-0881;Hadi Sunyoto;Jl. Melati No. 134;Bekasi;Bogor;28.644000;254152.000000;terkirim;4;2;5;2026-06-06 10:17:31
+882;SWF-20260606-0882;Joko Susilo;Jl. Raya Bogor No. 53;Jakarta Barat;Jakarta Timur;6.562500;229687.500000;terkirim;3;1;5;2026-06-06 22:15:08
+883;SWF-20260607-0883;Roni Wijaya;Jl. Mawar No. 9;Tangerang;Yogyakarta;14.109333;166093.333333;terkirim;1;2;6;2026-06-07 01:47:14
+884;SWF-20260607-0884;Maya Kartika;Jl. Pahlawan No. 63;Depok;Semarang;8.794500;70356.000000;terkirim;4;1;4;2026-06-07 05:02:29
+885;SWF-20260607-0885;Rahmat Hidayat;Jl. Kebon Jeruk No. 17;Jakarta Timur;Bandung;4.896000;97920.000000;terkirim;2;1;6;2026-06-07 09:16:29
+886;SWF-20260607-0886;Gita Saraswati;Jl. Sudirman No. 82;Semarang;Surabaya;7.869167;78691.666667;terkirim;1;1;4;2026-06-07 15:34:54
+887;SWF-20260607-0887;Maya Kartika;Jl. Kebon Jeruk No. 125;Depok;Surabaya;2.860000;22880.000000;terkirim;4;1;6;2026-06-07 16:24:06
+888;SWF-20260608-0888;Wati Kurnia;Jl. Mangga Dua No. 127;Surabaya;Jakarta Timur;45.534667;1693713.333333;terkirim;3;3;5;2026-06-08 04:52:16
+889;SWF-20260608-0889;Gita Saraswati;Jl. Raya Bogor No. 113;Jakarta Selatan;Jakarta Barat;6.000000;48000.000000;terkirim;4;1;4;2026-06-08 04:52:53
+890;SWF-20260608-0890;Hendra Wijaya;Jl. Ahmad Yani No. 114;Bekasi;Yogyakarta;14.586000;170860.000000;terkirim;1;2;4;2026-06-08 05:27:13
+891;SWF-20260608-0891;Toni Hermanto;Jl. Ahmad Yani No. 77;Bandung;Jakarta Barat;7.395000;147900.000000;terkirim;2;1;4;2026-06-08 11:40:23
+892;SWF-20260608-0892;Toni Hermanto;Jl. Cempaka No. 69;Jakarta Barat;Bekasi;31.920000;738400.000000;terkirim;2;3;5;2026-06-08 12:52:27
+893;SWF-20260608-0893;Hendra Wijaya;Jl. Cempaka No. 145;Tangerang;Bogor;1.728333;13826.666667;terkirim;4;1;6;2026-06-08 16:22:05
+894;SWF-20260608-0894;Roni Wijaya;Jl. Kebon Jeruk No. 66;Depok;Tangerang;7.072000;56576.000000;terkirim;4;1;6;2026-06-08 17:51:54
+895;SWF-20260608-0895;Hadi Sunyoto;Jl. Flamboyan No. 71;Jakarta Selatan;Jakarta Timur;10.455000;108640.000000;sampai_tujuan;4;2;5;2026-06-08 21:35:34
+896;SWF-20260608-0896;Joko Susilo;Jl. Mangga Dua No. 97;Jakarta Pusat;Jakarta Timur;6.757500;236512.500000;terkirim;3;1;5;2026-06-08 23:04:24
+897;SWF-20260608-0897;Rahmat Hidayat;Jl. Melati No. 106;Jakarta Timur;Jakarta Barat;5.880000;47040.000000;terkirim;4;1;5;2026-06-08 23:35:07
+898;SWF-20260609-0898;Hendra Wijaya;Jl. Merdeka No. 36;Semarang;Jakarta Selatan;31.266667;725333.333333;terkirim;2;3;5;2026-06-09 06:44:27
+899;SWF-20260609-0899;Lestari Wulandari;Jl. Kebon Jeruk No. 67;Depok;Surabaya;1.350000;10800.000000;terkirim;4;1;5;2026-06-09 18:32:03
+900;SWF-20260609-0900;Hadi Sunyoto;Jl. Mawar No. 5;Bandung;Tangerang;8.806000;70448.000000;terkirim;4;1;6;2026-06-09 21:07:47
+901;SWF-20260610-0901;Rahmat Hidayat;Jl. Ahmad Yani No. 137;Jakarta Timur;Bandung;8.211000;82110.000000;terkirim;1;1;5;2026-06-10 00:27:05
+902;SWF-20260610-0902;Lestari Wulandari;Jl. Gatot Subroto No. 47;Surabaya;Bandung;46.251333;470010.666667;terkirim;4;3;5;2026-06-10 21:42:45
+903;SWF-20260611-0903;Sri Wahyuni;Jl. Merdeka No. 3;Jakarta Barat;Tangerang;13.301333;291026.666667;sampai_tujuan;2;2;6;2026-06-11 05:58:29
+904;SWF-20260611-0904;Maya Kartika;Jl. Mawar No. 148;Jakarta Timur;Depok;8.232000;164640.000000;terkirim;2;1;4;2026-06-11 06:18:33
+905;SWF-20260611-0905;Yanto Sukarno;Jl. Gatot Subroto No. 84;Bekasi;Jakarta Barat;10.080000;226600.000000;terkirim;2;2;5;2026-06-11 07:25:49
+906;SWF-20260611-0906;Siti Rahma;Jl. Flamboyan No. 32;Tangerang;Jakarta Pusat;22.968000;254680.000000;terkirim;1;2;5;2026-06-11 09:02:10
+907;SWF-20260611-0907;Maya Kartika;Jl. Ahmad Yani No. 24;Jakarta Timur;Bandung;9.500000;190000.000000;terkirim;2;1;5;2026-06-11 09:49:46
+908;SWF-20260611-0908;Roni Wijaya;Jl. Kebon Jeruk No. 24;Semarang;Karawang;27.832000;303320.000000;terkirim;1;2;4;2026-06-11 17:10:11
+909;SWF-20260611-0909;Agus Setiawan;Jl. Mawar No. 93;Depok;Jakarta Selatan;20.280000;227800.000000;terkirim;1;2;5;2026-06-11 17:21:45
+910;SWF-20260612-0910;Siti Rahma;Jl. Pahlawan No. 46;Bandung;Jakarta Pusat;9.550667;191013.333333;terkirim;2;1;4;2026-06-12 02:20:24
+911;SWF-20260612-0911;Dian Sasmita;Jl. Cempaka No. 41;Tangerang;Jakarta Timur;11.754667;260093.333333;terkirim;2;2;4;2026-06-12 11:04:58
+912;SWF-20260612-0912;Hendra Wijaya;Jl. Kenanga No. 96;Depok;Surabaya;1.436500;50277.500000;terkirim;3;1;5;2026-06-12 12:54:16
+913;SWF-20260612-0913;Gita Saraswati;Jl. Kenanga No. 135;Jakarta Timur;Jakarta Barat;2.178000;43560.000000;terkirim;2;1;5;2026-06-12 19:44:56
+914;SWF-20260612-0914;Wati Kurnia;Jl. Flamboyan No. 35;Bandung;Yogyakarta;5.716667;45733.333333;terkirim;4;1;4;2026-06-12 21:47:49
+915;SWF-20260613-0915;Agus Setiawan;Jl. Kamboja No. 127;Yogyakarta;Bandung;5.763333;115266.666667;terkirim;2;1;4;2026-06-13 02:46:24
+916;SWF-20260613-0916;Sri Wahyuni;Jl. Raya Bogor No. 27;Jakarta Barat;Depok;11.088000;413080.000000;terkirim;3;2;6;2026-06-13 05:05:37
+917;SWF-20260613-0917;Wati Kurnia;Jl. Mawar No. 38;Bandung;Semarang;2.202667;44053.333333;terkirim;2;1;4;2026-06-13 08:27:55
+918;SWF-20260613-0918;Sri Wahyuni;Jl. Melati No. 3;Bandung;Bogor;21.726000;198808.000000;terkirim;4;2;4;2026-06-13 09:11:59
+919;SWF-20260613-0919;Agus Setiawan;Jl. Mangga Dua No. 132;Bekasi;Tangerang;12.243000;122944.000000;terkirim;4;2;5;2026-06-13 17:16:22
+920;SWF-20260613-0920;Andi Pratama;Jl. Gatot Subroto No. 94;Tangerang;Yogyakarta;4.450333;44503.333333;terkirim;1;1;5;2026-06-13 20:52:12
+921;SWF-20260613-0921;Hendra Wijaya;Jl. Diponegoro No. 89;Depok;Karawang;17.333333;371666.666667;terkirim;2;2;6;2026-06-13 21:41:18
+922;SWF-20260614-0922;Roni Wijaya;Jl. Mawar No. 135;Bandung;Jakarta Timur;15.810667;578373.333333;terkirim;3;2;4;2026-06-14 04:26:27
+923;SWF-20260614-0923;Agus Setiawan;Jl. Thamrin No. 58;Semarang;Yogyakarta;24.437333;513746.666667;terkirim;2;2;4;2026-06-14 05:09:29
+924;SWF-20260614-0924;Wati Kurnia;Jl. Kamboja No. 120;Bekasi;Jakarta Timur;1.520000;53200.000000;terkirim;3;1;6;2026-06-14 06:57:20
+925;SWF-20260614-0925;Rahmat Hidayat;Jl. Sudirman No. 106;Jakarta Timur;Jakarta Barat;14.555000;141440.000000;terkirim;4;2;6;2026-06-14 10:07:36
+926;SWF-20260614-0926;Joko Susilo;Jl. Mawar No. 19;Jakarta Barat;Bekasi;6.862500;137250.000000;terkirim;2;1;5;2026-06-14 14:02:47
+927;SWF-20260615-0927;Agus Setiawan;Jl. Raya Bogor No. 135;Jakarta Selatan;Yogyakarta;30.030000;1151050.000000;terkirim;3;3;6;2026-06-15 03:06:24
+928;SWF-20260615-0928;Lestari Wulandari;Jl. Mangga Dua No. 11;Tangerang;Depok;17.664000;378280.000000;terkirim;2;2;5;2026-06-15 04:52:00
+929;SWF-20260615-0929;Dian Sasmita;Jl. Mawar No. 62;Surabaya;Bogor;11.602500;141025.000000;terkirim;1;2;6;2026-06-15 05:03:14
+930;SWF-20260615-0930;Hadi Sunyoto;Jl. Melati No. 108;Surabaya;Depok;2.016667;20166.666667;terkirim;1;1;4;2026-06-15 06:54:58
+931;SWF-20260615-0931;Wati Kurnia;Jl. Mangga Dua No. 27;Semarang;Yogyakarta;52.896000;523168.000000;terkirim;4;3;6;2026-06-15 07:35:04
+932;SWF-20260615-0932;Agus Setiawan;Jl. Pahlawan No. 93;Bandung;Yogyakarta;9.450000;330750.000000;terkirim;3;1;5;2026-06-15 07:55:48
+933;SWF-20260615-0933;Wati Kurnia;Jl. Merdeka No. 56;Bandung;Jakarta Timur;2.478667;86753.333333;terkirim;3;1;4;2026-06-15 11:07:13
+934;SWF-20260615-0934;Yanto Sukarno;Jl. Mawar No. 64;Depok;Karawang;9.248000;323680.000000;terkirim;3;1;4;2026-06-15 13:06:39
+935;SWF-20260615-0935;Dewi Lestari;Jl. Kamboja No. 23;Bekasi;Tangerang;25.350000;912250.000000;terkirim;3;2;6;2026-06-15 13:12:38
+936;SWF-20260615-0936;Toni Hermanto;Jl. Thamrin No. 98;Jakarta Barat;Bekasi;34.344000;374752.000000;terkirim;4;3;4;2026-06-15 13:42:19
+937;SWF-20260615-0937;Roni Wijaya;Jl. Raya Bogor No. 130;Yogyakarta;Surabaya;19.552000;181416.000000;sampai_tujuan;4;2;6;2026-06-15 20:14:31
+938;SWF-20260616-0938;Rahmat Hidayat;Jl. Kenanga No. 68;Jakarta Timur;Semarang;37.895000;403160.000000;terkirim;4;3;5;2026-06-16 13:36:03
+939;SWF-20260616-0939;Rahmat Hidayat;Jl. Melati No. 58;Bogor;Jakarta Pusat;15.853333;579866.666667;terkirim;3;2;5;2026-06-16 19:21:26
+940;SWF-20260617-0940;Eko Prasetyo;Jl. Kebon Jeruk No. 38;Jakarta Pusat;Bekasi;5.822000;46576.000000;terkirim;4;1;6;2026-06-17 05:10:19
+941;SWF-20260617-0941;Hadi Sunyoto;Jl. Kenanga No. 148;Tangerang;Semarang;17.257333;163058.666667;terkirim;4;2;5;2026-06-17 06:40:10
+942;SWF-20260618-0942;Rahmat Hidayat;Jl. Diponegoro No. 83;Yogyakarta;Jakarta Barat;7.436000;59488.000000;terkirim;4;1;5;2026-06-18 01:07:35
+943;SWF-20260618-0943;Gita Saraswati;Jl. Pahlawan No. 120;Depok;Surabaya;11.968000;120744.000000;sampai_tujuan;4;2;5;2026-06-18 04:36:21
+944;SWF-20260619-0944;Gita Saraswati;Jl. Flamboyan No. 144;Surabaya;Jakarta Pusat;17.892000;203920.000000;terkirim;1;2;4;2026-06-19 01:01:21
+945;SWF-20260619-0945;Budi Santoso;Jl. Kamboja No. 111;Yogyakarta;Jakarta Timur;24.790000;892650.000000;terkirim;3;2;6;2026-06-19 02:45:50
+946;SWF-20260619-0946;Maya Kartika;Jl. Cempaka No. 37;Semarang;Karawang;1.333333;46666.666667;sampai_tujuan;3;1;4;2026-06-19 04:55:35
+947;SWF-20260619-0947;Wati Kurnia;Jl. Thamrin No. 50;Jakarta Barat;Surabaya;2.288000;18304.000000;terkirim;4;1;5;2026-06-19 07:54:44
+948;SWF-20260619-0948;Sri Wahyuni;Jl. Cempaka No. 98;Yogyakarta;Bogor;7.870500;78705.000000;terkirim;1;1;5;2026-06-19 23:57:27
+949;SWF-20260620-0949;Rahmat Hidayat;Jl. Thamrin No. 67;Tangerang;Jakarta Barat;7.020000;245700.000000;terkirim;3;1;4;2026-06-20 00:47:54
+950;SWF-20260620-0950;Sari Indah;Jl. Sudirman No. 96;Jakarta Selatan;Jakarta Barat;1.411667;14116.666667;terkirim;1;1;5;2026-06-20 03:31:02
+951;SWF-20260620-0951;Yanto Sukarno;Jl. Gatot Subroto No. 45;Jakarta Barat;Yogyakarta;31.317000;726340.000000;terkirim;2;3;4;2026-06-20 07:13:53
+952;SWF-20260620-0952;Maya Kartika;Jl. Thamrin No. 113;Yogyakarta;Jakarta Timur;23.606000;261060.000000;sampai_tujuan;1;2;4;2026-06-20 10:29:14
+953;SWF-20260620-0953;Hendra Wijaya;Jl. Ahmad Yani No. 90;Surabaya;Jakarta Timur;8.638667;69109.333333;terkirim;4;1;6;2026-06-20 15:20:54
+954;SWF-20260621-0954;Gita Saraswati;Jl. Kenanga No. 115;Jakarta Selatan;Yogyakarta;12.720000;279400.000000;terkirim;2;2;4;2026-06-21 01:19:39
+955;SWF-20260621-0955;Sari Indah;Jl. Mawar No. 16;Bogor;Yogyakarta;5.852000;204820.000000;terkirim;3;1;6;2026-06-21 03:59:55
+956;SWF-20260621-0956;Roni Wijaya;Jl. Raya Bogor No. 83;Jakarta Timur;Karawang;17.546667;165373.333333;terkirim;4;2;5;2026-06-21 04:40:28
+957;SWF-20260621-0957;Agus Setiawan;Jl. Melati No. 144;Bogor;Surabaya;35.173833;1331084.166667;terkirim;3;3;6;2026-06-21 08:20:53
+958;SWF-20260621-0958;Maya Kartika;Jl. Thamrin No. 81;Yogyakarta;Jakarta Pusat;2.704000;94640.000000;terkirim;3;1;4;2026-06-21 11:08:01
+959;SWF-20260621-0959;Hadi Sunyoto;Jl. Thamrin No. 131;Bekasi;Yogyakarta;2.035000;16280.000000;terkirim;4;1;4;2026-06-21 11:15:26
+960;SWF-20260621-0960;Roni Wijaya;Jl. Kamboja No. 53;Bandung;Yogyakarta;1.595000;31900.000000;terkirim;2;1;5;2026-06-21 11:53:04
+961;SWF-20260622-0961;Sri Wahyuni;Jl. Pahlawan No. 96;Tangerang;Jakarta Pusat;5.548667;194203.333333;terkirim;3;1;6;2026-06-22 00:16:01
+962;SWF-20260622-0962;Andi Pratama;Jl. Cempaka No. 3;Tangerang;Bogor;14.790000;143320.000000;terkirim;4;2;6;2026-06-22 11:40:45
+963;SWF-20260622-0963;Eko Prasetyo;Jl. Diponegoro No. 58;Jakarta Selatan;Yogyakarta;2.880000;23040.000000;terkirim;4;1;4;2026-06-22 13:13:15
+964;SWF-20260622-0964;Andi Pratama;Jl. Kenanga No. 73;Karawang;Depok;7.582333;75823.333333;terkirim;1;1;4;2026-06-22 17:43:49
+965;SWF-20260622-0965;Hadi Sunyoto;Jl. Sudirman No. 121;Bogor;Jakarta Selatan;2.184000;17472.000000;terkirim;4;1;4;2026-06-22 20:25:10
+966;SWF-20260622-0966;Dian Sasmita;Jl. Mawar No. 113;Yogyakarta;Jakarta Timur;12.210000;269200.000000;terkirim;2;2;6;2026-06-22 23:11:24
+967;SWF-20260623-0967;Siti Rahma;Jl. Melati No. 65;Jakarta Timur;Tangerang;6.842500;54740.000000;terkirim;4;1;4;2026-06-23 00:41:16
+968;SWF-20260623-0968;Roni Wijaya;Jl. Melati No. 113;Jakarta Pusat;Karawang;9.471000;331485.000000;terkirim;3;1;4;2026-06-23 02:35:08
+969;SWF-20260623-0969;Rahmat Hidayat;Jl. Cempaka No. 133;Karawang;Jakarta Pusat;15.019500;175195.000000;terkirim;1;2;4;2026-06-23 13:44:41
+970;SWF-20260623-0970;Budi Santoso;Jl. Sudirman No. 100;Semarang;Bandung;2.216667;22166.666667;terkirim;1;1;6;2026-06-23 16:13:18
+971;SWF-20260623-0971;Dian Sasmita;Jl. Kenanga No. 116;Yogyakarta;Jakarta Barat;27.216000;242728.000000;terkirim;4;2;4;2026-06-23 18:41:09
+972;SWF-20260623-0972;Hendra Wijaya;Jl. Thamrin No. 100;Depok;Jakarta Timur;7.410000;259350.000000;terkirim;3;1;4;2026-06-23 22:28:19
+973;SWF-20260624-0973;Sri Wahyuni;Jl. Diponegoro No. 91;Jakarta Barat;Bogor;44.982000;459856.000000;sampai_tujuan;4;3;5;2026-06-24 00:07:51
+974;SWF-20260624-0974;Lestari Wulandari;Jl. Kenanga No. 35;Yogyakarta;Karawang;9.102000;182040.000000;terkirim;2;1;4;2026-06-24 00:52:56
+975;SWF-20260624-0975;Wati Kurnia;Jl. Mawar No. 79;Jakarta Barat;Bogor;7.513333;60106.666667;sampai_tujuan;4;1;6;2026-06-24 04:16:29
+976;SWF-20260624-0976;Roni Wijaya;Jl. Melati No. 142;Jakarta Timur;Yogyakarta;48.576667;1071533.333333;sampai_tujuan;2;3;4;2026-06-24 07:34:30
+977;SWF-20260624-0977;Maya Kartika;Jl. Thamrin No. 70;Yogyakarta;Surabaya;10.319167;231383.333333;sampai_tujuan;2;2;5;2026-06-24 12:08:19
+978;SWF-20260624-0978;Toni Hermanto;Jl. Melati No. 136;Yogyakarta;Surabaya;0.924000;9240.000000;dalam_perjalanan;1;1;4;2026-06-24 12:09:49
+979;SWF-20260624-0979;Rahmat Hidayat;Jl. Melati No. 92;Jakarta Barat;Semarang;8.762833;87628.333333;sampai_tujuan;1;1;6;2026-06-24 14:53:11
+980;SWF-20260624-0980;Lestari Wulandari;Jl. Thamrin No. 75;Depok;Jakarta Selatan;4.350000;34800.000000;dalam_perjalanan;4;1;6;2026-06-24 19:24:13
+981;SWF-20260624-0981;Dewi Lestari;Jl. Kamboja No. 72;Yogyakarta;Jakarta Barat;7.392000;73920.000000;dalam_perjalanan;1;1;4;2026-06-24 21:51:09
+982;SWF-20260624-0982;Sri Wahyuni;Jl. Kamboja No. 44;Semarang;Jakarta Pusat;20.328000;187624.000000;dalam_perjalanan;4;2;5;2026-06-24 23:36:06
+983;SWF-20260625-0983;Lestari Wulandari;Jl. Gatot Subroto No. 95;Jakarta Selatan;Jakarta Barat;12.960000;284200.000000;dalam_perjalanan;2;2;6;2026-06-25 02:09:36
+984;SWF-20260625-0984;Hendra Wijaya;Jl. Gatot Subroto No. 91;Bandung;Bogor;3.906000;136710.000000;sampai_tujuan;3;1;4;2026-06-25 02:21:43
+985;SWF-20260625-0985;Budi Santoso;Jl. Kamboja No. 82;Jakarta Timur;Jakarta Pusat;14.046667;137373.333333;sampai_tujuan;4;2;5;2026-06-25 08:21:54
+986;SWF-20260625-0986;Rahmat Hidayat;Jl. Melati No. 142;Jakarta Pusat;Jakarta Barat;1.056000;8448.000000;dalam_perjalanan;4;1;5;2026-06-25 16:48:19
+987;SWF-20260625-0987;Sari Indah;Jl. Mangga Dua No. 97;Bekasi;Tangerang;49.600000;1836000.000000;dalam_perjalanan;3;3;5;2026-06-25 17:56:48
+988;SWF-20260625-0988;Gita Saraswati;Jl. Kebon Jeruk No. 126;Depok;Bekasi;4.466667;156333.333333;terkirim;3;1;4;2026-06-25 22:15:22
+989;SWF-20260626-0989;Dewi Lestari;Jl. Mawar No. 17;Jakarta Timur;Surabaya;2.660000;26600.000000;menunggu;1;1;0;2026-06-26 00:19:18
+990;SWF-20260626-0990;Lestari Wulandari;Jl. Gatot Subroto No. 40;Bandung;Yogyakarta;13.554667;160546.666667;menunggu;1;2;0;2026-06-26 02:18:32
+991;SWF-20260626-0991;Siti Rahma;Jl. Kebon Jeruk No. 21;Jakarta Timur;Jakarta Selatan;2.275000;45500.000000;menunggu;2;1;0;2026-06-26 05:39:36
+992;SWF-20260626-0992;Sari Indah;Jl. Gatot Subroto No. 100;Bekasi;Yogyakarta;30.543333;710866.666667;dalam_perjalanan;2;3;6;2026-06-26 06:27:50
+993;SWF-20260626-0993;Toni Hermanto;Jl. Raya Bogor No. 16;Bogor;Jakarta Timur;2.466667;49333.333333;menunggu;2;1;0;2026-06-26 09:25:35
+994;SWF-20260626-0994;Andi Pratama;Jl. Diponegoro No. 139;Bandung;Jakarta Barat;2.691667;53833.333333;diproses;2;1;4;2026-06-26 10:29:28
+995;SWF-20260626-0995;Sri Wahyuni;Jl. Raya Bogor No. 106;Karawang;Yogyakarta;18.154667;660413.333333;diproses;3;2;6;2026-06-26 12:43:47
+996;SWF-20260626-0996;Hadi Sunyoto;Jl. Merdeka No. 65;Depok;Jakarta Timur;0.918000;7344.000000;diproses;4;1;6;2026-06-26 14:43:13
+997;SWF-20260626-0997;Dian Sasmita;Jl. Cempaka No. 21;Surabaya;Semarang;2.579500;90282.500000;diproses;3;1;6;2026-06-26 16:30:50
+998;SWF-20260626-0998;Dian Sasmita;Jl. Gatot Subroto No. 146;Depok;Semarang;30.708333;345666.666667;diproses;4;3;5;2026-06-26 18:38:41
+999;SWF-20260626-0999;Toni Hermanto;Jl. Melati No. 140;Yogyakarta;Jakarta Barat;3.022500;105787.500000;dalam_perjalanan;3;1;5;2026-06-26 21:40:39
+1000;SWF-20260626-1000;Eko Prasetyo;Jl. Flamboyan No. 40;Jakarta Timur;Semarang;8.053500;161070.000000;sampai_tujuan;2;1;5;2026-06-26 23:10:42

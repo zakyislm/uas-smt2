@@ -21,7 +21,7 @@ async function initAmbilPaket() {
         <div class="card" style="max-width:600px">
             <div class="card-header">
                 <div>
-                    <div class="card-title"><span class="material-icons-outlined">outbox</span> Ambil Paket dari Antrean</div>
+                    <div class="card-title">Ambil Paket dari Antrean</div>
                     <div class="card-subtitle">Paket di depan Queue akan di-dequeue dan diassign ke kurir berikutnya (Circular List)</div>
                 </div>
             </div>
@@ -32,7 +32,7 @@ async function initAmbilPaket() {
                     <div style="font-size:20px;font-weight:700;margin-bottom:8px">${nextPaket.resi}</div>
                     <div class="metric-row"><span class="metric-label">Penerima</span><span class="metric-value">${nextPaket.nama_penerima}</span></div>
                     <div class="metric-row"><span class="metric-label">Rute</span><span class="metric-value">${nextPaket.kota_asal} → ${nextPaket.kota_tujuan}</span></div>
-                    <div class="metric-row"><span class="metric-label">Berat</span><span class="metric-value">${nextPaket.berat} kg</span></div>
+                    <div class="metric-row"><span class="metric-label">Dimensi</span><span class="metric-value">${(nextPaket.berat * 6000).toFixed(0)} cm³</span></div>
                     <div class="metric-row"><span class="metric-label">Biaya</span><span class="metric-value">Rp ${formatCurrency(nextPaket.biaya)}</span></div>
                 </div>
                 <button class="btn btn-primary btn-lg w-full" onclick="doDequeue()" id="dequeue-btn">

@@ -8,7 +8,7 @@ function renderRiwayatScreen() {
         <div class="card">
             <div class="card-header">
                 <div>
-                    <div class="card-title"><span class="material-icons-outlined">history</span> Riwayat Tracking</div>
+                    <div class="card-title">Riwayat Tracking</div>
                     <div class="card-subtitle">Lihat timeline tracking per paket atau semua</div>
                 </div>
             </div>

@@ -60,17 +60,17 @@ struct User {
 
 struct Paket {
     int id, id_layanan, id_klasifikasi, id_kurir;
-    string resi, nama_penerima, alamat_tujuan, kota_asal, kota_tujuan, status;
+    string resi, nama_penerima, alamat_tujuan, kota_asal, kota_tujuan, status, created_at;
     double berat, biaya;
     Paket(int id = 0, const string& resi = "", const string& nama_penerima = "",
           const string& alamat_tujuan = "", const string& kota_asal = "",
           const string& kota_tujuan = "", double berat = 0.0, double biaya = 0.0,
           const string& status = "menunggu", int id_layanan = 0,
-          int id_klasifikasi = 0, int id_kurir = 0)
+          int id_klasifikasi = 0, int id_kurir = 0, const string& created_at = "")
         : id(id), id_layanan(id_layanan), id_klasifikasi(id_klasifikasi),
           id_kurir(id_kurir), resi(resi), nama_penerima(nama_penerima),
           alamat_tujuan(alamat_tujuan), kota_asal(kota_asal),
-          kota_tujuan(kota_tujuan), status(status), berat(berat), biaya(biaya) {}
+          kota_tujuan(kota_tujuan), status(status), created_at(created_at), berat(berat), biaya(biaya) {}
 };
 
 struct Tracking {
@@ -652,6 +652,12 @@ inline User* authLogin(AuthData& auth, const string& username, const string& pas
     return nullptr;
 }
 
+inline string getTimestamp() {
+    time_t now = time(0); tm* ltm = localtime(&now);
+    char buf[30]; sprintf(buf, "%04d-%02d-%02d %02d:%02d:%02d", 1900+ltm->tm_year, 1+ltm->tm_mon, ltm->tm_mday, ltm->tm_hour, ltm->tm_min, ltm->tm_sec);
+    return string(buf);
+}
+
 // --- Paket Service ---
 inline void paketLoadLayanan(PaketData& p, const string& filename) {
     try {
@@ -681,7 +687,8 @@ inline void paketLoadPaket(PaketData& p, const string& filename) {
         for (size_t i = 0; i < lines.size(); i++) {
             auto t = csvSplit(lines[i], ';');
             if (t.size() >= 12) {
-                Paket pk(stoi(t[0]), t[1], t[2], t[3], t[4], t[5], stod(t[6]), stod(t[7]), t[8], stoi(t[9]), stoi(t[10]), stoi(t[11]));
+                string created_at = t.size() >= 13 ? t[12] : getTimestamp();
+                Paket pk(stoi(t[0]), t[1], t[2], t[3], t[4], t[5], stod(t[6]), stod(t[7]), t[8], stoi(t[9]), stoi(t[10]), stoi(t[11]), created_at);
                 p.paketList.insert(pk);
                 p.resiTree.insert(pk.resi, pk.id);
                 if (pk.id >= p.nextPaketId) p.nextPaketId = pk.id + 1;
@@ -715,15 +722,10 @@ inline string generateResi(PaketData& p) {
     return string(buf);
 }
 
-inline string getTimestamp() {
-    time_t now = time(0); tm* ltm = localtime(&now);
-    char buf[30]; sprintf(buf, "%04d-%02d-%02d %02d:%02d:%02d", 1900+ltm->tm_year, 1+ltm->tm_mon, ltm->tm_mday, ltm->tm_hour, ltm->tm_min, ltm->tm_sec);
-    return string(buf);
-}
-
 inline void paketAddPaket(PaketData& p, const Paket& pk) {
     Paket np = pk; np.id = p.nextPaketId++;
     if (np.resi.empty()) np.resi = generateResi(p);
+    if (np.created_at.empty()) np.created_at = getTimestamp();
     p.paketList.insert(np); p.resiTree.insert(np.resi, np.id); p.paketQueue.enqueue(np);
     cout << "  [SUKSES] Paket " << np.resi << " berhasil ditambahkan.\n";
 }
@@ -798,7 +800,7 @@ inline void paketDisplayAll(PaketData& p) {
         cout << "\n  Detail:\n";
         for (size_t i = 0; i < pakets.size(); i++) {
             auto& pp = pakets[i];
-            cout << "  ----------------------------------------\n  ID       : " << pp.id << "\n  Resi     : " << pp.resi << "\n  Penerima : " << pp.nama_penerima << "\n  Tujuan   : " << pp.kota_asal << " -> " << pp.kota_tujuan << "\n  Alamat   : " << pp.alamat_tujuan << "\n  Berat    : " << pp.berat << " kg\n  Biaya    : Rp " << pp.biaya << "\n  Layanan  : " << paketGetLayananName(p, pp.id_layanan) << "\n  Klasifikasi: " << paketGetKlasifikasiName(p, pp.id_klasifikasi) << "\n  Kurir ID : " << pp.id_kurir << "\n  Status   : " << pp.status << "\n";
+            cout << "  ----------------------------------------\n  ID       : " << pp.id << "\n  Resi     : " << pp.resi << "\n  Penerima : " << pp.nama_penerima << "\n  Tujuan   : " << pp.kota_asal << " -> " << pp.kota_tujuan << "\n  Alamat   : " << pp.alamat_tujuan << "\n  Dimensi  : " << pp.berat << " kg (Volumetrik)\n  Biaya    : Rp " << pp.biaya << "\n  Layanan  : " << paketGetLayananName(p, pp.id_layanan) << "\n  Klasifikasi: " << paketGetKlasifikasiName(p, pp.id_klasifikasi) << "\n  Kurir ID : " << pp.id_kurir << "\n  Status   : " << pp.status << "\n";
         }
     }
 }
@@ -810,8 +812,8 @@ inline void paketDisplayAVL(PaketData& p) { cout << "\n  ===== PENCARIAN RESI (A
 inline void paketSavePaket(PaketData& p, const string& filename) {
     auto pakets = p.paketList.toVector();
     vector<string> lines;
-    lines.push_back("id;resi;nama_penerima;alamat_tujuan;kota_asal;kota_tujuan;berat;biaya;status;id_layanan;id_klasifikasi;id_kurir");
-    for (auto& pp : pakets) lines.push_back(csvJoin({to_string(pp.id), pp.resi, pp.nama_penerima, pp.alamat_tujuan, pp.kota_asal, pp.kota_tujuan, to_string(pp.berat), to_string(pp.biaya), pp.status, to_string(pp.id_layanan), to_string(pp.id_klasifikasi), to_string(pp.id_kurir)}, ';'));
+    lines.push_back("id;resi;nama_penerima;alamat_tujuan;kota_asal;kota_tujuan;berat;biaya;status;id_layanan;id_klasifikasi;id_kurir;created_at");
+    for (auto& pp : pakets) lines.push_back(csvJoin({to_string(pp.id), pp.resi, pp.nama_penerima, pp.alamat_tujuan, pp.kota_asal, pp.kota_tujuan, to_string(pp.berat), to_string(pp.biaya), pp.status, to_string(pp.id_layanan), to_string(pp.id_klasifikasi), to_string(pp.id_kurir), pp.created_at}, ';'));
     csvWrite("data/" + filename, lines);
     cout << "  [SUKSES] " << pakets.size() << " paket disimpan ke " << filename << ".\n";
 }
@@ -903,7 +905,7 @@ inline void reportDisplayLaporanPaket(vector<Paket>& pakets) {
     cout << "\n  ============================================\n  === LAPORAN SEMUA PAKET ===\n  ============================================\n";
     if (pakets.empty()) { cout << "  [INFO] Belum ada data paket.\n"; return; }
     sort(pakets.begin(), pakets.end(), [](const Paket& a, const Paket& b) { return a.id < b.id; });
-    cout << "  " << setw(5) << "ID" << setw(15) << "Resi" << setw(18) << "Penerima" << setw(15) << "Kota Tujuan" << setw(8) << "Berat" << setw(12) << "Biaya" << setw(18) << "Status" << "\n";
+    cout << "  " << setw(5) << "ID" << setw(15) << "Resi" << setw(18) << "Penerima" << setw(15) << "Kota Tujuan" << setw(8) << "Dimensi" << setw(12) << "Biaya" << setw(18) << "Status" << "\n";
     cout << "  " << string(91, '-') << "\n";
     auto displayRow = [](const Paket& pp) { cout << "  " << setw(5) << pp.id << setw(15) << pp.resi << setw(18) << pp.nama_penerima << setw(15) << pp.kota_tujuan << setw(8) << pp.berat << setw(12) << pp.biaya << setw(18) << pp.status << "\n"; };
     for_each(pakets.begin(), pakets.end(), displayRow);
@@ -931,7 +933,7 @@ inline void reportDisplayStatistik(vector<Paket>& pakets) {
     double totalBiaya = 0, totalBerat = 0, maxBiaya = 0; string paketTermahal;
     for (auto& pp : pakets) { totalBiaya += pp.biaya; totalBerat += pp.berat; if (pp.biaya > maxBiaya) { maxBiaya = pp.biaya; paketTermahal = pp.resi; } }
     cout << "\n  Total Paket          : " << total << "\n  Menunggu             : " << menunggu << "\n  Dalam Perjalanan     : " << dalam << "\n  Terkirim             : " << terkirim;
-    cout << "\n  ----------------------------------------\n  Total Biaya          : Rp " << fixed << setprecision(0) << totalBiaya << "\n  Rata-rata Biaya      : Rp " << (total>0?totalBiaya/total:0) << "\n  Rata-rata Berat      : " << (total>0?totalBerat/total:0) << " kg\n  Paket Termahal       : " << paketTermahal << " (Rp " << maxBiaya << ")\n  ============================================\n";
+    cout << "\n  ----------------------------------------\n  Total Biaya          : Rp " << fixed << setprecision(0) << totalBiaya << "\n  Rata-rata Biaya      : Rp " << (total>0?totalBiaya/total:0) << "\n  Rata-rata Dimensi    : " << (total>0?totalBerat/total:0) << " kg (Volumetrik)\n  Paket Termahal       : " << paketTermahal << " (Rp " << maxBiaya << ")\n  ============================================\n";
 }
 
 inline void reportDisplayCEO(vector<Paket>& pakets, int totalKurir, int totalTracking) {

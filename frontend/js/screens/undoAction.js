@@ -8,7 +8,7 @@ function renderUndoActionScreen() {
         <div class="card" style="max-width:600px">
             <div class="card-header">
                 <div>
-                    <div class="card-title"><span class="material-icons-outlined">undo</span> Undo Tracking (Stack)</div>
+                    <div class="card-title">Undo Tracking (Stack)</div>
                     <div class="card-subtitle">Pop tracking terakhir dari map&lt;int, Stack&lt;Tracking&gt;&gt;</div>
                 </div>
             </div>
