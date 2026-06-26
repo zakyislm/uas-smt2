@@ -37,6 +37,14 @@ const App = {
         const user = this.getUser();
         if (!user) { this.navigate('login'); return; }
 
+        // Route Guard based on MENU_ACCESS
+        const access = MENU_ACCESS[user.role] || [];
+        if (!access.includes(screen)) {
+            const defaultScreen = access[0] || 'login';
+            this.navigate(defaultScreen);
+            return;
+        }
+
         // Build layout
         const contentHtml = this.getScreenHtml(screen);
         app.innerHTML = `
@@ -60,7 +68,6 @@ const App = {
             updateStatus: renderUpdateStatusScreen,
             undoAction: renderUndoActionScreen,
             riwayat: renderRiwayatScreen,
-            laporan: renderLaporanScreen,
             filterData: renderFilterDataScreen,
             sortingPaket: renderSortingPaketScreen,
             bfsGraph: renderBfsGraphScreen,
@@ -78,7 +85,6 @@ const App = {
             antrean: initAntrean,
             kurir: initKurir,
             ambilPaket: initAmbilPaket,
-            laporan: initLaporan,
             filterData: initFilterData,
             sortingPaket: initSortingPaket,
             bfsGraph: initBfsGraph,

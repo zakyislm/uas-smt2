@@ -159,6 +159,7 @@ int main() {
           pk.id_layanan = body.value("id_layanan", 0);
           pk.id_klasifikasi = body.value("id_klasifikasi", 0);
           pk.id_kurir = 0;
+          pk.created_at = getTimestamp();
           paket.paketList.insert(pk);
           paket.resiTree.insert(pk.resi, pk.id);
           paket.paketQueue.enqueue(pk);
@@ -432,6 +433,7 @@ int main() {
                       {"biaya_tertinggi", maxBiaya},
                       {"total_kurir", paket.kurirList.size()},
                       {"total_tracking", (int)tracking.trackingHistory.size()},
+                      {"queue_size", (int)paket.paketQueue.size()},
                       {"status_breakdown", breakdown},
                       {"pakets", jPakets}};
             res.set_content(j.dump(), "application/json");

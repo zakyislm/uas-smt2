@@ -1,81 +1,151 @@
-# SwiftExpedition Tracking Dashboard
+# SwiftExpedition — Sistem Manajemen Logistik & Pengiriman Paket
 
-SwiftExpedition adalah sistem manajemen logistik dan pengiriman paket canggih yang dirancang untuk mensimulasikan alur kerja ekspedisi di dunia nyata. Proyek ini memadukan kekuatan **Struktur Data Kompleks di C++** dengan **Antarmuka Grafis Berbasis Web (GUI)** modern untuk menghasilkan platform yang interaktif, cepat, dan mudah digunakan.
+SwiftExpedition adalah sistem manajemen logistik dan pengiriman paket yang menggunakan  **backend C++** dengan **interface web modern (SPA Javascript)**. Semua data diproses secara *in-memory* menggunakan struktur data buatan sendiri.
 
----
-
-## Konsep Inti (Core Concepts)
-
-Sistem ini dibangun di atas konsep integrasi antara backend berkinerja tinggi dan frontend yang responsif, menggunakan arsitektur **Local Client-Server**:
-
-1. **C++ Data Structures Backend**
-   Sistem tidak menggunakan database eksternal seperti SQL. Semua data diproses murni secara *in-memory* menggunakan implementasi struktur data buatan sendiri (Custom STL-like) di dalam memori C++:
-   *   **Singly Linked List**: Untuk manajemen keseluruhan daftar paket.
-   *   **Circular Linked List**: Untuk rotasi penugasan kurir secara otomatis (Round-Robin).
-   *   **Queue**: Untuk antrean paket yang menunggu diproses berdasarkan prioritas layanan.
-   *   **Stack**: Untuk sistem *Undo*, memungkinkan pembatalan status *tracking* terakhir jika terjadi kesalahan.
-   *   **AVL Tree**: Untuk pencarian paket yang sangat cepat berdasarkan nomor resi (Logaritmic Time Complexity).
-   *   **Hash Table**: Untuk sistem autentikasi dan pencarian pengguna (O(1) lookup).
-   *   **Graph (BFS & DFS)**: Untuk memvisualisasikan rute antarkota, mencari jalur terpendek (BFS), dan mencari alternatif seluruh rute yang mungkin (DFS).
-   *   **IntroSort (std::sort)**: Mengurutkan paket berdasarkan biaya atau berat secara efisien.
-
-2. **C++ HTTP REST Server**
-   Sebuah server HTTP lokal yang dibuat dengan `cpp-httplib` dan `nlohmann/json` berjalan di latar belakang (port 8080). Server ini bertugas untuk menerjemahkan data dari struktur data C++ menjadi format JSON agar bisa dibaca oleh *browser*. Server juga memproteksi data dengan sistem `std::mutex` untuk mencegah tabrakan data (Thread-Safety).
-
-3. **Single Page Application (SPA) Frontend**
-   Antarmuka web tanpa *refresh* yang dirancang dengan **Vanilla JavaScript & CSS** tanpa *framework* berat. Antarmuka ini menggunakan sistem desain premium dengan gaya *dark mode* dan mengkonsumsi API JSON dari C++.
+> **Platform:** Windows
 
 ---
 
-## Struktur Folder Modular (Modular Directory Structure)
+## Requirements
 
-Untuk kemudahan presentasi dan pemeliharaan kode (maintainability), codebase proyek ini telah direfaktorisasi dari file tunggal yang panjang menjadi struktur modular yang rapi di bawah folder `lib/`:
+| Specification | ... |
+|---------------|------------|
+| **OS** | Windows 10 / 11 |
+| **Compiler** | MinGW `g++` (C++17) |
+| **Browser** | Chrome, Edge, atau Firefox versi terbaru |
 
-*   **`main.cpp`**: Hanya berisi fungsi utama `main()` dan inisialisasi awal untuk alur CLI program console (~48 baris).
-*   **`server.cpp`**: Hanya berisi konfigurasi HTTP server dan routing API JSON untuk frontend web.
-*   **`lib/expedition.h`**: Core header yang menyimpan semua definisi struktur data custom (Singly/Circular Linked List, Stack, Queue, AVL Tree, Graph), manipulasi CSV, dan state global.
-*   **`lib/cli_menus.h`**: Menyimpan alur dan tampilan menu CLI untuk program console.
-*   **`lib/serialization.h`**: Menyimpan helper serialisasi objek C++ menjadi JSON untuk API backend.
-*   **`external/`**: Menyimpan pustaka eksternal pihak ketiga (`httplib.h` dan `json.hpp`) agar file root tetap bersih.
-
----
-
-## Program Workflow (Alur Kerja)
-
-Alur kerja dirancang menyerupai operasional ekspedisi nyata dengan 4 pilar utama (berdasarkan *Role* / Hak Akses):
-
-### 1. Penerimaan Paket (Admin / CEO)
-*   **Input Data**: Admin memasukkan data paket baru melalui form web (Layanan, Berat, Kota Asal, dan Kota Tujuan).
-*   **Masuk Antrean**: Paket baru akan masuk ke dalam **Queue** (Antrean), dan didata di dalam **Singly Linked List** dan **AVL Tree**.
-
-### 2. Penugasan Kurir (Kurir / Admin)
-*   **Dequeue**: Saat fungsi "Ambil Paket" dieksekusi, paket pertama di antrean akan dikeluarkan dari **Queue**.
-*   **Rotasi Kurir**: Sistem akan melihat **Circular Linked List** kurir. Kurir yang sedang mendapat giliran akan otomatis dipasangkan dengan paket yang baru dikeluarkan dari antrean.
-*   Status paket berubah otomatis menjadi `dalam_perjalanan`.
-
-### 3. Pemantauan & Update Status (Kurir)
-*   **Tracking**: Kurir mengupdate lokasi terkini paket. Setiap update dimasukkan ke **Array Tracking** dan dicatat dalam **Stack**.
-*   **Kesalahan Update (Undo)**: Jika ada salah *input*, kurir dapat memencet tombol *Undo Action*. Sistem akan mem-`pop` (mengambil data terakhir) dari **Stack** dan mengembalikan paket ke status sebelumnya.
-
-### 4. Analisis & Rute Ekspedisi (Manager / CEO)
-*   **Laporan Operasional**: Manajer dapat melihat perbandingan pendapatan, total beban, dan efisiensi kurir.
-*   **Sorting & Filtering**: Menemukan anomali paket terberat atau paling mahal.
-*   **Simulasi Rute (Graph)**: 
-    *   **BFS (Breadth-First Search)**: Secara *real-time* mencari jalur terpendek (transit paling sedikit) agar bahan bakar lebih efisien. Digambarkan dengan *Canvas API*.
-    *   **DFS (Depth-First Search)**: Menampilkan seluruh kemungkinan rute jika jalur utama sedang bermasalah.
+> Jika belum install MinGW, download disini  [winlibs.com](https://winlibs.com/) atau [MSYS2](https://www.msys2.org/).
 
 ---
 
-## Cara Menjalankan
+## Cara Menggunakan Aplikasi
 
-1. Lakukan kompilasi server (*build*):
-   ```bash
-   build.bat
-   ```
-2. Jalankan aplikasi server:
-   ```bash
-   ./server.exe
-   ```
-3. Browser akan otomatis terbuka ke alamat `http://localhost:8080`.
-4. Login menggunakan role sesuai data di `anggota.csv` (Contoh: `admin1` / `adminpass`).
-5. Jangan lupa klik tombol **Simpan (CSV)** pada sistem sebelum menutup *server* agar seluruh perubahan struktur data tersimpan permanen!
+### 1. Compile (Build)
+
+Klik dua kali file **`build.bat`** atau execute via terminal:
+
+```
+build.bat
+OR
+./build.bat
+OR
+.\build.bat
+```
+
+Script ini akan compile `server.cpp` menjadi `server.exe` menggunakan library `httplib`, `nlohmann/json`, dan `libsodium`.
+
+### 2. Run Server
+
+Klik dua kali file **`server.exe`** atau execute via terminal:
+
+```
+server.exe
+OR
+./server.exe
+OR
+.\server.exe
+```
+
+Local HTTP server akan running di **`http://localhost:9090`** lalu browser akan **terbuka otomatis** ke url tersebut.
+
+### 3. Login
+
+Gunakan salah satu akun berikut (password default: **`pass123`** untuk semua akun):
+
+| Username | Role | Permissions |
+|----------|------|-------|
+| `zaky` | CEO | Dashboard, All |
+| `farrel` | Manager | Dashboard, Report, Sorting |
+| `fauzi` | Admin | Manage Package, Queue |
+| `citra` | Kurir | Update Status, Undo, History |
+
+### 4. Done!
+
+Aplikasi siap digunakan. Untuk menghentikan server, tekan `Ctrl+C` pada terminal atau close windows terminal.
+
+---
+
+## Proyek Structure
+
+```
+alpro-strukdat/
+├── build.bat                  # Script compile (Windows)
+├── server.cpp                 # HTTP REST Server + routing API
+├── server.exe                 # Hasil compile server
+├── main.cpp                   # Entry point CLI (program console)
+├── main.exe                   # Hasil compile CLI
+├── libsodium-26.dll           # Runtime library untuk hashing password
+│
+├── lib/                       #   Header module C++
+│   ├── expedition.h           #   Semua struktur data (LinkedList, Queue, Stack, AVL, Graph)
+│   ├── cli_menus.h            #   Menu interaktif CLI
+│   └── serialization.h        #   Helper parser C++ → JSON
+│
+├── external/lib/              #   3rd Party Library
+│   ├── http_lib/httplib.h     #   HTTP server library
+│   ├── json_hpp/json.hpp      #   JSON parser
+│   └── libsodium/             #   Password hashing
+│
+├── data/                      #   Data CSV (database flat-file)
+│   ├── anggota.csv            #   Data pengguna & login
+│   ├── paket.csv              #   Data paket pengiriman
+│   ├── tracking.csv           #   Riwayat tracking paket
+│   ├── kurir.csv              #   Daftar kurir
+│   ├── kota.csv               #   Graph rute antarkota
+│   ├── layanan.csv            #   Jenis layanan pengiriman
+│   └── klasifikasi.csv        #   Klasifikasi paket
+│
+└── frontend/                  # Single Page Application (SPA)
+    ├── index.html             #   Main Page
+    ├── css/swift.css           #   Stylesheet (dark mode)
+    └── js/
+        ├── api.js             #   HTTP client ke backend
+        ├── app.js             #   Router & navigasi SPA
+        ├── chart.js           #   Chart.js (grafik dashboard)
+        ├── components/        #   Komponen UI reusable
+        │   ├── graphCanvas.js #     Visualisasi graf (Canvas API)
+        │   ├── sidebar.js     #     Nav sidebar
+        │   ├── header.js      #     Header halaman
+        │   ├── modal.js       #     Dialog modal
+        │   ├── statusChip.js  #     Badge status paket
+        │   └── table.js       #     Tabel data
+        └── screens/           #   Halaman-halaman aplikasi
+            ├── login.js       #     Halaman login
+            ├── dashboard.js   #     Dashboard & statistik
+            ├── pengiriman.js  #     Daftar semua paket
+            ├── tambahPaket.js #     Form tambah paket baru
+            ├── antrean.js     #     Antrean paket (Queue)
+            ├── kurir.js       #     Rotasi kurir (Circular LL)
+            ├── ambilPaket.js  #     Dequeue + assign kurir
+            ├── updateStatus.js#     Update tracking paket
+            ├── undoAction.js  #     Undo status terakhir (Stack)
+            ├── riwayat.js     #     Riwayat tracking
+            ├── filterData.js  #     Filter & pencarian paket
+            ├── sortingPaket.js#     Sorting paket
+            ├── bfsGraph.js    #     Jalur terpendek (BFS)
+            └── dfsGraph.js    #     Semua rute (DFS)
+```
+
+---
+
+## Struktur Data
+
+| Struktur Data | ... |
+|---------------|-------------|
+| **Singly Linked List** | Manajemen seluruh paket |
+| **Circular Linked List** | Rotasi kurir (round-robin) |
+| **Queue** | Antrean paket menunggu diproses |
+| **Stack** | Sistem undo status tracking |
+| **AVL Tree** | Pencarian paket berdasarkan resi |
+| **Hash Table** | Auth pengguna |
+| **Graph + BFS** | Pencarian jalur terpendek antarkota |
+| **Graph + DFS** | Pencarian semua rute alternatif |
+| **IntroSort** | Pengurutan paket berdasarkan biaya/ukuran dimensi |
+
+---
+
+## Notes
+
+- Semua data disimpan dalam file CSV di folder `data/`. Data yang berubah **otomatis tersave** saat logout dari aplikasi.
+- File `libsodium-26.dll` **wajib ada** di folder yang sama dengan `server.exe` agar fungsi hash berjalan.
+- Aplikasi ini dibuat untuk **Windows** dan belum tersedia untuk OS lain.

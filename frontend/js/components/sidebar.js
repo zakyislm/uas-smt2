@@ -16,7 +16,6 @@ const MENU_ITEMS = [
     ]},
     { section: 'ANALISIS', items: [
         { id: 'riwayat',      icon: '<span class="material-icons-outlined">history</span>', label: 'Riwayat Tracking' },
-        { id: 'laporan',      icon: '<span class="material-icons-outlined">trending_up</span>', label: 'Laporan Operasional' },
         { id: 'filterData',   icon: '<span class="material-icons-outlined">search</span>', label: 'Filter Data' },
         { id: 'sortingPaket', icon: '<span class="material-icons-outlined">sort</span>',  label: 'Sorting Paket' },
     ]},
@@ -28,10 +27,10 @@ const MENU_ITEMS = [
 
 const MENU_ACCESS = {
     CEO:     ['dashboard','pengiriman','tambahPaket','antrean','kurir','ambilPaket','updateStatus',
-              'undoAction','riwayat','laporan','filterData','sortingPaket','bfsGraph','dfsGraph'],
-    Manager: ['dashboard','pengiriman','riwayat','laporan','filterData','sortingPaket','bfsGraph','dfsGraph'],
-    Admin:   ['dashboard','pengiriman','tambahPaket','antrean','kurir','filterData','sortingPaket'],
-    Kurir:   ['dashboard','pengiriman','ambilPaket','updateStatus','undoAction','riwayat','antrean'],
+              'undoAction','riwayat','filterData','sortingPaket','bfsGraph','dfsGraph'],
+    Manager: ['dashboard','pengiriman','riwayat','filterData','sortingPaket','bfsGraph','dfsGraph'],
+    Admin:   ['pengiriman','tambahPaket','antrean','kurir','filterData','sortingPaket'],
+    Kurir:   ['pengiriman','ambilPaket','updateStatus','undoAction','riwayat','antrean'],
 };
 
 function renderSidebar(user, activeScreen) {

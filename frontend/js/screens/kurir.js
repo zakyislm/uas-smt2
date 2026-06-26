@@ -18,7 +18,7 @@ async function initKurir() {
         el.innerHTML = `
         <div class="page-header">
             <div>
-                <div class="page-title"><span class="material-icons-outlined">local_shipping</span> Daftar Kurir</div>
+                <div class="page-title">Daftar Kurir</div>
                 <div class="page-subtitle">${data.kurirs.length} kurir dalam Circular Linked List (Aktif: ${data.current || '-'})</div>
             </div>
             <button class="btn btn-primary" onclick="rotateKurirAction()"><span class="material-icons-outlined">sync</span> Rotasi Kurir</button>
@@ -37,7 +37,7 @@ async function initKurir() {
         </div>
 
         <div class="card mt-lg">
-            <div class="card-title mb-md"><span class="material-icons-outlined">analytics</span> Tabel Kurir</div>
+            <div class="card-title mb-md">Tabel Kurir</div>
             ${renderTable(
                 [
                     { label: 'ID', key: 'id', width: '60px' },

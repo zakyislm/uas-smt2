@@ -18,7 +18,7 @@ async function initAntrean() {
         el.innerHTML = `
         <div class="page-header">
             <div>
-                <div class="page-title"><span class="material-icons-outlined">format_list_numbered</span> Antrean Paket Masuk</div>
+                <div class="page-title">Antrean Paket Masuk</div>
                 <div class="page-subtitle">${queue.length} paket dalam antrean (Queue - FIFO dengan Priority)</div>
             </div>
             <span class="badge">${queue.length}</span>
@@ -50,14 +50,14 @@ async function initAntrean() {
             </div>
 
             <div class="card mt-lg">
-                <div class="card-title mb-md"><span class="material-icons-outlined">analytics</span> Tabel Antrean</div>
+                <div class="card-title mb-md">Tabel Antrean</div>
                 ${renderTable(
                     [
                         { label: '#', render: (r, i) => `<span class="badge">${queue.indexOf(r) + 1}</span>`, width: '50px' },
                         { label: 'Resi', key: 'resi' },
                         { label: 'Penerima', key: 'nama_penerima' },
                         { label: 'Rute', render: r => `${r.kota_asal} → ${r.kota_tujuan}` },
-                        { label: 'Berat', render: r => `${r.berat} kg` },
+                        { label: 'Dimensi', render: r => `${(r.berat * 6000).toFixed(0)} cm³` },
                         { label: 'Prioritas', render: r => `<span class="priority-badge priority-badge--${r.id_layanan >= 3 ? 'high' : (r.id_layanan >= 2 ? 'medium' : 'low')}">Layanan ${r.id_layanan}</span>` },
                     ],
                     queue

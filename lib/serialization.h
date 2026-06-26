@@ -33,7 +33,8 @@ inline json paketToJson(const Paket& p, PaketData& pd) {
             {"id_klasifikasi", p.id_klasifikasi},
             {"id_kurir", p.id_kurir},
             {"layanan_nama", layananNama},
-            {"klasifikasi_nama", klasNama}};
+            {"klasifikasi_nama", klasNama},
+            {"created_at", p.created_at}};
 }
 
 inline json trackingToJson(const Tracking& t) {

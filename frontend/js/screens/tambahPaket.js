@@ -21,7 +21,7 @@ async function initTambahPaket() {
         <div class="card" style="max-width:720px">
             <div class="card-header">
                 <div>
-                    <div class="card-title"><span class="material-icons-outlined">add_box</span> Form Tambah Paket Baru</div>
+                    <div class="card-title">Form Tambah Paket Baru</div>
                     <div class="card-subtitle">Data akan dimasukkan ke SinglyLinkedList dan Queue</div>
                 </div>
             </div>
@@ -53,9 +53,19 @@ async function initTambahPaket() {
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label">BERAT (KG) *</label>
-                        <input class="form-input" type="number" step="0.1" min="0.1" id="tp-berat" placeholder="0.0" required>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:8px; grid-column: span 1;">
+                        <div class="form-group">
+                            <label class="form-label">PANJANG (CM) *</label>
+                            <input class="form-input" type="number" min="1" id="tp-panjang" placeholder="Panjang" required oninput="calcBiaya()">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">LEBAR (CM) *</label>
+                            <input class="form-input" type="number" min="1" id="tp-lebar" placeholder="Lebar" required oninput="calcBiaya()">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">TINGGI (CM) *</label>
+                            <input class="form-input" type="number" min="1" id="tp-tinggi" placeholder="Tinggi" required oninput="calcBiaya()">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">LAYANAN *</label>
@@ -67,7 +77,7 @@ async function initTambahPaket() {
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="form-label">KLASIFIKASI BERAT *</label>
+                        <label class="form-label">KLASIFIKASI UKURAN *</label>
                         <select class="form-select" id="tp-klasifikasi" required onchange="calcBiaya()">
                             <option value="">Pilih klasifikasi</option>
                             ${klasifikasi.map(k => `<option value="${k.id}" data-biaya="${k.biaya_tambahan}">${k.nama} (+Rp ${formatCurrency(k.biaya_tambahan)})</option>`).join('')}
@@ -92,8 +102,6 @@ async function initTambahPaket() {
                 </div>
             </form>
         </div>`;
-
-        document.getElementById('tp-berat').addEventListener('input', calcBiaya);
     } catch (err) {
         document.getElementById('tambah-content').innerHTML =
             `<div class="empty-state"><div class="empty-state-icon"><span class="material-icons-outlined">warning</span></div><div class="empty-state-title">Gagal memuat form</div></div>`;
@@ -101,7 +109,10 @@ async function initTambahPaket() {
 }
 
 function calcBiaya() {
-    const berat = parseFloat(document.getElementById('tp-berat')?.value || 0);
+    const panjang = parseFloat(document.getElementById('tp-panjang')?.value || 0);
+    const lebar = parseFloat(document.getElementById('tp-lebar')?.value || 0);
+    const tinggi = parseFloat(document.getElementById('tp-tinggi')?.value || 0);
+    const berat = (panjang * lebar * tinggi) / 6000.0;
     const layananEl = document.getElementById('tp-layanan');
     const klasEl = document.getElementById('tp-klasifikasi');
     const tarif = parseFloat(layananEl?.selectedOptions[0]?.dataset.tarif || 0);
@@ -109,7 +120,7 @@ function calcBiaya() {
     const total = (berat * tarif) + tambahan;
     const display = document.getElementById('tp-biaya-display');
     const hidden = document.getElementById('tp-biaya');
-    if (display) display.textContent = `Rp ${formatCurrency(total)}`;
+    if (display) display.textContent = `Rp ${formatCurrency(total)} (${(panjang * lebar * tinggi).toFixed(0)} cm³)`;
     if (hidden) hidden.value = total;
 }
 
@@ -119,13 +130,18 @@ async function submitTambahPaket(e) {
     btn.disabled = true;
     btn.textContent = 'Menyimpan...';
 
+    const panjang = parseFloat(document.getElementById('tp-panjang').value || 0);
+    const lebar = parseFloat(document.getElementById('tp-lebar').value || 0);
+    const tinggi = parseFloat(document.getElementById('tp-tinggi').value || 0);
+    const calculatedBerat = (panjang * lebar * tinggi) / 6000.0;
+
     const data = {
         resi: document.getElementById('tp-resi').value,
         nama_penerima: document.getElementById('tp-nama').value,
         alamat_tujuan: document.getElementById('tp-alamat').value,
         kota_asal: document.getElementById('tp-asal').value,
         kota_tujuan: document.getElementById('tp-tujuan').value,
-        berat: parseFloat(document.getElementById('tp-berat').value),
+        berat: calculatedBerat,
         biaya: parseFloat(document.getElementById('tp-biaya').value),
         id_layanan: parseInt(document.getElementById('tp-layanan').value),
         id_klasifikasi: parseInt(document.getElementById('tp-klasifikasi').value),
@@ -139,6 +155,6 @@ async function submitTambahPaket(e) {
         App.toast(err.error || 'Gagal menambahkan paket', 'error');
     } finally {
         btn.disabled = false;
-        btn.textContent = '<span class="material-icons-outlined">inventory_2</span> Tambah Paket';
+        btn.innerHTML = '<span class="material-icons-outlined">inventory_2</span> Tambah Paket';
     }
 }

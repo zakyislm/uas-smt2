@@ -17,7 +17,7 @@ async function initFilterData() {
 
         el.innerHTML = `
         <div class="card">
-            <div class="card-title mb-md"><span class="material-icons-outlined">search</span> Filter Paket</div>
+            <div class="card-title mb-md">Filter Paket</div>
             <div class="filter-bar">
                 <div class="form-group">
                     <label class="form-label">STATUS</label>
@@ -91,7 +91,7 @@ async function applyFilter() {
                 { label: 'Resi', key: 'resi' },
                 { label: 'Penerima', key: 'nama_penerima' },
                 { label: 'Rute', render: r => `${r.kota_asal} → ${r.kota_tujuan}` },
-                { label: 'Berat', render: r => `${r.berat} kg` },
+                { label: 'Dimensi', render: r => `${(r.berat * 6000).toFixed(0)} cm³` },
                 { label: 'Biaya', render: r => `Rp ${formatCurrency(r.biaya)}` },
                 { label: 'Status', render: r => renderStatusChip(r.status) },
             ],

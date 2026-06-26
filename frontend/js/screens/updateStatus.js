@@ -8,7 +8,7 @@ function renderUpdateStatusScreen() {
         <div class="card" style="max-width:600px">
             <div class="card-header">
                 <div>
-                    <div class="card-title"><span class="material-icons-outlined">sync</span> Update Status Tracking</div>
+                    <div class="card-title">Update Status Tracking</div>
                     <div class="card-subtitle">Tracking akan dicatat ke Stack dan History</div>
                 </div>
             </div>

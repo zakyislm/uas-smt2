@@ -35,7 +35,7 @@ function renderLoginScreen() {
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:11px;color:var(--text-muted)">
                     <span><span class="material-icons-outlined">admin_panel_settings</span> zaky / pass123</span>
                     <span><span class="material-icons-outlined">analytics</span> farrel / pass123</span>
-                    <span><span class="material-icons-outlined">settings</span>️ fauzi / pass123</span>
+                    <span><span class="material-icons-outlined">settings</span> fauzi / pass123</span>
                     <span><span class="material-icons-outlined">local_shipping</span> citra / pass123</span>
                 </div>
             </div>
